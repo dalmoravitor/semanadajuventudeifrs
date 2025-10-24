@@ -1,0 +1,137 @@
+/**
+ * FIRESTORE SECURITY RULES
+ * 
+ * INSTRUÇÕES PARA APLICAR:
+ * 
+ * 1. Acesse: https://console.firebase.google.com/
+ * 2. Selecione o projeto: semanadajuventudeifrs
+ * 3. No menu lateral, clique em "Firestore Database"
+ * 4. Clique na aba "Rules" (Regras)
+ * 5. Substitua o conteúdo atual pelas regras abaixo
+ * 6. Clique em "Publicar" (Publish)
+ * 
+ * IMPORTANTE: Após publicar, aguarde 1-2 minutos para propagar
+ */
+
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // ============================================
+    // REGRAS PÚBLICAS (LEITURA)
+    // ============================================
+    
+    // Modalidades - Leitura pública
+    match /modalidades/{modalidadeId} {
+      allow read: if true;
+      allow write: if request.auth != null;
+    }
+    
+    // Equipes - Leitura pública
+    match /equipes/{equipeId} {
+      allow read: if true;
+      allow write: if request.auth != null;
+    }
+    
+    // Inscrições - Leitura pública
+    match /inscricoes/{inscricaoId} {
+      allow read: if true;
+      allow write: if request.auth != null;
+    }
+    
+    // Chaves - Leitura pública
+    match /chaves/{chaveId} {
+      allow read: if true;
+      allow write: if request.auth != null;
+    }
+    
+    // Confrontos - Leitura pública
+    match /confrontos/{confrontoId} {
+      allow read: if true;
+      allow write: if request.auth != null;
+    }
+    
+    // Resultados - Leitura pública
+    match /resultados/{resultadoId} {
+      allow read: if true;
+      allow write: if request.auth != null;
+    }
+    
+    // Ranking - Leitura pública
+    match /ranking/{rankingId} {
+      allow read: if true;
+      allow write: if request.auth != null;
+    }
+    
+    // Configurações - Leitura pública
+    match /configuracoes/{configId} {
+      allow read: if true;
+      allow write: if request.auth != null;
+    }
+  }
+}
+
+/**
+ * EXPLICAÇÃO DAS REGRAS:
+ * 
+ * 1. Todas as collections permitem LEITURA PÚBLICA (allow read: if true)
+ *    - Qualquer usuário pode ver modalidades, equipes, ranking, etc.
+ * 
+ * 2. ESCRITA requer AUTENTICAÇÃO (allow write: if request.auth != null)
+ *    - Apenas usuários logados podem criar/editar/deletar
+ *    - Protege contra modificações não autorizadas
+ * 
+ * 3. request.auth != null verifica se o usuário está autenticado
+ *    - Retorna true se há um usuário logado
+ *    - Retorna false se não há usuário (acesso anônimo)
+ * 
+ * SEGURANÇA:
+ * - Público pode ver tudo (para exibir ranking, modalidades, etc.)
+ * - Apenas admin logado pode modificar dados
+ * - Seu usuário fixo (Authentication) terá permissão total
+ */
+
+/**
+ * REGRAS ALTERNATIVAS (MAIS RESTRITIVAS)
+ * 
+ * Se quiser restringir ainda mais, use estas regras:
+ * 
+ * rules_version = '2';
+ * service cloud.firestore {
+ *   match /databases/{database}/documents {
+ *     // Função helper para verificar admin
+ *     function isAdmin() {
+ *       return request.auth != null && 
+ *              request.auth.token.email == 'admin@semanadajuventude.com';
+ *     }
+ *     
+ *     // Todas as collections
+ *     match /{document=**} {
+ *       allow read: if true;
+ *       allow write: if isAdmin();
+ *     }
+ *   }
+ * }
+ * 
+ * Isso permite escrita APENAS para o email específico do admin.
+ */
+
+/**
+ * REGRAS PARA DESENVOLVIMENTO (TEMPORÁRIAS)
+ * 
+ * ATENÇÃO: USE APENAS DURANTE DESENVOLVIMENTO/TESTE
+ * NÃO USE EM PRODUÇÃO!
+ * 
+ * rules_version = '2';
+ * service cloud.firestore {
+ *   match /databases/{database}/documents {
+ *     match /{document=**} {
+ *       allow read, write: if true;
+ *     }
+ *   }
+ * }
+ * 
+ * Isso permite leitura e escrita TOTAL sem restrições.
+ * Útil apenas para testar se o problema é de permissão.
+ * REMOVA após confirmar que funciona!
+ */

@@ -1,0 +1,818 @@
+import React, { useState } from "react";
+import { useSudoku } from "../../hooks/useSudoku";
+
+/**
+ * ========================================
+ * SISTEMA DE SUDOKU - MULTI-ETAPAS
+ * ========================================
+ * 
+ * Etapa 1: 3 subdivisões (5, 5, 6 equipes) → 2 melhores de cada = 6 classificados
+ * Etapa 2: 3 subdivisões com eliminados da etapa 1 → 2 melhores de cada = 6 classificados
+ * Etapa 3 (Semifinal): 6 equipes juntas, 3 sudokus → 3 melhores
+ * Final: 3 equipes, 2 sudokus simultâneos, eliminação por erro
+ */
+
+function SistemaSudoku({ adminMode, modalidade }) {
+	const {
+		loading,
+		todasEquipes,
+		etapaAtual,
+		dados,
+		salvarEquipesEtapa1,
+		salvarResultadoEtapa1,
+		classificarEtapa1,
+		salvarEquipesEtapa2,
+		salvarResultadoEtapa2,
+		classificarEtapa2,
+		salvarResultadoEtapa3,
+		classificarEtapa3,
+		salvarRodadaFinal,
+		finalizarCompetição
+	} = useSudoku(modalidade?.id);
+
+	const [modalResultado, setModalResultado] = useState({
+		open: false,
+		etapa: null,
+		subdivisao: null,
+		equipe: null,
+		tipo: 'simples' // 'simples' | 'triplo' | 'final'
+	});
+
+	// States para o modal de resultado
+	const [tempoSimplesState, setTempoSimplesState] = useState('');
+	const [errosState, setErrosState] = useState('');
+	const [sudoku1, setSudoku1] = useState({ tempo: '', erros: '' });
+	const [sudoku2, setSudoku2] = useState({ tempo: '', erros: '' });
+	const [sudoku3, setSudoku3] = useState({ tempo: '', erros: '' });
+
+	// States para seleção de equipes com dropdowns
+	const [equipesEtapa1Subdiv0, setEquipesEtapa1Subdiv0] = useState([]);
+	const [equipesEtapa1Subdiv1, setEquipesEtapa1Subdiv1] = useState([]);
+	const [equipesEtapa1Subdiv2, setEquipesEtapa1Subdiv2] = useState([]);
+	const [equipesEtapa2Subdiv0, setEquipesEtapa2Subdiv0] = useState([]);
+	const [equipesEtapa2Subdiv1, setEquipesEtapa2Subdiv1] = useState([]);
+	const [equipesEtapa2Subdiv2, setEquipesEtapa2Subdiv2] = useState([]);
+
+	if (loading) {
+		return (
+			<div style={{ textAlign: "center", padding: "40px 20px" }}>
+				<p style={{ color: "var(--muted)" }}>Carregando dados...</p>
+			</div>
+		);
+	}
+
+	// ========================================
+	// RENDER ETAPA 1
+	// ========================================
+	
+	const renderEtapa1 = () => (
+		<div>
+			<article className="card" style={{ marginBottom: 24, background: "linear-gradient(135deg, rgba(45, 212, 191, 0.1) 0%, rgba(251, 191, 36, 0.1) 100%)" }}>
+				<div className="card__body">
+					<h3 style={{ margin: "0 0 8px 0", fontSize: 18, color: "var(--primary)" }}>
+						📊 Etapa 1 - Classificatória
+					</h3>
+					<p style={{ margin: 0, fontSize: 14, color: "var(--muted)" }}>
+						3 subdivisões (5, 5 e 6 equipes). Cada equipe resolve 1 sudoku em até 10 minutos.
+						<br />
+						<strong>Penalidades:</strong> até 3 erros = +15min | mais de 3 erros ou não concluiu = 16min
+						<br />
+						<strong>Classificam:</strong> 2 melhores de cada subdivisão (6 equipes total)
+					</p>
+				</div>
+			</article>
+
+			{dados.etapa1.subdivisoes.map((subdivisao, idx) => (
+				<article key={idx} className="card" style={{ marginBottom: 24 }}>
+					<div className="card__header">
+						<h3 className="card__title">{subdivisao.nome}</h3>
+					</div>
+					<div className="card__body">
+						{/* Seleção de equipes */}
+						{adminMode && subdivisao.equipes.length === 0 && (
+							<div style={{ marginBottom: 16 }}>
+								<label style={{ display: "block", marginBottom: 8, fontWeight: 600 }}>
+									Selecione as {[5, 5, 6][idx]} equipes:
+								</label>
+								{Array.from({ length: [5, 5, 6][idx] }).map((_, posicao) => {
+									const equipesState = [equipesEtapa1Subdiv0, equipesEtapa1Subdiv1, equipesEtapa1Subdiv2][idx];
+									const setEquipesState = [setEquipesEtapa1Subdiv0, setEquipesEtapa1Subdiv1, setEquipesEtapa1Subdiv2][idx];
+									
+									// Filtrar equipes já selecionadas em outras posições desta subdivisão
+									const equipesDisponiveis = todasEquipes.filter(eq => 
+										!equipesState.some((selected, i) => i !== posicao && selected === eq.id)
+									);
+
+									return (
+										<div key={posicao} style={{ marginBottom: 8 }}>
+											<select
+												className="inputLogin"
+												style={{ width: "100%" }}
+												value={equipesState[posicao] || ''}
+												onChange={(e) => {
+													const novasEquipes = [...equipesState];
+													novasEquipes[posicao] = e.target.value;
+													setEquipesState(novasEquipes);
+												}}
+											>
+												<option value="">-- Selecione a equipe {posicao + 1} --</option>
+												{equipesDisponiveis.map(eq => (
+													<option key={eq.id} value={eq.id}>{eq.nome}</option>
+												))}
+											</select>
+										</div>
+									);
+								})}
+								<button
+									className="btn btn--primary"
+									style={{ marginTop: 12, width: "100%" }}
+									onClick={() => {
+										const equipesState = [equipesEtapa1Subdiv0, equipesEtapa1Subdiv1, equipesEtapa1Subdiv2][idx];
+										const tamanhoEsperado = [5, 5, 6][idx];
+										const equipesValidas = equipesState.filter(e => e);
+										
+										if (equipesValidas.length === tamanhoEsperado) {
+											salvarEquipesEtapa1(idx, equipesValidas);
+										} else {
+											alert(`Selecione todas as ${tamanhoEsperado} equipes!`);
+										}
+									}}
+								>
+									Confirmar Equipes
+								</button>
+							</div>
+						)}
+
+						{/* Tabela de resultados */}
+						{subdivisao.equipes.length > 0 && (
+							<table className="home-table" style={{ marginBottom: 0 }}>
+								<thead>
+									<tr>
+										<th>Equipe</th>
+										<th style={{ width: 120 }}>Tempo Real</th>
+										<th style={{ width: 100 }}>Erros</th>
+										<th style={{ width: 140 }}>Tempo Penalizado</th>
+										<th style={{ width: 120 }}>Ações</th>
+									</tr>
+								</thead>
+								<tbody>
+									{subdivisao.equipes
+										.map(equipe => ({
+											equipe,
+											resultado: subdivisao.resultados[equipe.id]
+										}))
+										.sort((a, b) => {
+											const tempoA = a.resultado?.tempoPenalizado ?? Infinity;
+											const tempoB = b.resultado?.tempoPenalizado ?? Infinity;
+											return tempoA - tempoB;
+										})
+										.map(({ equipe, resultado }, position) => (
+											<tr key={equipe.id} style={{ 
+												background: position < 2 ? "rgba(45, 212, 191, 0.1)" : "transparent" 
+											}}>
+												<td style={{ fontWeight: position < 2 ? 700 : 400 }}>
+													{position < 2 && "✓ "}{equipe.nome}
+												</td>
+												<td>
+													{resultado ? formatarTempo(resultado.tempo) : "—"}
+												</td>
+												<td style={{ textAlign: "center" }}>
+													{resultado ? resultado.erros : "—"}
+												</td>
+												<td style={{ fontWeight: 700, color: position < 2 ? "var(--primary)" : "var(--text)" }}>
+													{resultado ? formatarTempo(resultado.tempoPenalizado) : "—"}
+												</td>
+												<td>
+													{adminMode && (
+														<button
+															className="btn btn--ghost"
+															onClick={() => setModalResultado({
+																open: true,
+																etapa: 1,
+																subdivisao: idx,
+																equipe,
+																tipo: 'simples'
+															})}
+															style={{ padding: "4px 12px", fontSize: 12 }}
+														>
+															{resultado ? "Editar" : "Inserir"}
+														</button>
+													)}
+												</td>
+											</tr>
+										))}
+								</tbody>
+							</table>
+						)}
+					</div>
+				</article>
+			))}
+
+			{/* Classificados da Etapa 1 */}
+			{dados.etapa1.classificados.length > 0 && (
+				<article className="card" style={{ marginBottom: 24, border: "2px solid var(--primary)" }}>
+					<div className="card__header" style={{ background: "var(--primary)" }}>
+						<h3 className="card__title" style={{ color: "white" }}>✅ Classificados para Etapa 2</h3>
+					</div>
+					<div className="card__body">
+						<div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 12 }}>
+							{dados.etapa1.classificados.map((equipe, idx) => (
+								<div key={equipe.id} style={{ 
+									padding: 12, 
+									background: "rgba(45, 212, 191, 0.1)", 
+									borderRadius: 8,
+									border: "1px solid var(--primary)"
+								}}>
+									<strong>{idx + 1}º</strong> {equipe.nome}
+								</div>
+							))}
+						</div>
+					</div>
+				</article>
+			)}
+
+			{/* Botão para avançar para Etapa 2 */}
+			{adminMode && dados.etapa1.classificados.length === 6 && (
+				<article className="card" style={{ marginBottom: 24 }}>
+					<div className="card__body" style={{ textAlign: "center" }}>
+						<button
+							className="btn btn--primary"
+							onClick={classificarEtapa1}
+							style={{ padding: "12px 32px", fontSize: 16 }}
+						>
+							Avançar para Etapa 2
+						</button>
+					</div>
+				</article>
+			)}
+		</div>
+	);
+
+	// ========================================
+	// RENDER ETAPA 2
+	// ========================================
+	
+	const renderEtapa2 = () => (
+		<div>
+			<article className="card" style={{ marginBottom: 24, background: "linear-gradient(135deg, rgba(251, 191, 36, 0.1) 0%, rgba(45, 212, 191, 0.1) 100%)" }}>
+				<div className="card__body">
+					<h3 style={{ margin: "0 0 8px 0", fontSize: 18, color: "var(--primary)" }}>
+						📊 Etapa 2 - Segunda Chance
+					</h3>
+					<p style={{ margin: 0, fontSize: 14, color: "var(--muted)" }}>
+						Mesmo formato da Etapa 1, mas com equipes eliminadas na etapa anterior.
+						<br />
+						<strong>Classificam:</strong> 2 melhores de cada subdivisão (6 equipes total)
+					</p>
+				</div>
+			</article>
+
+			{dados.etapa2.subdivisoes.map((subdivisao, idx) => (
+				<article key={idx} className="card" style={{ marginBottom: 24 }}>
+					<div className="card__header">
+						<h3 className="card__title">{subdivisao.nome}</h3>
+					</div>
+					<div className="card__body">
+						{/* Seleção de equipes */}
+						{adminMode && subdivisao.equipes.length === 0 && (
+							<div style={{ marginBottom: 16 }}>
+								<label style={{ display: "block", marginBottom: 8, fontWeight: 600 }}>
+									Selecione as {[5, 5, 6][idx]} equipes:
+								</label>
+								{Array.from({ length: [5, 5, 6][idx] }).map((_, posicao) => {
+									const equipesState = [equipesEtapa2Subdiv0, equipesEtapa2Subdiv1, equipesEtapa2Subdiv2][idx];
+									const setEquipesState = [setEquipesEtapa2Subdiv0, setEquipesEtapa2Subdiv1, setEquipesEtapa2Subdiv2][idx];
+									
+									// Filtrar equipes já selecionadas em outras posições desta subdivisão
+									const equipesDisponiveis = todasEquipes.filter(eq => 
+										!equipesState.some((selected, i) => i !== posicao && selected === eq.id)
+									);
+
+									return (
+										<div key={posicao} style={{ marginBottom: 8 }}>
+											<select
+												className="inputLogin"
+												style={{ width: "100%" }}
+												value={equipesState[posicao] || ''}
+												onChange={(e) => {
+													const novasEquipes = [...equipesState];
+													novasEquipes[posicao] = e.target.value;
+													setEquipesState(novasEquipes);
+												}}
+											>
+												<option value="">-- Selecione a equipe {posicao + 1} --</option>
+												{equipesDisponiveis.map(eq => (
+													<option key={eq.id} value={eq.id}>{eq.nome}</option>
+												))}
+											</select>
+										</div>
+									);
+								})}
+								<button
+									className="btn btn--primary"
+									style={{ marginTop: 12, width: "100%" }}
+									onClick={() => {
+										const equipesState = [equipesEtapa2Subdiv0, equipesEtapa2Subdiv1, equipesEtapa2Subdiv2][idx];
+										const tamanhoEsperado = [5, 5, 6][idx];
+										const equipesValidas = equipesState.filter(e => e);
+										
+										if (equipesValidas.length === tamanhoEsperado) {
+											salvarEquipesEtapa2(idx, equipesValidas);
+										} else {
+											alert(`Selecione todas as ${tamanhoEsperado} equipes!`);
+										}
+									}}
+								>
+									Confirmar Equipes
+								</button>
+							</div>
+						)}
+
+						{/* Tabela de resultados */}
+						{subdivisao.equipes.length > 0 && (
+							<table className="home-table" style={{ marginBottom: 0 }}>
+								<thead>
+									<tr>
+										<th>Equipe</th>
+										<th style={{ width: 120 }}>Tempo Real</th>
+										<th style={{ width: 100 }}>Erros</th>
+										<th style={{ width: 140 }}>Tempo Penalizado</th>
+										<th style={{ width: 120 }}>Ações</th>
+									</tr>
+								</thead>
+								<tbody>
+									{subdivisao.equipes
+										.map(equipe => ({
+											equipe,
+											resultado: subdivisao.resultados[equipe.id]
+										}))
+										.sort((a, b) => {
+											const tempoA = a.resultado?.tempoPenalizado ?? Infinity;
+											const tempoB = b.resultado?.tempoPenalizado ?? Infinity;
+											return tempoA - tempoB;
+										})
+										.map(({ equipe, resultado }, position) => (
+											<tr key={equipe.id} style={{ 
+												background: position < 2 ? "rgba(251, 191, 36, 0.1)" : "transparent" 
+											}}>
+												<td style={{ fontWeight: position < 2 ? 700 : 400 }}>
+													{position < 2 && "✓ "}{equipe.nome}
+												</td>
+												<td>{resultado ? formatarTempo(resultado.tempo) : "—"}</td>
+												<td style={{ textAlign: "center" }}>{resultado ? resultado.erros : "—"}</td>
+												<td style={{ fontWeight: 700, color: position < 2 ? "var(--accent)" : "var(--text)" }}>
+													{resultado ? formatarTempo(resultado.tempoPenalizado) : "—"}
+												</td>
+												<td>
+													{adminMode && (
+														<button
+															className="btn btn--ghost"
+															onClick={() => setModalResultado({
+																open: true,
+																etapa: 2,
+																subdivisao: idx,
+																equipe,
+																tipo: 'simples'
+															})}
+															style={{ padding: "4px 12px", fontSize: 12 }}
+														>
+															{resultado ? "Editar" : "Inserir"}
+														</button>
+													)}
+												</td>
+											</tr>
+										))}
+								</tbody>
+							</table>
+						)}
+					</div>
+				</article>
+			))}
+
+			{/* Classificados da Etapa 2 */}
+			{dados.etapa2.classificados.length > 0 && (
+				<article className="card" style={{ marginBottom: 24, border: "2px solid var(--accent)" }}>
+					<div className="card__header" style={{ background: "var(--accent)" }}>
+						<h3 className="card__title" style={{ color: "white" }}>✅ Classificados para Semifinal</h3>
+					</div>
+					<div className="card__body">
+						<div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 12 }}>
+							{dados.etapa2.classificados.map((equipe, idx) => (
+								<div key={equipe.id} style={{ 
+									padding: 12, 
+									background: "rgba(251, 191, 36, 0.1)", 
+									borderRadius: 8,
+									border: "1px solid var(--accent)"
+								}}>
+									<strong>{idx + 1}º</strong> {equipe.nome}
+								</div>
+							))}
+						</div>
+					</div>
+				</article>
+			)}
+
+			{/* Botão para avançar para Semifinal */}
+			{adminMode && dados.etapa2.classificados.length === 6 && (
+				<article className="card" style={{ marginBottom: 24 }}>
+					<div className="card__body" style={{ textAlign: "center" }}>
+						<button
+							className="btn btn--primary"
+							onClick={classificarEtapa2}
+							style={{ padding: "12px 32px", fontSize: 16 }}
+						>
+							Avançar para Semifinal
+						</button>
+					</div>
+				</article>
+			)}
+		</div>
+	);
+
+	// ========================================
+	// RENDER ETAPA 3 (SEMIFINAL)
+	// ========================================
+	
+	const renderEtapa3 = () => (
+		<div>
+			<article className="card" style={{ marginBottom: 24, border: "2px solid var(--primary)" }}>
+				<div className="card__header" style={{ background: "linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%)" }}>
+					<h3 className="card__title" style={{ fontSize: 18 }}>🏆 Etapa 3 - SEMIFINAL</h3>
+				</div>
+				<div className="card__body">
+					<p style={{ color: "var(--muted)", marginBottom: 16 }}>
+						6 equipes juntas resolvem 3 sudokus (até 15min cada).
+						<br />
+						<strong>Penalidades:</strong> até 3 erros = +22min | mais de 3 erros ou NC = 25min
+						<br />
+						<strong>Classificam:</strong> 3 menores somatórios
+					</p>
+
+					<table className="home-table" style={{ marginBottom: 0 }}>
+						<thead>
+							<tr>
+								<th>Equipe</th>
+								<th style={{ width: 120 }}>Sudoku 1</th>
+								<th style={{ width: 120 }}>Sudoku 2</th>
+								<th style={{ width: 120 }}>Sudoku 3</th>
+								<th style={{ width: 140 }}>Somatório</th>
+								<th style={{ width: 120 }}>Ações</th>
+							</tr>
+						</thead>
+						<tbody>
+							{dados.etapa3.equipes
+								.map(equipe => ({
+									equipe,
+									resultado: dados.etapa3.resultados[equipe.id]
+								}))
+								.sort((a, b) => {
+									const somatorioA = a.resultado?.somatorio ?? Infinity;
+									const somatorioB = b.resultado?.somatorio ?? Infinity;
+									return somatorioA - somatorioB;
+								})
+								.map(({ equipe, resultado }, position) => (
+									<tr key={equipe.id} style={{ 
+										background: position < 3 ? "rgba(45, 212, 191, 0.1)" : "transparent" 
+									}}>
+										<td style={{ fontWeight: position < 3 ? 700 : 400 }}>
+											{position < 3 && "✓ "}{equipe.nome}
+										</td>
+										<td>{resultado ? formatarTempo(resultado.sudoku1.tempoPenalizado) : "—"}</td>
+										<td>{resultado ? formatarTempo(resultado.sudoku2.tempoPenalizado) : "—"}</td>
+										<td>{resultado ? formatarTempo(resultado.sudoku3.tempoPenalizado) : "—"}</td>
+										<td style={{ fontWeight: 700, color: position < 3 ? "var(--primary)" : "var(--text)" }}>
+											{resultado ? formatarTempo(resultado.somatorio) : "—"}
+										</td>
+										<td>
+											{adminMode && (
+												<button
+													className="btn btn--ghost"
+													onClick={() => setModalResultado({
+														open: true,
+														etapa: 3,
+														subdivisao: null,
+														equipe,
+														tipo: 'triplo'
+													})}
+													style={{ padding: "4px 12px", fontSize: 12 }}
+												>
+													{resultado ? "Editar" : "Inserir"}
+												</button>
+											)}
+										</td>
+									</tr>
+								))}
+						</tbody>
+					</table>
+				</div>
+			</article>
+
+			{/* Classificados da Semifinal */}
+			{dados.etapa3.classificados.length > 0 && (
+				<article className="card" style={{ marginBottom: 24, border: "2px solid var(--primary)" }}>
+					<div className="card__header" style={{ background: "linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%)" }}>
+						<h3 className="card__title" style={{ color: "white" }}>🏆 Finalistas</h3>
+					</div>
+					<div className="card__body">
+						<div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16 }}>
+							{dados.etapa3.classificados.map((equipe, idx) => (
+								<div key={equipe.id} style={{ 
+									padding: 16, 
+									background: idx === 0 ? "rgba(251, 191, 36, 0.2)" :
+												idx === 1 ? "rgba(156, 163, 175, 0.2)" :
+												"rgba(205, 127, 50, 0.2)",
+									borderRadius: 8,
+									border: "2px solid var(--primary)",
+									textAlign: "center",
+									fontSize: 15,
+									fontWeight: 700
+								}}>
+									{idx === 0 ? "🥇" : idx === 1 ? "🥈" : "🥉"} {equipe.nome}
+								</div>
+							))}
+						</div>
+					</div>
+				</article>
+			)}
+
+			{/* Botão para avançar para Final */}
+			{adminMode && dados.etapa3.classificados.length === 3 && (
+				<article className="card" style={{ marginBottom: 24 }}>
+					<div className="card__body" style={{ textAlign: "center" }}>
+						<button
+							className="btn btn--primary"
+							onClick={classificarEtapa3}
+							style={{ padding: "12px 32px", fontSize: 16 }}
+						>
+							Avançar para Final
+						</button>
+					</div>
+				</article>
+			)}
+		</div>
+	);
+
+	// ========================================
+	// RENDER FINAL
+	// ========================================
+	
+	const renderFinal = () => (
+		<div>
+			<article className="card" style={{ marginBottom: 24, border: "3px solid var(--accent)" }}>
+				<div className="card__header" style={{ background: "linear-gradient(135deg, var(--accent) 0%, var(--primary) 100%)" }}>
+					<h3 className="card__title" style={{ fontSize: 20 }}>👑 GRANDE FINAL</h3>
+				</div>
+				<div className="card__body">
+					<p style={{ color: "var(--muted)", marginBottom: 16 }}>
+						3 finalistas disputam 2 sudokus simultâneos.
+						<br />
+						<strong>Regra:</strong> Qualquer erro = desclassificação imediata
+						<br />
+						<strong>Rodadas sucessivas até ordenar 1º, 2º e 3º lugares</strong>
+					</p>
+
+					{/* Classificação final */}
+					{dados.final.classificacaoFinal.length > 0 && (
+						<div style={{ marginTop: 24 }}>
+							<h4 style={{ marginBottom: 12 }}>🏅 Classificação Final:</h4>
+							<table className="home-table" style={{ marginBottom: 0 }}>
+								<thead>
+									<tr>
+										<th style={{ width: 80 }}>Posição</th>
+										<th>Equipe</th>
+										<th style={{ width: 100 }}>Pontos</th>
+									</tr>
+								</thead>
+								<tbody>
+									{dados.final.classificacaoFinal.map((equipe, idx) => (
+										<tr key={equipe.id} style={{ 
+											background: idx === 0 ? "rgba(251, 191, 36, 0.2)" :
+														idx === 1 ? "rgba(156, 163, 175, 0.2)" :
+														idx === 2 ? "rgba(205, 127, 50, 0.2)" : "transparent"
+										}}>
+											<td style={{ fontWeight: 700, fontSize: 16 }}>
+												{idx === 0 ? "🥇" : idx === 1 ? "🥈" : "🥉"} {idx + 1}º
+											</td>
+											<td style={{ fontWeight: 700, fontSize: 15 }}>
+												{equipe.nome}
+											</td>
+											<td style={{ fontWeight: 700 }}>
+												{[160, 150, 140][idx]} pts
+											</td>
+										</tr>
+									))}
+								</tbody>
+							</table>
+						</div>
+					)}
+
+					{/* Admin: Registrar rodadas e finalizar */}
+					{adminMode && dados.final.classificacaoFinal.length === 0 && (
+						<div style={{ marginTop: 16 }}>
+							<p style={{ fontSize: 13, color: "var(--muted)" }}>
+								Registre as rodadas e determine a classificação final manualmente.
+							</p>
+						</div>
+					)}
+				</div>
+			</article>
+		</div>
+	);
+
+	// ========================================
+	// MODAL DE RESULTADO
+	// ========================================
+	
+	const renderModal = () => {
+		if (!modalResultado.open) return null;
+
+		const { etapa, subdivisao, equipe, tipo } = modalResultado;
+
+		const handleSubmit = (e) => {
+			e.preventDefault();
+
+			if (tipo === 'simples') {
+				if (etapa === 1) {
+					salvarResultadoEtapa1(subdivisao, equipe.id, tempoSimplesState, errosState);
+				} else if (etapa === 2) {
+					salvarResultadoEtapa2(subdivisao, equipe.id, tempoSimplesState, errosState);
+				}
+			} else if (tipo === 'triplo') {
+				salvarResultadoEtapa3(equipe.id, sudoku1, sudoku2, sudoku3);
+			}
+
+			// Limpar states e fechar modal
+			setTempoSimplesState('');
+			setErrosState('');
+			setSudoku1({ tempo: '', erros: '' });
+			setSudoku2({ tempo: '', erros: '' });
+			setSudoku3({ tempo: '', erros: '' });
+			setModalResultado({ open: false, etapa: null, subdivisao: null, equipe: null, tipo: 'simples' });
+		};
+
+		return (
+			<div className="modal-overlay" onClick={() => setModalResultado(m => ({ ...m, open: false }))}>
+				<div className="modal" onClick={(e) => e.stopPropagation()}>
+					<h3>
+						Resultado - {equipe.nome}
+					</h3>
+					<p style={{ color: "var(--muted)", fontSize: 14 }}>
+						{tipo === 'simples' ? `Etapa ${etapa}` : 'Semifinal (3 Sudokus)'}
+					</p>
+					<form onSubmit={handleSubmit} className="form">
+						{tipo === 'simples' ? (
+							<>
+								<div className="row">
+									<label>Tempo (segundos)</label>
+									<input
+										type="number"
+										min="0"
+										max="600"
+										value={tempoSimplesState}
+										onChange={(e) => setTempoSimplesState(e.target.value)}
+										required
+									/>
+								</div>
+								<div className="row">
+									<label>Erros</label>
+									<input
+										type="number"
+										min="0"
+										max="10"
+										value={errosState}
+										onChange={(e) => setErrosState(e.target.value)}
+										required
+									/>
+								</div>
+							</>
+						) : (
+							<>
+								<h4 style={{ marginTop: 0 }}>Sudoku 1</h4>
+								<div className="row">
+									<label>Tempo (segundos)</label>
+									<input
+										type="number"
+										value={sudoku1.tempo}
+										onChange={(e) => setSudoku1({ ...sudoku1, tempo: e.target.value })}
+										required
+									/>
+								</div>
+								<div className="row">
+									<label>Erros</label>
+									<input
+										type="number"
+										value={sudoku1.erros}
+										onChange={(e) => setSudoku1({ ...sudoku1, erros: e.target.value })}
+										required
+									/>
+								</div>
+
+								<h4>Sudoku 2</h4>
+								<div className="row">
+									<label>Tempo (segundos)</label>
+									<input
+										type="number"
+										value={sudoku2.tempo}
+										onChange={(e) => setSudoku2({ ...sudoku2, tempo: e.target.value })}
+										required
+									/>
+								</div>
+								<div className="row">
+									<label>Erros</label>
+									<input
+										type="number"
+										value={sudoku2.erros}
+										onChange={(e) => setSudoku2({ ...sudoku2, erros: e.target.value })}
+										required
+									/>
+								</div>
+
+								<h4>Sudoku 3</h4>
+								<div className="row">
+									<label>Tempo (segundos)</label>
+									<input
+										type="number"
+										value={sudoku3.tempo}
+										onChange={(e) => setSudoku3({ ...sudoku3, tempo: e.target.value })}
+										required
+									/>
+								</div>
+								<div className="row">
+									<label>Erros</label>
+									<input
+										type="number"
+										value={sudoku3.erros}
+										onChange={(e) => setSudoku3({ ...sudoku3, erros: e.target.value })}
+										required
+									/>
+								</div>
+							</>
+						)}
+
+						<div className="actions">
+							<button type="button" className="btn btn--ghost" onClick={() => setModalResultado(m => ({ ...m, open: false }))}>
+								Cancelar
+							</button>
+							<button type="submit" className="btn btn--primary">
+								Salvar
+							</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		);
+	};
+
+	// ========================================
+	// RENDER PRINCIPAL
+	// ========================================
+	
+	return (
+		<div style={{ margin: "24px auto", maxWidth: 1200 }}>
+			{/* Header da competição */}
+			<article className="card" style={{ marginBottom: 24 }}>
+				<div className="card__body">
+					<h2 style={{ margin: "0 0 8px 0" }}>🧩 Sudoku - Competição Multi-Etapas</h2>
+					<div style={{ display: "flex", gap: 12, marginTop: 12 }}>
+						{[1, 2, 3, 4].map(etapa => (
+							<div
+								key={etapa}
+								style={{
+									flex: 1,
+									padding: "8px 12px",
+									borderRadius: 6,
+									background: etapaAtual === etapa ? "var(--primary)" : "rgba(100, 100, 100, 0.2)",
+									color: etapaAtual === etapa ? "white" : "var(--muted)",
+									textAlign: "center",
+									fontWeight: etapaAtual === etapa ? 700 : 400,
+									fontSize: 13
+								}}
+							>
+								{etapa === 1 ? "Etapa 1" : etapa === 2 ? "Etapa 2" : etapa === 3 ? "Semifinal" : "Final"}
+							</div>
+						))}
+					</div>
+				</div>
+			</article>
+
+			{/* Renderizar etapa atual */}
+			{etapaAtual === 1 && renderEtapa1()}
+			{etapaAtual === 2 && renderEtapa2()}
+			{etapaAtual === 3 && renderEtapa3()}
+			{etapaAtual === 4 && renderFinal()}
+
+			{/* Modal de resultado */}
+			{renderModal()}
+		</div>
+	);
+}
+
+// Helper para formatar tempo (segundos → MM:SS)
+function formatarTempo(segundos) {
+	if (!segundos && segundos !== 0) return "—";
+	const minutos = Math.floor(segundos / 60);
+	const segs = segundos % 60;
+	return `${minutos}:${segs.toString().padStart(2, '0')}`;
+}
+
+export default SistemaSudoku;

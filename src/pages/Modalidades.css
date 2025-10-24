@@ -1,0 +1,143 @@
+/* Estilos da página de Modalidades - seguindo a identidade da Home */
+
+.modalidades {
+  color: var(--text);
+  background: linear-gradient(180deg, #0b1020 0%, #0f172a 100%);
+  min-height: 100vh;
+  width: 100%;
+  
+  padding-top: calc(var(--app-header-h, 72px) + 8px);
+  display: flex;
+  flex-direction: column;
+}
+
+.modalidades__header {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  background: rgba(11,16,32,0.7);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  padding: 12px 8px;
+  z-index: 10;
+}
+.modalidades__header h1 { margin: 0; font-size: 32px; }
+
+.modalidades__filtros { 
+  display: flex;  
+  gap: 12px; 
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.select {
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.select:hover {
+  border-color: var(--primary);
+  background: rgba(45, 212, 191, 0.1);
+}
+.select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(45, 212, 191, 0.2);
+}
+
+/* Reaproveita .cards-grid e .card de Home.css */
+.cards-grid {
+  padding: 0;
+  align-self: center;
+  width: 100%;
+  max-width: 1200px;
+  display: grid;
+  align-items: stretch;
+  justify-content: center;
+  gap: 20px;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+/* 2 colunas em telas pequenas/médias */
+@media (min-width: 640px) {
+  .cards-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* 3 colunas em tablets e acima - PADRÃO FIXO */
+@media (min-width: 900px) {
+  .cards-grid { 
+    grid-template-columns: repeat(3, 1fr);
+    width: 95%;
+    max-width: 1400px;
+  }
+}
+
+/* Badges e pequenos elementos dentro dos cards */
+.badge {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  line-height: 1;
+}
+.badge--masc { background: #2563eb; color: #fff; }
+.badge--fem { background: #db2777; color: #fff; }
+.badge--misto { background: #7c3aed; color: #fff; }
+
+.status { font-weight: 600; }
+.status--ok { color: #22c55e; }
+.status--wait { color: #eab308; }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Cards com tamanho fixo e layout padronizado */
+.modalidade-card {
+  width: 100%;
+  min-height: 280px;
+  max-height: 280px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  justify-content: space-between;
+}
+
+@media (min-width: 900px) {
+  .modalidade-card {
+    width: 380px;
+  }
+}
+
+.modalidade-card .card__header {
+  flex-shrink: 0;
+}
+
+.modalidade-card .card__body {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.modalidade-card .card__body:last-child {
+  flex: 0;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding: 12px 16px;
+}
