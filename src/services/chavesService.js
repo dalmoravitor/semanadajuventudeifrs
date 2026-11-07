@@ -9,9 +9,22 @@
  * @returns {Array} Array de chaves com estrutura padrão
  */
 export function gerarChavesVazias(categoria, modalidadeId) {
+  const nome = (modalidadeId || '').toLowerCase();
+  const isFifa = nome.includes('fifa');
+  const isMK = nome.includes('mortal') || nome.includes('kombat');
+
+  // Requisito: FIFA e Mortal Kombat -> 4 chaves de 4 equipes (misto)
+  if (isFifa || isMK) {
+    const letras = ["A", "B", "C", "D"]; // 4 chaves
+    return Array.from({ length: 4 }, (_, i) => ({
+      nome: `Chave ${letras[i]}`,
+      equipes: ["", "", "", ""] // 4 equipes por chave
+    }));
+  }
+
+  // Demais modalidades: padrão anterior
   // Masculino: 5 chaves (15 equipes)
-  // Feminino: 4 chaves (12 equipes)
-  // Misto: 4 chaves (padrão)
+  // Feminino/Misto: 4 chaves (12 equipes)
   const numChaves = categoria === "masculino" ? 5 : 4;
   const letras = ["A", "B", "C", "D", "E"];
   

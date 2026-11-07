@@ -31,6 +31,18 @@ function SistemaChavesEliminatorias({
   const [resultadosEliminatorias, setResultadosEliminatorias] = React.useState(resultadosEliminatoriasInicial || {});
   const [ranking, setRanking] = React.useState(null);
   const [rankingSalvo, setRankingSalvo] = React.useState(false);
+  const nomeModalidadeLower = (modalidade?.titulo || modalidade?.nome || id || '').toLowerCase();
+  const isColetivo = (
+    nomeModalidadeLower.includes('futsal') ||
+    nomeModalidadeLower.includes('handebol') ||
+    nomeModalidadeLower.includes('vôlei') ||
+    nomeModalidadeLower.includes('volei') ||
+    nomeModalidadeLower.includes('basquete')
+  );
+  const [addModalOpen, setAddModalOpen] = React.useState(false);
+  const [addFase, setAddFase] = React.useState('Quartas de Final');
+  const [addEquipeAId, setAddEquipeAId] = React.useState('');
+  const [addEquipeBId, setAddEquipeBId] = React.useState('');
 
   // Hooks personalizados para gerenciar estado (precisam vir antes dos efeitos que dependem deles)
   const { chaves, setChaves, chavesCompletas } = useChaves(
@@ -255,6 +267,10 @@ function SistemaChavesEliminatorias({
     };
 
     // Se chaves completas e não temos quartas carregadas, gerar
+    if (isColetivo) {
+      // Modo manual: não gerar automaticamente
+      return;
+    }
     if (chavesCompletas && (!confrontosQuartas || confrontosQuartas.length === 0)) {
       const chavesComClassificacao = chaves.map((chave, chaveIdx) => {
         const eqs = chave.equipes;
@@ -272,7 +288,7 @@ function SistemaChavesEliminatorias({
         gerarESalvarQuartas(classificados);
       }
     }
-  }, [chavesCompletas, chaves, confrontosQuartas, getResultadoJogo, id, categoria]);  // Gerar semifinais quando todas as quartas tiverem resultado
+  }, [chavesCompletas, chaves, confrontosQuartas, getResultadoJogo, id, categoria, isColetivo]);  // Gerar semifinais quando todas as quartas tiverem resultado
   React.useEffect(() => {
     const gerarESalvarSemis = async (vencedores) => {
       const novosConfrontos = gerarConfrontosSemis(vencedores);
@@ -292,7 +308,8 @@ function SistemaChavesEliminatorias({
     };
 
     // Verificar se todas as quartas têm resultado
-    if (confrontosQuartas && confrontosQuartas.length === 4 && (!confrontosSemis || confrontosSemis.length === 0)) {
+  if (isColetivo) return; // Modo manual
+  if (confrontosQuartas && confrontosQuartas.length === 4 && (!confrontosSemis || confrontosSemis.length === 0)) {
       const todasQuartasCompletas = confrontosQuartas.every(c => {
         const res = resultadosEliminatorias[c.id];
         return res && res.scoreA !== undefined && res.scoreB !== undefined;
@@ -308,7 +325,7 @@ function SistemaChavesEliminatorias({
         gerarESalvarSemis(vencedores);
       }
     }
-  }, [confrontosQuartas, resultadosEliminatorias, confrontosSemis, id]);
+  }, [confrontosQuartas, resultadosEliminatorias, confrontosSemis, id, isColetivo]);
 
   // Gerar final quando ambas as semifinais tiverem resultado
   React.useEffect(() => {
@@ -330,7 +347,8 @@ function SistemaChavesEliminatorias({
     };
 
     // Verificar se ambas as semifinais têm resultado
-    if (confrontosSemis && confrontosSemis.length === 2 && !confrontosFinal) {
+  if (isColetivo) return; // Modo manual
+  if (confrontosSemis && confrontosSemis.length === 2 && !confrontosFinal) {
       const todasSemisCompletas = confrontosSemis.every(c => {
         const res = resultadosEliminatorias[c.id];
         return res && res.scoreA !== undefined && res.scoreB !== undefined;
@@ -351,7 +369,7 @@ function SistemaChavesEliminatorias({
         gerarESalvarFinal(vencedores, perdedores);
       }
     }
-  }, [confrontosSemis, resultadosEliminatorias, confrontosFinal, id, confrontosQuartas]);
+  }, [confrontosSemis, resultadosEliminatorias, confrontosFinal, id, confrontosQuartas, isColetivo]);
 
   // Modal state and handlers (must be inside component)
   const [modalOpen, setModalOpen] = React.useState(false);
@@ -365,6 +383,68 @@ function SistemaChavesEliminatorias({
     setModalScoreA(res?.scoreA ?? '');
     setModalScoreB(res?.scoreB ?? '');
     setModalOpen(true);
+  }
+
+  // ===================== ADICIONAR JOGO (MODO MANUAL) =====================
+  async function handleAddGame(e) {
+    e?.preventDefault?.();
+    if (!addEquipeAId || !addEquipeBId) {
+      alert('Selecione as duas equipes.');
+      return;
+    }
+    if (addEquipeAId === addEquipeBId) {
+      alert('As equipes devem ser diferentes.');
+      return;
+    }
+
+    const equipeA = todasEquipes.find(eq => eq.id === addEquipeAId);
+    const equipeB = todasEquipes.find(eq => eq.id === addEquipeBId);
+    if (!equipeA || !equipeB) {
+      alert('Equipes inválidas.');
+      return;
+    }
+
+    const faseKey = addFase.toLowerCase().includes('quartas') ? 'quartas' : addFase.toLowerCase().includes('semi') ? 'semis' : 'final';
+    const novoConfronto = {
+      id: `${faseKey}-${Date.now()}`,
+      equipeA: { id: equipeA.id, nome: equipeA.nome },
+      equipeB: { id: equipeB.id, nome: equipeB.nome },
+      fase: addFase,
+      jogo: 1
+    };
+
+    try {
+      if (faseKey === 'quartas') {
+        const next = [...(confrontosQuartas || [])];
+        novoConfronto.jogo = next.length + 1;
+        next.push(novoConfronto);
+        setConfrontosQuartas(next);
+        const { saveConfrontosEliminatorias } = require('../../api/resultados');
+        await saveConfrontosEliminatorias(id, { confrontosQuartas: next, confrontosSemis, confrontosFinal });
+      } else if (faseKey === 'semis') {
+        const next = [...(confrontosSemis || [])];
+        novoConfronto.jogo = next.length + 1;
+        next.push(novoConfronto);
+        setConfrontosSemis(next);
+        const { saveConfrontosEliminatorias } = require('../../api/resultados');
+        await saveConfrontosEliminatorias(id, { confrontosQuartas, confrontosSemis: next, confrontosFinal });
+      } else {
+        if (confrontosFinal) {
+          alert('A final já existe. Edite a existente ou remova manualmente no banco.');
+          return;
+        }
+        const final = { ...novoConfronto, id: 'final', jogo: 1 };
+        setConfrontosFinal(final);
+        const { saveConfrontosEliminatorias } = require('../../api/resultados');
+        await saveConfrontosEliminatorias(id, { confrontosQuartas, confrontosSemis, confrontosFinal: final });
+      }
+      setAddModalOpen(false);
+      setAddEquipeAId('');
+      setAddEquipeBId('');
+    } catch (err) {
+      console.error('Erro ao adicionar jogo:', err);
+      alert('Erro ao adicionar jogo. Veja o console.');
+    }
   }
 
   async function handleSaveModal(e) {
@@ -419,7 +499,12 @@ function SistemaChavesEliminatorias({
       {chavesCompletas && (
         <div style={{ marginTop: 24 }}>
           <article className="card">
-            <div className="card__header"><h3 className="card__title">🏆 Fase Eliminatória</h3></div>
+            <div className="card__header" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+              <h3 className="card__title">🏆 Fase Eliminatória</h3>
+              {adminMode && isColetivo && (
+                <button className="btn btn--primary" onClick={() => setAddModalOpen(true)}>➕ Adicionar Jogo</button>
+              )}
+            </div>
             <div className="card__body">
               
               {/* Bracket Visual */}
@@ -586,6 +671,47 @@ function SistemaChavesEliminatorias({
                   </details>
                 </div>
               )}
+
+              {/* Modal Adicionar Jogo (modo manual para esportes coletivos) */}
+              {addModalOpen && (
+                <div className="modal-overlay" onClick={() => setAddModalOpen(false)}>
+                  <div className="modal" onClick={(e) => e.stopPropagation()}>
+                    <h3>Adicionar Jogo</h3>
+                    <form onSubmit={handleAddGame} className="form">
+                      <div className="row">
+                        <label>Fase</label>
+                        <select className="inputLogin" value={addFase} onChange={(e)=>setAddFase(e.target.value)}>
+                          <option>Quartas de Final</option>
+                          <option>Semifinal</option>
+                          <option>Final</option>
+                        </select>
+                      </div>
+                      <div className="row">
+                        <label>Equipe A</label>
+                        <select className="inputLogin" value={addEquipeAId} onChange={(e)=>setAddEquipeAId(e.target.value)}>
+                          <option value="">Selecione...</option>
+                          {todasEquipes.map(eq => (
+                            <option key={eq.id} value={eq.id}>{eq.nome}</option>
+                          ))}
+                        </select>
+                      </div>
+                      <div className="row">
+                        <label>Equipe B</label>
+                        <select className="inputLogin" value={addEquipeBId} onChange={(e)=>setAddEquipeBId(e.target.value)}>
+                          <option value="">Selecione...</option>
+                          {todasEquipes.map(eq => (
+                            <option key={eq.id} value={eq.id}>{eq.nome}</option>
+                          ))}
+                        </select>
+                      </div>
+                      <div className="actions">
+                        <button type="button" className="btn btn--ghost" onClick={()=>setAddModalOpen(false)}>Cancelar</button>
+                        <button type="submit" className="btn btn--primary">💾 Salvar Jogo</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              )}
             </div>
           </article>
         </div>
@@ -604,7 +730,10 @@ function SistemaChavesEliminatorias({
  * Agora usando dropdown de equipes pré-existentes no banco de dados
  */
 function TabelaChaves({ chaves, setChaves, adminMode, equipesDisponiveis = [], modalidadeId }) {
-  const numEquipes = 3;
+  const nome = (modalidadeId || '').toLowerCase();
+  const isFifa = nome.includes('fifa');
+  const isMK = nome.includes('mortal') || nome.includes('kombat');
+  const numEquipes = (isFifa || isMK) ? 4 : 3;
   const [salvando, setSalvando] = useState(false);
   const [mensagemSalvar, setMensagemSalvar] = useState(null);
 

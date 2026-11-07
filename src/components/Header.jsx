@@ -1,5 +1,6 @@
 import { NavLink, Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { FiMenu, FiX } from "react-icons/fi";
 import { useAuth } from "../context/AuthContext";
 import "./header.css";
 import logo from "../assets/icons/logo.jpeg";
@@ -31,9 +32,9 @@ export default function Header() {
 				aria-controls="mobile-menu"
 				onClick={() => setMenuOpen(v => !v)}
 			>
-				<span className="menu-toggle__bar" />
-				<span className="menu-toggle__bar" />
-				<span className="menu-toggle__bar" />
+				<span className="menu-toggle__icon" aria-hidden="true">
+					{menuOpen ? <FiX size={22} /> : <FiMenu size={22} />}
+				</span>
 			</button>
 
 			<nav className="home-header__nav" aria-label="Menu principal">

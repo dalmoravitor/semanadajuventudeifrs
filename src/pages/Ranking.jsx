@@ -8,12 +8,17 @@ import Alert from "../components/Alert";
 import { getModalidades } from "../api/modalidades";
 import { calcularRankingGeralFromFirestore } from "../services/rankingGeralService";
 import { fetchRankingGeralEquipes } from "../services/rankingGeral";
+import { getRankingModalidade, saveRankingModalidade } from "../api/ranking";
+import { useAuth } from "../context/AuthContext";
 
 export default function Ranking() {
+	const { user } = useAuth();
+	const isAdmin = !!user; // mesma lógica usada no resto do app
 	const [aba, setAba] = useState("geral");
 	const [rankingGeral, setRankingGeral] = useState([]); // por turmas (com distribuição)
 	const [rankingEquipes, setRankingEquipes] = useState([]); // por equipes (bruto)
 	const [totalModalidades, setTotalModalidades] = useState(0);
+	const [listaModalidades, setListaModalidades] = useState([]);
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(null);
 	const [detalhesVisiveis, setDetalhesVisiveis] = useState({});
@@ -27,20 +32,21 @@ export default function Ranking() {
 			try {
 				// Busca todas as modalidades
 				const resultModalidades = await getModalidades();
-				
-						if (!resultModalidades.success) {
+				if (!resultModalidades.success) {
 					setError(resultModalidades.error || "Erro ao carregar modalidades");
 					return;
 				}
-						setTotalModalidades((resultModalidades.data || []).length);
+				const mods = resultModalidades.data || [];
+				setTotalModalidades(mods.length);
+				setListaModalidades(mods);
 
 				// Calcula o ranking geral considerando o mapeamento de equipes
-				const ranking = await calcularRankingGeralFromFirestore(resultModalidades.data);
+				const ranking = await calcularRankingGeralFromFirestore(mods);
 				setRankingGeral(ranking);
 
-					// Calcula o ranking bruto por equipes
-					const rankingBruto = await fetchRankingGeralEquipes();
-					setRankingEquipes(rankingBruto);
+				// Calcula o ranking bruto por equipes
+				const rankingBruto = await fetchRankingGeralEquipes();
+				setRankingEquipes(rankingBruto);
 				
 			} catch (err) {
 				console.error("Erro ao buscar ranking:", err);
@@ -57,7 +63,37 @@ export default function Ranking() {
 		const rankingPorAba = useMemo(() => ({
 			geral: rankingGeral,
 			equipes: rankingEquipes,
+			detalhado: rankingEquipes, // base para matriz de modalidades por equipe
 		}), [rankingGeral, rankingEquipes]);
+
+	// Salvar edição de pontos por modalidade (admin)
+	const [savingCell, setSavingCell] = useState(false);
+	const handleSalvarPontos = async ({ equipeId, equipeNome }, modalidadeId, novoPontos) => {
+		try {
+			setSavingCell(true);
+			// Carrega ranking da modalidade
+			const res = await getRankingModalidade(modalidadeId);
+			const atual = (res.success && res.data && Array.isArray(res.data.ranking)) ? res.data.ranking : [];
+			const idx = atual.findIndex(r => (r.equipeId || r.id || r.equipe) === equipeId);
+			const pontosNum = Number(novoPontos) || 0;
+			if (idx >= 0) {
+				atual[idx] = { ...atual[idx], pontos: pontosNum };
+			} else {
+				// adicionar novo registro para a equipe nesta modalidade
+				atual.push({ equipe: equipeNome, equipeId, pontos: pontosNum });
+			}
+			const save = await saveRankingModalidade(modalidadeId, atual);
+			if (!save.success) throw new Error(save.error || 'Falha ao salvar');
+			// Recarregar listagens para refletir novo total
+			const rankingBruto = await fetchRankingGeralEquipes();
+			setRankingEquipes(rankingBruto);
+		} catch (err) {
+			console.error('Erro ao salvar pontos:', err);
+			alert('❌ Erro ao salvar pontos da modalidade: ' + (err.message || String(err)));
+		} finally {
+			setSavingCell(false);
+		}
+	};
 
 	// Toggle detalhes de uma turma
 	const toggleDetalhes = (turmaId) => {
@@ -323,6 +359,18 @@ export default function Ranking() {
 							<div className="chip"><span className="chip__dot chip__dot--primary" /> Turmas: <strong>{rankingGeral.length}</strong></div>
 							<div className="chip"><span className="chip__dot chip__dot--neutral" /> Equipes: <strong>{rankingEquipes.length}</strong></div>
 						</div>
+						{/* Banner informativo */}
+						<div style={{
+							marginTop: 16,
+							padding: "12px 16px",
+							borderRadius: 8,
+							background: "#fff7ed",
+							border: "1px solid #fed7aa",
+							color: "#7c2d12",
+							fontWeight: 600,
+						}}>
+							As pontuações ainda estão sendo processadas...
+						</div>
 					</div>
 					{/* Podium */}
 					{(() => {
@@ -364,10 +412,69 @@ export default function Ranking() {
 									({rankingEquipes.length})
 								</span>
 							</button>
+						<button
+							role="tab"
+							aria-selected={aba === "detalhado"}
+							className={`tab ${aba === "detalhado" ? "is-active" : ""}`}
+							onClick={() => setAba("detalhado")}
+						>
+							Detalhado
+						</button>
 				</div>
 			</div>
 
-			{tabela(rankingPorAba[aba])}
+			{aba === 'detalhado' ? (
+				<div className="table-wrapper" style={{ overflowX: 'auto' }}>
+					<table className="home-table ranking-table">
+						<thead>
+							<tr>
+								<th>Equipe</th>
+								{listaModalidades.map((m) => (
+									<th key={m.id}>{m.nome}</th>
+								))}
+								<th className="text-right">Total</th>
+							</tr>
+						</thead>
+						<tbody>
+							{rankingEquipes.map((eq) => (
+								<tr key={eq.equipeId}>
+									<td><strong>{eq.equipe}</strong></td>
+									{listaModalidades.map((m) => {
+										const modItem = (eq.modalidades || []).find(x => x.modalidadeId === m.id);
+										const valor = modItem ? modItem.pontos : 0;
+										return (
+											<td key={m.id}>
+												{isAdmin ? (
+													<div style={{ display: 'flex', gap: 6, alignItems: 'center' }}>
+														<input
+															type="number"
+															defaultValue={valor}
+															min={0}
+															style={{ width: 80 }}
+															onBlur={(e) => {
+																const novo = Number(e.target.value || 0);
+																if (novo !== valor) {
+																	handleSalvarPontos({ equipeId: eq.equipeId, equipeNome: eq.equipe }, m.id, novo);
+																}
+														}}
+													/>
+														{savingCell && <span style={{ fontSize: 12, color: 'var(--muted)' }}>salvando…</span>}
+													</div>
+												) : (
+													<strong>{valor || 0}</strong>
+												)}
+											</td>
+										);
+									})}
+									<td className="text-right"><strong>{eq.totalPontos || 0}</strong></td>
+								</tr>
+							))}
+						</tbody>
+					</table>
+				</div>
+			) : (
+					tabela(rankingPorAba[aba])
+			)}
 
 			<div className="section-actions" style={{ alignItems: 'center', gap: 12, display: 'flex' }}>
 						<Link to="/modalidades" className="btn btn--ghost">Ver resultados por modalidade →</Link>

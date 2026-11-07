@@ -3,6 +3,8 @@ import { useParams, Link } from "react-router-dom";
 import "./Home.css";
 import "./ModalidadeDetalhe.css";
 import Header from "../components/Header";
+import { updateModalidade } from "../api/modalidades";
+import { getServerTimestamp } from "../api/helpers";
 import { withModalidadeData } from "../hocs/withModalidadeData";
 import { useChaves } from "../hooks/useChaves";
 import { useResultadosChaves } from "../hooks/useResultadosChaves";
@@ -2172,13 +2174,37 @@ function ModalidadeDetalhe({
 
 	// Usar modalidade das props (vindas do Firestore via HOC)
 	const [data, setData] = useState(modalidadeFromProps);
+	const [recado, setRecado] = useState(modalidadeFromProps?.recado || "");
+	const [savingRecado, setSavingRecado] = useState(false);
+	const [saveMsg, setSaveMsg] = useState(null);
 	
 	// Atualizar quando props mudarem
 	useEffect(() => {
 		if (modalidadeFromProps) {
 			setData(modalidadeFromProps);
+			setRecado(modalidadeFromProps.recado || "");
 		}
 	}, [modalidadeFromProps]);
+
+	const handleSalvarRecado = async () => {
+		if (!id) return;
+		setSavingRecado(true);
+		setSaveMsg(null);
+		try {
+			const res = await updateModalidade(id, { recado: recado || "", recadoUpdatedAt: getServerTimestamp() });
+			if (res.success) {
+				setSaveMsg({ tipo: 'ok', texto: '✅ Recado salvo!' });
+				setTimeout(() => setSaveMsg(null), 2500);
+			} else {
+				setSaveMsg({ tipo: 'erro', texto: '❌ Erro ao salvar recado.' });
+			}
+		} catch (e) {
+			console.error('Erro ao salvar recado:', e);
+			setSaveMsg({ tipo: 'erro', texto: '❌ Erro ao salvar recado.' });
+		} finally {
+			setSavingRecado(false);
+		}
+	};
 
 	const [form, setForm] = useState({ pos1: "", pos2: "", pos3: "" });
 	
@@ -2456,6 +2482,41 @@ function ModalidadeDetalhe({
 						<span style={{ textTransform: "capitalize" }}>Tipo: <strong>{data.tipo}</strong></span>{" · "}
 						<span>Sistema: <strong>{data.sistema}</strong></span>
 					</div>
+				</div>
+
+				{/* Recado/observações da modalidade - abaixo do título */}
+				<div style={{ maxWidth: 900, margin: "16px auto 0", padding: 16 }}>
+					{adminMode ? (
+						<article className="card" style={{ border: "1px solid var(--border)" }}>
+							<div className="card__header"><h2 className="card__title">📝 Recado da Modalidade</h2></div>
+							<div className="card__body" style={{ display: 'grid', gap: 12 }}>
+								<textarea
+									value={recado}
+									onChange={(e) => setRecado(e.target.value)}
+									rows={3}
+									placeholder="Escreva observações e recados importantes para os participantes..."
+									style={{ width: '100%', resize: 'vertical' }}
+								/>
+								<div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+									<button className="btn btn--primary" onClick={handleSalvarRecado} disabled={savingRecado}>
+										{savingRecado ? 'Salvando...' : 'Salvar recado'}
+									</button>
+									{saveMsg && (
+										<span style={{ color: saveMsg.tipo === 'ok' ? 'var(--primary)' : '#ef4444' }}>{saveMsg.texto}</span>
+									)}
+								</div>
+							</div>
+						</article>
+					) : recado && recado.trim() !== '' ? (
+						<div style={{
+							padding: '12px 16px',
+							borderRadius: 8,
+							background: 'rgba(59,130,246,0.08)',
+							border: '1px solid rgba(59,130,246,0.25)'
+						}}>
+							<strong>Recado:</strong> {recado}
+						</div>
+					) : null}
 				</div>
 
 		{/* Sistema de Competição - Renderiza baseado no tipo */}

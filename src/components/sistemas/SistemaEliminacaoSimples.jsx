@@ -102,6 +102,9 @@ function RankingFinal({ confrontoFinal, confrontosSemis, confrontosQuartas, conf
  */
 
 function SistemaEliminacaoSimples({ adminMode, modalidade }) {
+	const _id = (modalidade?.id || '').toLowerCase();
+	const idLower = (modalidade?.id || "").toLowerCase();
+	const isCSGO = /cs[_-]?go/.test(idLower);
 	const numEquipes = 16;
 	
 	// Hook customizado com Firebase
@@ -305,62 +308,117 @@ function SistemaEliminacaoSimples({ adminMode, modalidade }) {
 						<h2 className="card__title">📝 Inscrição de Equipes</h2>
 					</div>
 					<div className="card__body">
-						<p style={{ color: "var(--muted)", marginBottom: 16 }}>
-							Selecione as {numEquipes} equipes participantes. Elas serão embaralhadas aleatoriamente para gerar os confrontos.
-						</p>
-						<div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 20, padding: "0 8px" }}>
-							{equipesLocal.map((equipe, idx) => {
-								const equipesDisponiveis = getEquipesDisponiveis(idx);
-								return (
-									<div key={idx} style={{ minWidth: 0 }}>
-										<label style={{ fontSize: 12, color: "var(--muted)", marginBottom: 4, display: "block" }}>
-											Posição {idx + 1}
-										</label>
-										<select
-											className="inputLogin"
-											value={equipe.id || ""}
-											onChange={(e) => {
-												const equipeId = e.target.value;
-												if (equipeId) {
-													const equipeSelecionada = todasEquipes.find(eq => eq.id === equipeId);
-													if (equipeSelecionada) {
-														handleEquipeChange(idx, {
-															id: equipeSelecionada.id,
-															nome: equipeSelecionada.nome,
-															cor: equipeSelecionada.cor,
-															anoSerie: equipeSelecionada.anoSerie,
-															numeroTurma: equipeSelecionada.numeroTurma
-														});
-													}
-												} else {
-													handleEquipeChange(idx, { id: `slot-${idx}`, nome: "" });
-												}
-											}}
-											style={{ width: "100%", boxSizing: "border-box" }}
-											disabled={!adminMode}
-										>
-											<option value="">-- Selecione --</option>
-											{equipesDisponiveis.map(eq => (
-												<option key={eq.id} value={eq.id}>
-													{eq.nome}
-												</option>
-											))}
-											{equipe.id && typeof equipe.id === 'string' && equipe.id.startsWith('turma_') && (
-												<option value={equipe.id} style={{ fontWeight: 'bold' }}>
-													{equipe.nome} (selecionada)
-												</option>
-											)}
-										</select>
+						{isCSGO ? (
+							<>
+								<p style={{ color: 'var(--muted)', marginBottom: 12 }}>
+									Insira as 8 duplas — cada linha representa uma partida das Oitavas de Final (Equipe A × Equipe B). A ordem será preservada.
+								</p>
+								<div style={{ display: 'grid', gap: 12 }}>
+									{Array.from({ length: 8 }).map((_, pairIdx) => {
+										const idxA = pairIdx * 2;
+										const idxB = pairIdx * 2 + 1;
+										return (
+											<div key={pairIdx} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
+												<div>
+													<label style={{ fontSize: 12, color: 'var(--muted)', marginBottom: 6, display: 'block' }}>Dupla {pairIdx + 1} — Equipe A</label>
+													<select className="inputLogin" value={equipesLocal[idxA]?.id || ''} onChange={(e) => {
+														const equipeId = e.target.value;
+														if (equipeId) {
+															const selecionada = todasEquipes.find(eq => eq.id === equipeId);
+															if (selecionada) handleEquipeChange(idxA, { id: selecionada.id, nome: selecionada.nome });
+														} else {
+															handleEquipeChange(idxA, { id: `slot-${idxA}`, nome: '' });
+														}
+													}} disabled={!adminMode} style={{ width: '100%' }}>
+														<option value="">-- Selecione --</option>
+														{todasEquipes.map(eq => (<option key={eq.id} value={eq.id}>{eq.nome}</option>))}
+													</select>
+												</div>
+												<div>
+													<label style={{ fontSize: 12, color: 'var(--muted)', marginBottom: 6, display: 'block' }}>Dupla {pairIdx + 1} — Equipe B</label>
+													<select className="inputLogin" value={equipesLocal[idxB]?.id || ''} onChange={(e) => {
+														const equipeId = e.target.value;
+														if (equipeId) {
+															const selecionada = todasEquipes.find(eq => eq.id === equipeId);
+															if (selecionada) handleEquipeChange(idxB, { id: selecionada.id, nome: selecionada.nome });
+														} else {
+															handleEquipeChange(idxB, { id: `slot-${idxB}`, nome: '' });
+														}
+													}} disabled={!adminMode} style={{ width: '100%' }}>
+														<option value="">-- Selecione --</option>
+														{todasEquipes.map(eq => (<option key={eq.id} value={eq.id}>{eq.nome}</option>))}
+													</select>
+												</div>
+											</div>
+										);
+									})}
+								</div>
+								{adminMode && (
+									<div style={{ marginTop: 12, textAlign: 'right' }}>
+										<button className="btn btn--primary" onClick={handleSalvarEquipes}>💾 Salvar Oitavas (usar duplas informadas)</button>
 									</div>
-								);
-							})}
-						</div>
-						{adminMode && (
-							<div style={{ marginTop: 16, textAlign: "right" }}>
-								<button className="btn btn--primary" onClick={handleSalvarEquipes}>
-									Salvar e Embaralhar Equipes
-								</button>
-							</div>
+								)}
+							</>
+						) : (
+							<>
+								<p style={{ color: "var(--muted)", marginBottom: 16 }}>
+									Selecione as {numEquipes} equipes participantes. Elas serão embaralhadas aleatoriamente para gerar os confrontos.
+								</p>
+								<div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 20, padding: "0 8px" }}>
+									{equipesLocal.map((equipe, idx) => {
+										const equipesDisponiveis = getEquipesDisponiveis(idx);
+										return (
+											<div key={idx} style={{ minWidth: 0 }}>
+												<label style={{ fontSize: 12, color: "var(--muted)", marginBottom: 4, display: "block" }}>
+													Posição {idx + 1}
+												</label>
+												<select
+													className="inputLogin"
+													value={equipe.id || ""}
+													onChange={(e) => {
+														const equipeId = e.target.value;
+														if (equipeId) {
+															const equipeSelecionada = todasEquipes.find(eq => eq.id === equipeId);
+															if (equipeSelecionada) {
+																handleEquipeChange(idx, {
+																	id: equipeSelecionada.id,
+																	nome: equipeSelecionada.nome,
+																	cor: equipeSelecionada.cor,
+																	anoSerie: equipeSelecionada.anoSerie,
+																	numeroTurma: equipeSelecionada.numeroTurma
+																});
+															}
+														} else {
+															handleEquipeChange(idx, { id: `slot-${idx}`, nome: "" });
+														}
+													}}
+													style={{ width: "100%", boxSizing: "border-box" }}
+													disabled={!adminMode}
+												>
+													<option value="">-- Selecione --</option>
+													{equipesDisponiveis.map(eq => (
+														<option key={eq.id} value={eq.id}>
+															{eq.nome}
+														</option>
+													))}
+													{equipe.id && typeof equipe.id === 'string' && equipe.id.startsWith('turma_') && (
+														<option value={equipe.id} style={{ fontWeight: 'bold' }}>
+															{equipe.nome} (selecionada)
+														</option>
+													)}
+												</select>
+											</div>
+										);
+									})}
+								</div>
+								{adminMode && (
+									<div style={{ marginTop: 16, textAlign: "right" }}>
+										<button className="btn btn--primary" onClick={handleSalvarEquipes}>
+											Salvar e Embaralhar Equipes
+										</button>
+									</div>
+								)}
+							</>
 						)}
 					</div>
 				</article>

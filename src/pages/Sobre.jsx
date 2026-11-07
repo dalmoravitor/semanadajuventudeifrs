@@ -85,7 +85,7 @@ export default function Sobre() {
             rankings atualizados automaticamente e resultados de cada modalidade.
           </p>
           <p>
-            O sistema foi desenvolvido pela <span style={{ color: 'var(--accent)', fontWeight: 600 }}>WeApp</span>,
+            O sistema foi desenvolvido pelo <span style={{ color: 'var(--accent)', fontWeight: 600 }}>Setor de Esporte e Lazer</span>,
             com o objetivo de unir tecnologia e espírito esportivo.
           </p>
         </div>
@@ -110,7 +110,7 @@ export default function Sobre() {
 
       {/* Footer */}
       <footer className="home-footer">
-        <p className="home-footer__quote">Desenvolvido por WeApp — 2025</p>
+        <p className="home-footer__quote">Desenvolvido por SEL IFRS Sertão — 2025</p>
       </footer>
     </div>
   );

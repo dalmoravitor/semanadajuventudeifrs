@@ -172,8 +172,10 @@ export function useEliminacaoSimples(modalidadeId, numEquipes = 16) {
       alert(`Selecione todas as ${numEquipes} equipes antes de salvar!`);
       return;
     }
-
-    const equipesEmbaralhadas = embaralharEquipes(equipesPreenchidas);
+  const _id = (modalidadeId || '').toLowerCase();
+  const isCSGO = /cs[_-]?go/i.test(_id);
+    // Para CSGO, preservar a ordem informada pelo admin (sem embaralhar)
+    const equipesEmbaralhadas = isCSGO ? equipesPreenchidas : embaralharEquipes(equipesPreenchidas);
     
     // Gera confrontos das oitavas (16 times = 8 jogos)
     const oitavas = [];
@@ -204,7 +206,7 @@ export function useEliminacaoSimples(modalidadeId, numEquipes = 16) {
       status: "oitavas"
     });
 
-    alert("Equipes salvas e confrontos das oitavas gerados!");
+    alert(isCSGO ? "Oitavas salvas com a ordem informada!" : "Equipes salvas e confrontos das oitavas gerados!");
   }, [equipesLocal, numEquipes, embaralharEquipes, salvarNoFirebase]);
 
   const saveResultado = useCallback(async (confrontoId, scoreA, scoreB) => {
