@@ -1,70 +1,81 @@
-# Getting Started with Create React App
+# Semana da Juventude 2025
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Site de resultados da XXIX Semana da Juventude do IFRS Campus Sertão: ranking geral das 16 turmas, pontos de cada uma das 38 modalidades e cronograma da edição de 3 a 7 de novembro de 2025.
 
-## Available Scripts
+**Site:** https://semanadajuventudeifrs.web.app
 
-In the project directory, you can run:
+A primeira versão foi usada durante o evento. Esta é a reconstrução feita depois, como projeto de portfólio: frontend novo com a identidade visual do IFRS e o código organizado em camadas, lendo os mesmos dados do Firebase. A versão do evento continua na tag [`v2025-original`](../../tree/v2025-original).
 
-### `npm start`
+## Antes e depois
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+| Métrica                             | Versão do evento      | Esta versão                                            |
+| ----------------------------------- | --------------------- | ------------------------------------------------------ |
+| JavaScript na primeira carga (gzip) | 267 KB                | 228 KB                                                 |
+| Avisos de lint                      | 95                    | 0                                                      |
+| Testes                              | 1, falhando           | 22 de unidade e componentes, 5 das regras do Firestore |
+| Maior arquivo                       | 2.837 linhas          | 269 linhas                                             |
+| Estilos inline (`style={{}}`)       | 1.456                 | 1 (largura da barra de pontos)                         |
+| Arquivos que acessam o Firebase     | 20                    | 3, todos em `src/data/`                                |
+| Quem pode gravar no banco           | Qualquer conta logada | Só a conta da organização, com testes                  |
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Stack
 
-### `npm test`
+React 19, TypeScript estrito, Vite, React Router, Tailwind CSS v4, Firebase (Firestore, Authentication, Hosting), Zod, Vitest e Testing Library.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Como rodar
 
-### `npm run build`
+Requer Node 20 ou mais novo.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+npm install
+cp .env.example .env   # preencha com a configuração web do Firebase
+npm run dev
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Para desenvolver sem tocar no banco real, use o Firebase Emulator (precisa de Java):
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+npm run emulador          # terminal 1: Firestore e Auth locais
+npm run emulador:dados    # terminal 2: carrega os dados de 2025 e cria a conta de teste
+npm run dev:emulador      # terminal 2: site apontando para o Emulator
+```
 
-### `npm run eject`
+## Scripts
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+| Comando                  | O que faz                                               |
+| ------------------------ | ------------------------------------------------------- |
+| `npm run check`          | Lint, tipos, testes e build, nessa ordem                |
+| `npm test`               | Testes de unidade e componentes                         |
+| `npm run test:regras`    | Testes das regras do Firestore no Emulator              |
+| `npm run dados:exportar` | Atualiza `dados/edicao-2025.json` a partir do Firestore |
+| `npm run deploy`         | Roda o `check` e publica o site no Firebase Hosting     |
+| `npm run deploy:regras`  | Testa e publica `firestore.rules`                       |
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Estrutura
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```
+src/app/        rotas, layout e providers
+src/features/   uma pasta por página (inicio, ranking, modalidades, modalidade, turma, cronograma, sobre, admin)
+src/ui/         componentes visuais com os tokens IFRS
+src/hooks/      useEdicao, useChaves, useUsuario, useAssinatura
+src/domain/     ranking geral, equipes combinadas, desempate (TypeScript puro, sem React)
+src/data/       Firebase, leitura em tempo real e validação dos documentos com Zod
+src/content/    dados fixos da edição e cronograma
+dados/          snapshot de 2025, usado como gabarito dos testes e carga do Emulator
+tests/          testes das regras do Firestore
+docs/decisoes/  registros curtos das decisões técnicas
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Cada camada só conhece a de baixo: páginas usam hooks, hooks usam `src/data` e `src/domain`, e só `src/data` importa o SDK do Firebase.
 
-## Learn More
+## Decisões
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- [001: Manter o Firebase e o banco de 2025](docs/decisoes/001-manter-firebase.md)
+- [002: Camadas e validação dos dados](docs/decisoes/002-camadas.md)
+- [003: Tamanho do bundle](docs/decisoes/003-bundle.md)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Créditos
 
-### Code Splitting
+Desenvolvimento: Vitor Dal Mora. Organização do evento: Setor de Esporte e Lazer (SEL) do IFRS Campus Sertão.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Projeto acadêmico, sem vínculo oficial com a comunicação do IFRS. Cores e tipografia seguem o Manual de Aplicação da Marca dos Institutos Federais.

@@ -1,0 +1,32 @@
+rules_version = '2';
+
+// Regras do banco da Semana da Juventude.
+// Leitura é pública (o site mostra os resultados para todos).
+// Gravação só para as contas da organização listadas em ehOrganizacao().
+// Além disso, o cadastro público de contas deve ficar desligado no
+// Firebase Authentication (Configurações → Ações do usuário).
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function ehOrganizacao() {
+      return request.auth != null
+        && request.auth.token.email in ['dalmoravitor@gmail.com'];
+    }
+
+    // Pontuação final de cada modalidade: única coleção que o site grava.
+    match /ranking/{modalidadeId} {
+      allow read: if true;
+      allow write: if ehOrganizacao()
+        && request.resource.data.ranking is list
+        && request.resource.data.ranking.size() <= 32;
+    }
+
+    // Demais coleções (modalidades, configurações, chaves e as dos sistemas de 2025).
+    // No Firestore, se duas regras casam com o mesmo documento, basta uma permitir;
+    // por isso "ranking" fica de fora daqui, senão a validação acima seria ignorada.
+    match /{colecao}/{documento=**} {
+      allow read: if true;
+      allow write: if ehOrganizacao() && colecao != 'ranking';
+    }
+  }
+}

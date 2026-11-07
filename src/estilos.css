@@ -1,0 +1,81 @@
+@import "tailwindcss";
+@import "@fontsource-variable/open-sans/wdth.css";
+
+/*
+ * Tokens da identidade IFRS (Manual de Aplicação da Marca IF, 2015).
+ * Verde #2F9E41 e vermelho #CD191E são as cores da marca; o verde escuro
+ * #1E7A2F é derivado para texto e botões, porque o verde oficial não chega
+ * a 4,5:1 de contraste com branco em texto de tamanho normal.
+ */
+@theme {
+  --font-sans: "Open Sans Variable", "Open Sans", system-ui, sans-serif;
+
+  --color-papel: #ffffff;
+  --color-tinta: #18241c;
+  --color-tinta-suave: #56655a;
+  --color-campo: #2f9e41;
+  --color-campo-escuro: #1e7a2f;
+  --color-campo-noite: #14532a;
+  --color-gramado: #eef4ef;
+  --color-cal: #d9e4db;
+  --color-campea: #cd191e;
+}
+
+/* Números e códigos de turma em estilo placar: Open Sans condensada e extra-negrito. */
+@utility placar {
+  font-stretch: 75%;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+  line-height: 1;
+}
+
+@utility medida {
+  max-width: 68ch;
+}
+
+@layer base {
+  html {
+    background-color: var(--color-papel);
+    color: var(--color-tinta);
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.55;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3 {
+    line-height: 1.15;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--color-campo-escuro);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  ::selection {
+    background-color: var(--color-campo);
+    color: var(--color-papel);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}

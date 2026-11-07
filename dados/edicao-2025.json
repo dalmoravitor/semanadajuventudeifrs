@@ -1,0 +1,6366 @@
+{
+  "exportadoEm": "2026-11-07T19:31:31.584Z",
+  "projeto": "semanadajuventudeifrs",
+  "modalidades": {
+    "atletismo_100m_fem": {
+      "status": "aguardando",
+      "nome": "Atletismo 100m",
+      "regrasPontuacao": {
+        "criterioClassificacao": "1º de cada bateria à final; demais por tempos para ordenar 5º ao 16º",
+        "classificamParaFinal": 1,
+        "baterias": 4
+      },
+      "criterioDesempate": [
+        "menor tempo"
+      ],
+      "numeroEquipesPorChave": 0,
+      "descricao": "Provas em 4 baterias com final entre os vencedores das baterias.",
+      "icone": "🏃",
+      "createdAt": "2025-10-28T22:49:43.027Z",
+      "numeroChaves": 0,
+      "ordem": 28,
+      "id": "atletismo_100m_fem",
+      "updatedAt": "2025-10-28T22:49:43.027Z",
+      "sistema": "eliminatoria+final (tempo)",
+      "categoria": "feminino",
+      "tipo": "individual"
+    },
+    "atletismo_100m_masc": {
+      "createdAt": "2025-10-28T22:49:43.062Z",
+      "id": "atletismo_100m_masc",
+      "updatedAt": "2025-10-28T22:49:43.062Z",
+      "criterioDesempate": [
+        "menor tempo"
+      ],
+      "categoria": "masculino",
+      "numeroEquipesPorChave": 0,
+      "tipo": "individual",
+      "sistema": "eliminatoria+final (tempo)",
+      "nome": "Atletismo 100m",
+      "regrasPontuacao": {
+        "baterias": 4,
+        "criterioClassificacao": "1º de cada bateria à final; demais por tempos para ordenar 5º ao 16º",
+        "classificamParaFinal": 1
+      },
+      "status": "aguardando",
+      "icone": "🏃",
+      "numeroChaves": 0,
+      "descricao": "Formato idêntico ao feminino.",
+      "ordem": 29
+    },
+    "atletismo_1500m_masc": {
+      "ordem": 33,
+      "icone": "🏃",
+      "regrasPontuacao": {},
+      "descricao": "Bateria única apenas masculino. Classificação por tempo.",
+      "nome": "Atletismo 1500m",
+      "sistema": "bateria-unica (tempo)",
+      "updatedAt": "2025-10-28T22:49:43.146Z",
+      "criterioDesempate": [
+        "menor tempo"
+      ],
+      "status": "aguardando",
+      "createdAt": "2025-10-28T22:49:43.146Z",
+      "tipo": "individual",
+      "numeroEquipesPorChave": 0,
+      "categoria": "masculino",
+      "numeroChaves": 0,
+      "id": "atletismo_1500m_masc"
+    },
+    "atletismo_4x100_misto": {
+      "id": "atletismo_4x100_misto",
+      "descricao": "Revezamento misto 4x100m com eliminatórias e final.",
+      "numeroEquipesPorChave": 0,
+      "sistema": "eliminatoria+final (tempo)",
+      "tipo": "coletiva",
+      "numeroChaves": 0,
+      "status": "aguardando",
+      "categoria": "misto",
+      "nome": "Revezamento 4x100m",
+      "createdAt": "2025-10-28T22:49:43.101Z",
+      "icone": "🏃‍♂️",
+      "regrasPontuacao": {
+        "baterias": 4,
+        "classificamParaFinal": 1
+      },
+      "updatedAt": "2025-10-28T22:49:43.101Z",
+      "criterioDesempate": [
+        "menor tempo"
+      ],
+      "ordem": 30
+    },
+    "atletismo_800m_fem": {
+      "ordem": 31,
+      "status": "aguardando",
+      "numeroEquipesPorChave": 0,
+      "descricao": "Bateria única. Classificação por tempo.",
+      "tipo": "individual",
+      "icone": "🏃",
+      "numeroChaves": 0,
+      "regrasPontuacao": {},
+      "criterioDesempate": [
+        "menor tempo"
+      ],
+      "categoria": "feminino",
+      "sistema": "bateria-unica (tempo)",
+      "nome": "Atletismo 800m",
+      "updatedAt": "2025-10-28T22:49:43.115Z",
+      "id": "atletismo_800m_fem",
+      "createdAt": "2025-10-28T22:49:43.115Z"
+    },
+    "atletismo_800m_masc": {
+      "regrasPontuacao": {},
+      "tipo": "individual",
+      "status": "aguardando",
+      "categoria": "masculino",
+      "id": "atletismo_800m_masc",
+      "createdAt": "2025-10-28T22:49:43.133Z",
+      "numeroEquipesPorChave": 0,
+      "criterioDesempate": [
+        "menor tempo"
+      ],
+      "updatedAt": "2025-10-28T22:49:43.133Z",
+      "sistema": "bateria-unica (tempo)",
+      "descricao": "Bateria única. Classificação por tempo.",
+      "numeroChaves": 0,
+      "ordem": 32,
+      "icone": "🏃",
+      "nome": "Atletismo 800m"
+    },
+    "basquetebol_fem": {
+      "criterioDesempate": [
+        "confronto direto",
+        "menor média de pontos disciplinares",
+        "menor média de pontos sofridos",
+        "maior média de pontos feitos",
+        "sorteio"
+      ],
+      "categoria": "feminino",
+      "status": "aguardando",
+      "numeroChaves": 4,
+      "sistema": "chaves+eliminacao",
+      "updatedAt": "2025-10-28T22:49:42.868Z",
+      "createdAt": "2025-10-28T22:49:42.868Z",
+      "tipo": "coletiva",
+      "icone": "🏀",
+      "id": "basquetebol_fem",
+      "nome": "Basquetebol",
+      "descricao": "Mesmo formato do masculino.",
+      "ordem": 25,
+      "regrasPontuacao": {
+        "lancesLivres": "2 arremessos em faltas (exceto 3 pts)",
+        "grupos": {
+          "vitoria": 3,
+          "empate": 1,
+          "derrota": 0
+        },
+        "desempate": "3 lances livres alternados; depois alternadas",
+        "tempo": "2 tempos de 5min (total 10min)"
+      },
+      "numeroEquipesPorChave": 3
+    },
+    "basquetebol_masc": {
+      "categoria": "masculino",
+      "icone": "🏀",
+      "sistema": "chaves+eliminacao",
+      "ordem": 24,
+      "regrasPontuacao": {
+        "desempate": "3 lances livres alternados; depois alternadas",
+        "grupos": {
+          "vitoria": 3,
+          "derrota": 0,
+          "empate": 1
+        },
+        "tempo": "2 tempos de 5min (total 10min)",
+        "lancesLivres": "2 arremessos em faltas (exceto 3 pts)"
+      },
+      "id": "basquetebol_masc",
+      "updatedAt": "2025-10-28T22:49:42.827Z",
+      "tipo": "coletiva",
+      "createdAt": "2025-10-28T22:49:42.827Z",
+      "numeroChaves": 5,
+      "nome": "Basquetebol",
+      "descricao": "16 equipes em 4 chaves (ajustável).",
+      "status": "aguardando",
+      "numeroEquipesPorChave": 3,
+      "criterioDesempate": [
+        "confronto direto",
+        "menor média de pontos disciplinares",
+        "menor média de pontos sofridos",
+        "maior média de pontos feitos",
+        "sorteio"
+      ]
+    },
+    "bisca": {
+      "regrasPontuacao": {
+        "trunfo": "naipe da carta aberta após corte; 7 pode trocar a carta de trunfo",
+        "baralho": 40,
+        "valoresCartas": {
+          "Sota": 2,
+          "As": 11,
+          "Rei": 4,
+          "Cavalo": 3,
+          "Tres": 10,
+          "SeteSeisCincoQuatroDois": 0
+        }
+      },
+      "updatedAt": "2025-10-28T22:49:42.562Z",
+      "createdAt": "2025-10-28T22:49:42.562Z",
+      "status": "aguardando",
+      "icone": "🃏",
+      "categoria": "misto",
+      "criterioDesempate": [
+        "não se aplica (melhor de 3)"
+      ],
+      "ordem": 17,
+      "tipo": "coletiva (dupla)",
+      "nome": "Bisca (Baralho Espanhol)",
+      "numeroEquipesPorChave": 0,
+      "numeroChaves": 0,
+      "descricao": "Duplas; conversa após 1ª rodada permitida. Uso de celular ou sinais: desclassificação imediata.",
+      "sistema": "eliminacao-simples (melhor-de-3)",
+      "id": "bisca"
+    },
+    "bocha_campeira": {
+      "categoria": "misto",
+      "updatedAt": "2025-10-28T22:49:42.206Z",
+      "ordem": 9,
+      "status": "aguardando",
+      "createdAt": "2025-10-28T22:49:42.206Z",
+      "nome": "Bocha Campeira",
+      "icone": "⚪",
+      "numeroEquipesPorChave": 3,
+      "id": "bocha_campeira",
+      "descricao": "16 equipes em 4 chaves, rodízio simples. Classificam 1º e 2º de cada chave.",
+      "tipo": "coletiva (dupla)",
+      "regrasPontuacao": {
+        "pontoPorBocha": 1,
+        "pontosParaVencer": 6
+      },
+      "sistema": "chaves (rodízio simples)+eliminacao",
+      "criterioDesempate": [
+        "entre duas equipes: confronto direto",
+        "entre três: saldo de pontos",
+        "maior nº de pontos feitos",
+        "menor nº de pontos sofridos",
+        "sorteio"
+      ],
+      "numeroChaves": 5
+    },
+    "cabo_de_guerra": {
+      "nome": "Cabo-de-guerra",
+      "updatedAt": "2025-10-28T22:49:42.671Z",
+      "createdAt": "2025-10-28T22:49:42.671Z",
+      "sistema": "chaves",
+      "criterioDesempate": [
+        "sorteio"
+      ],
+      "categoria": "misto",
+      "regrasPontuacao": {
+        "composicao": {
+          "meninas": 5,
+          "meninos": 5
+        },
+        "observacao": "soltar a corda: desclassificação e pontuação zerada"
+      },
+      "numeroChaves": 5,
+      "numeroEquipesPorChave": 3,
+      "icone": "🪢",
+      "descricao": "16 equipes em 4 chaves (ideal). Equipamentos pessoais (tênis/luvas) por conta dos alunos. Regras de definição de 5º ao 12º via posições dos 4 primeiros.",
+      "id": "cabo_de_guerra",
+      "tipo": "coletiva",
+      "ordem": 20,
+      "status": "aguardando"
+    },
+    "cs_go": {
+      "icone": "🎮",
+      "nome": "CS – GO",
+      "status": "aguardando",
+      "ordem": 4,
+      "categoria": "misto",
+      "regrasPontuacao": {
+        "formato": "Partida Curta 16 rounds; final com 30 rounds",
+        "pausaDuracaoMin": 1,
+        "pausas": 3
+      },
+      "sistema": "eliminacao-simples",
+      "createdAt": "2025-10-28T22:49:42.067Z",
+      "numeroChaves": 0,
+      "criterioDesempate": [
+        "não se aplica (eliminação direta)",
+        "decisão do lado por acordo"
+      ],
+      "updatedAt": "2025-10-28T22:49:42.067Z",
+      "descricao": "Equipes de 5 (+1 reserva opcional). Eliminatória simples em 4 etapas. Map veto por exclusão. Condutas inadequadas geram desclassificação.",
+      "numeroEquipesPorChave": 0,
+      "tipo": "coletiva",
+      "id": "cs_go"
+    },
+    "culinaria": {
+      "id": "culinaria",
+      "descricao": "Receitas padronizadas: Risoto de carne bovina e Torta Banoffee. Equipe mista obrigatória. Avaliação por banca.",
+      "tipo": "coletiva (4 integrantes)",
+      "sistema": "pontuacao",
+      "numeroEquipesPorChave": 0,
+      "updatedAt": "2025-10-28T22:49:42.219Z",
+      "createdAt": "2025-10-28T22:49:42.219Z",
+      "status": "aguardando",
+      "nome": "Culinária",
+      "categoria": "misto",
+      "criterioDesempate": [
+        "maior pontuação nos critérios em ordem (Sabor, Apresentação, Textura, Ingredientes, Higiene)",
+        "sorteio"
+      ],
+      "icone": "👨‍🍳",
+      "numeroChaves": 0,
+      "regrasPontuacao": {
+        "penalidadeAtraso": "-50% da pontuação se exceder o tempo",
+        "criterios": {
+          "Uso de Ingredientes": 20,
+          "Textura e Consistência": 20,
+          "Sabor e Temperatura": 30,
+          "Apresentação e Criatividade": 20,
+          "Higiene e Organização": 10
+        },
+        "tempoMaxMin": 120
+      },
+      "ordem": 10
+    },
+    "dardo_fem": {
+      "numeroChaves": 0,
+      "id": "dardo_fem",
+      "numeroEquipesPorChave": 0,
+      "nome": "Lançamento de Dardo",
+      "criterioDesempate": [
+        "arremesso extra"
+      ],
+      "icone": "🎯",
+      "descricao": "Conta-se a melhor marca; arremesso acima da linha dos ombros.",
+      "ordem": 36,
+      "regrasPontuacao": {
+        "tentativas": 3,
+        "desempate": "novo arremesso",
+        "arremessoAcimaOmbro": true
+      },
+      "createdAt": "2025-10-28T22:49:43.222Z",
+      "updatedAt": "2025-10-28T22:49:43.222Z",
+      "tipo": "individual",
+      "status": "aguardando",
+      "sistema": "melhor-de-3 (medida)",
+      "categoria": "feminino"
+    },
+    "dardo_masc": {
+      "tipo": "individual",
+      "sistema": "melhor-de-3 (medida)",
+      "numeroChaves": 0,
+      "descricao": "Conta-se a melhor marca; arremesso acima da linha dos ombros.",
+      "status": "aguardando",
+      "id": "dardo_masc",
+      "updatedAt": "2025-10-28T22:49:43.274Z",
+      "ordem": 37,
+      "regrasPontuacao": {
+        "arremessoAcimaOmbro": true,
+        "tentativas": 3,
+        "desempate": "novo arremesso"
+      },
+      "criterioDesempate": [
+        "arremesso extra"
+      ],
+      "createdAt": "2025-10-28T22:49:43.274Z",
+      "icone": "🎯",
+      "categoria": "masculino",
+      "numeroEquipesPorChave": 0,
+      "nome": "Arremesso de Dardo"
+    },
+    "disciplina_organizacao": {
+      "status": "aguardando",
+      "ordem": 2,
+      "updatedAt": "2025-10-28T22:49:41.957Z",
+      "regrasPontuacao": {
+        "penalidadeSalaSuja": -10,
+        "base": 160,
+        "minimo": 0,
+        "penalidadeOcorrencia": -10
+      },
+      "createdAt": "2025-10-28T22:49:41.957Z",
+      "icone": "📚",
+      "categoria": "misto",
+      "id": "disciplina_organizacao",
+      "nome": "Prova de Disciplina e Organização",
+      "sistema": "pontuacao-decadente",
+      "tipo": "coletiva",
+      "numeroEquipesPorChave": 0,
+      "criterioDesempate": [
+        "não se aplica"
+      ],
+      "numeroChaves": 0,
+      "descricao": "Cada turma inicia com 160. -10 por ocorrência registrada e -10 por avaliação de sala suja. Sem ocorrências e sala limpa = 160."
+    },
+    "fifa": {
+      "numeroChaves": 5,
+      "numeroEquipesPorChave": 3,
+      "createdAt": "2025-10-28T22:49:42.114Z",
+      "id": "fifa",
+      "criterioDesempate": [
+        "confronto direto (entre duas equipes)",
+        "maior saldo de gols",
+        "maior média de gols feitos",
+        "menor média de gols sofridos",
+        "sorteio"
+      ],
+      "updatedAt": "2025-10-28T22:49:42.114Z",
+      "regrasPontuacao": {
+        "grupos": {
+          "vitoria": 3,
+          "empate": 1,
+          "derrota": 0
+        },
+        "observacao": "Todos jogam com o mesmo time (Real Madrid). Empate no mata-mata vai para pênaltis.",
+        "wo": {
+          "placar": "3x0"
+        }
+      },
+      "ordem": 5,
+      "nome": "FIFA (on-line)",
+      "categoria": "misto",
+      "icone": "⚽",
+      "tipo": "individual",
+      "status": "aguardando",
+      "sistema": "chaves+eliminacao",
+      "descricao": "16 equipes em 4 chaves; todos contra todos na chave; classificam 1º e 2º. Eliminatória com pênaltis em caso de empate."
+    },
+    "futsal_fem": {
+      "updatedAt": "2025-10-28T22:49:43.009Z",
+      "createdAt": "2025-10-28T22:49:43.009Z",
+      "status": "aguardando",
+      "id": "futsal_fem",
+      "categoria": "feminino",
+      "tipo": "coletiva",
+      "numeroChaves": 4,
+      "numeroEquipesPorChave": 3,
+      "sistema": "chaves+eliminacao",
+      "nome": "Futsal",
+      "descricao": "Mesmo formato do masculino.",
+      "icone": "⚽",
+      "criterioDesempate": [
+        "confronto direto (entre duas)",
+        "menor média pontos disciplinares",
+        "menor média de gols sofridos",
+        "maior média de gols feitos",
+        "sorteio"
+      ],
+      "regrasPontuacao": {
+        "grupos": {
+          "derrota": 0,
+          "empate": 1,
+          "vitoria": 3
+        },
+        "faltas": {
+          "semCartaoPrimeiras": "1ª e 2ª faltas com barreira",
+          "comCartao": "tiro livre direto do local ou dos 10m, sem barreira",
+          "aPartir3a": "sem barreira"
+        },
+        "desempateMataMata": "3 pênaltis; depois alternados"
+      },
+      "ordem": 27
+    },
+    "futsal_masc": {
+      "criterioDesempate": [
+        "confronto direto (entre duas)",
+        "menor média pontos disciplinares",
+        "menor média de gols sofridos",
+        "maior média de gols feitos",
+        "sorteio"
+      ],
+      "updatedAt": "2025-10-28T22:49:42.883Z",
+      "createdAt": "2025-10-28T22:49:42.883Z",
+      "nome": "Futsal",
+      "sistema": "chaves+eliminacao",
+      "categoria": "masculino",
+      "icone": "⚽",
+      "status": "aguardando",
+      "ordem": 26,
+      "id": "futsal_masc",
+      "regrasPontuacao": {
+        "faltas": {
+          "aPartir3a": "sem barreira",
+          "semCartaoPrimeiras": "1ª e 2ª faltas com barreira",
+          "comCartao": "tiro livre direto do local ou dos 10m, sem barreira"
+        },
+        "desempateMataMata": "3 pênaltis; depois alternados",
+        "grupos": {
+          "vitoria": 3,
+          "empate": 1,
+          "derrota": 0
+        }
+      },
+      "numeroEquipesPorChave": 3,
+      "descricao": "16 equipes em 4 chaves (ajustável).",
+      "tipo": "coletiva",
+      "numeroChaves": 5
+    },
+    "gincana_recreativa": {
+      "updatedAt": "2025-10-28T22:49:43.314Z",
+      "sistema": "tempo",
+      "status": "aguardando",
+      "numeroEquipesPorChave": 0,
+      "createdAt": "2025-10-28T22:49:43.314Z",
+      "criterioDesempate": [
+        "ordem de critérios definida: tempo > tarefa > ovo > sorteio"
+      ],
+      "nome": "Gincana Recreativa",
+      "categoria": "misto",
+      "regrasPontuacao": {
+        "tempoMaxMin": 10,
+        "tarefas": 10,
+        "penalidadeElementoQuebrado": "+30 segundos",
+        "ordemDesempate": [
+          "menor tempo",
+          "tarefa realizada",
+          "quebra do ovo",
+          "sorteio"
+        ]
+      },
+      "icone": "🎉",
+      "numeroChaves": 0,
+      "id": "gincana_recreativa",
+      "ordem": 38,
+      "descricao": "Corrida de tarefas com ‘elemento de transferência (ovo)’. Passa ao próximo apenas após sinal do fiscal.",
+      "tipo": "coletiva (10 integrantes)"
+    },
+    "gincana_tecnico_cultural": {
+      "numeroEquipesPorChave": 0,
+      "tipo": "coletiva (3 integrantes)",
+      "status": "aguardando",
+      "numeroChaves": 0,
+      "id": "gincana_tecnico_cultural",
+      "descricao": "Uso de celulares pelos 3 representantes. Torcida não pode soprar respostas. Plataforma define a classificação.",
+      "createdAt": "2025-10-28T22:49:42.232Z",
+      "icone": "🎉",
+      "nome": "Gincana Técnico-Cultural (Kahoot)",
+      "sistema": "pontuacao (plataforma)",
+      "updatedAt": "2025-10-28T22:49:42.232Z",
+      "ordem": 11,
+      "criterioDesempate": [
+        "classificação da própria plataforma"
+      ],
+      "regrasPontuacao": {
+        "alternativas": 4,
+        "perguntas": 40,
+        "errado": 0,
+        "certo": "pontuação dinâmica por tempo",
+        "tempoPorPerguntaSeg": 20
+      },
+      "categoria": "misto"
+    },
+    "handebol_fem": {
+      "updatedAt": "2025-10-28T22:49:42.652Z",
+      "regrasPontuacao": {
+        "grupos": {
+          "vitoria": 3,
+          "empate": 1,
+          "derrota": 0
+        },
+        "penalidadeExclusao": "2 ataques",
+        "desempateMataMata": "3 cobranças de 7m; depois alternadas",
+        "tempo": "8 min (sem troca de lado)"
+      },
+      "createdAt": "2025-10-28T22:49:42.652Z",
+      "tipo": "coletiva",
+      "categoria": "feminino",
+      "status": "aguardando",
+      "numeroEquipesPorChave": 3,
+      "icone": "🤾",
+      "nome": "Handebol",
+      "sistema": "chaves+eliminacao",
+      "ordem": 19,
+      "numeroChaves": 4,
+      "descricao": "Mesmo formato do masculino.",
+      "id": "handebol_fem",
+      "criterioDesempate": [
+        "confronto direto (entre duas)",
+        "menor média de pontos disciplinares",
+        "menor média de gols sofridos",
+        "maior média de gols feitos",
+        "sorteio"
+      ]
+    },
+    "handebol_masc": {
+      "numeroEquipesPorChave": 3,
+      "createdAt": "2025-10-28T22:49:42.609Z",
+      "status": "aguardando",
+      "updatedAt": "2025-10-28T22:49:42.609Z",
+      "id": "handebol_masc",
+      "nome": "Handebol",
+      "ordem": 18,
+      "sistema": "chaves+eliminacao",
+      "icone": "🤾",
+      "criterioDesempate": [
+        "confronto direto (entre duas)",
+        "menor média de pontos disciplinares",
+        "menor média de gols sofridos",
+        "maior média de gols feitos",
+        "sorteio"
+      ],
+      "categoria": "masculino",
+      "tipo": "coletiva",
+      "numeroChaves": 5,
+      "regrasPontuacao": {
+        "grupos": {
+          "derrota": 0,
+          "empate": 1,
+          "vitoria": 3
+        },
+        "desempateMataMata": "3 cobranças de 7m; depois alternadas",
+        "penalidadeExclusao": "2 ataques",
+        "tempo": "8 min (sem troca de lado)"
+      },
+      "descricao": "16 equipes em 4 chaves (ajustável pela comissão). Não usar adesivo nas mãos. Regras específicas de exclusão."
+    },
+    "inscricao_kit": {
+      "descricao": "Entrega do kit completo até 31/10 às 12h. Kit completo: 160 pontos; caso incompleto/fora do prazo: 0 ponto.",
+      "tipo": "coletiva",
+      "id": "inscricao_kit",
+      "numeroChaves": 0,
+      "status": "aguardando",
+      "regrasPontuacao": {
+        "completa": 160,
+        "incompleta": 0
+      },
+      "criterioDesempate": [
+        "não se aplica"
+      ],
+      "ordem": 1,
+      "categoria": "misto",
+      "icone": "📋",
+      "nome": "Inscrição (Kit Solidário)",
+      "numeroEquipesPorChave": 0,
+      "updatedAt": "2025-10-28T22:49:41.703Z",
+      "sistema": "pontuacao-fixa",
+      "createdAt": "2025-10-28T22:49:41.703Z"
+    },
+    "mortal_kombat": {
+      "id": "mortal_kombat",
+      "icone": "🥋",
+      "numeroChaves": 5,
+      "descricao": "16 equipes em 4 chaves; todos contra todos; classificam 1º e 2º de cada chave. Condutas inadequadas geram desclassificação.",
+      "ordem": 6,
+      "criterioDesempate": [
+        "confronto direto (entre duas equipes)",
+        "sorteio"
+      ],
+      "tipo": "individual",
+      "status": "aguardando",
+      "regrasPontuacao": {
+        "vitoria": 3,
+        "derrota": 0
+      },
+      "sistema": "chaves",
+      "categoria": "misto",
+      "nome": "Mortal Kombat",
+      "createdAt": "2025-10-28T22:49:42.136Z",
+      "numeroEquipesPorChave": 3,
+      "updatedAt": "2025-10-28T22:49:42.136Z"
+    },
+    "presencas": {
+      "categoria": "misto",
+      "icone": "✅",
+      "status": "aguardando",
+      "nome": "Presenças",
+      "ordem": 3,
+      "numeroEquipesPorChave": 0,
+      "updatedAt": "2025-10-28T22:49:41.991Z",
+      "regrasPontuacao": {
+        "multiplicadorSobreGeral": 2,
+        "observacao": "Percentual de presença é ranqueado e pontuado com o dobro da pontuação geral das modalidades."
+      },
+      "createdAt": "2025-10-28T22:49:41.991Z",
+      "descricao": "Chamada 2x ao dia. Ranking por percentual de presença, pontuado em dobro em relação às demais modalidades.",
+      "sistema": "percentual",
+      "numeroChaves": 0,
+      "criterioDesempate": [
+        "percentual mais alto",
+        "sorteio"
+      ],
+      "tipo": "coletiva",
+      "id": "presencas"
+    },
+    "salto_distancia_fem": {
+      "id": "salto_distancia_fem",
+      "sistema": "melhor-de-3 (medida)",
+      "tipo": "individual",
+      "numeroEquipesPorChave": 0,
+      "descricao": "Conta-se a melhor marca entre 3 tentativas.",
+      "numeroChaves": 0,
+      "regrasPontuacao": {
+        "melhorMarca": true,
+        "desempate": "novo salto em caso de empate",
+        "tentativas": 3
+      },
+      "ordem": 34,
+      "status": "aguardando",
+      "createdAt": "2025-10-28T22:49:43.164Z",
+      "criterioDesempate": [
+        "salto extra"
+      ],
+      "icone": "🦘",
+      "updatedAt": "2025-10-28T22:49:43.164Z",
+      "nome": "Salto em Distância",
+      "categoria": "feminino"
+    },
+    "salto_distancia_masc": {
+      "numeroEquipesPorChave": 0,
+      "ordem": 35,
+      "categoria": "masculino",
+      "icone": "🦘",
+      "criterioDesempate": [
+        "salto extra"
+      ],
+      "sistema": "melhor-de-3 (medida)",
+      "createdAt": "2025-10-28T22:49:43.209Z",
+      "nome": "Salto em Distância",
+      "updatedAt": "2025-10-28T22:49:43.209Z",
+      "id": "salto_distancia_masc",
+      "status": "aguardando",
+      "tipo": "individual",
+      "descricao": "Conta-se a melhor marca entre 3 tentativas.",
+      "numeroChaves": 0,
+      "regrasPontuacao": {
+        "desempate": "novo salto em caso de empate",
+        "melhorMarca": true,
+        "tentativas": 3
+      }
+    },
+    "show_de_talentos": {
+      "criterioDesempate": [
+        "maior nota nos critérios na ordem apresentada",
+        "decisão da comissão",
+        "sorteio"
+      ],
+      "numeroEquipesPorChave": 0,
+      "status": "aguardando",
+      "ordem": 12,
+      "nome": "Show de Talentos",
+      "regrasPontuacao": {
+        "penalidadeTempo": "-10 pontos por minuto excedente",
+        "criterios": {
+          "Criatividade e Originalidade": 25,
+          "Adequação ao Tema e Normas (eliminatório)": 25,
+          "Habilidade Técnica / Qualidade Artística": 25,
+          "Performance e Engajamento": 25
+        },
+        "tempoMaxMin": 15,
+        "tema": "Cultura Gaúcha"
+      },
+      "descricao": "Apresentações artísticas sobre Cultura Gaúcha. Observância às políticas institucionais e código de conduta.",
+      "sistema": "pontuacao",
+      "icone": "🎤",
+      "updatedAt": "2025-10-28T22:49:42.254Z",
+      "tipo": "coletiva",
+      "createdAt": "2025-10-28T22:49:42.254Z",
+      "numeroChaves": 0,
+      "id": "show_de_talentos",
+      "categoria": "misto"
+    },
+    "soletrando": {
+      "categoria": "misto",
+      "id": "soletrando",
+      "status": "aguardando",
+      "regrasPontuacao": {
+        "final": {
+          "formato": "eliminatória",
+          "rankingEmpate": "ordem de eliminação; empates na mesma rodada usam pontuação da etapa anterior"
+        },
+        "classificatoria": {
+          "rodadas": 3,
+          "classificados": 5,
+          "tempoSeg": 60,
+          "acerto": 1
+        }
+      },
+      "updatedAt": "2025-10-28T22:49:42.268Z",
+      "nome": "Soletrando",
+      "createdAt": "2025-10-28T22:49:42.268Z",
+      "descricao": "Disputa em duas fases, com sorteio da ordem e palavras aleatórias por rodada.",
+      "criterioDesempate": [
+        "primeira resposta correta",
+        "segunda resposta correta",
+        "... até a sexta",
+        "eliminatória direta se persistir"
+      ],
+      "numeroEquipesPorChave": 0,
+      "tipo": "coletiva (3 integrantes)",
+      "numeroChaves": 0,
+      "ordem": 13,
+      "sistema": "soletrando",
+      "icone": "📖"
+    },
+    "sudoku": {
+      "sistema": "multi-etapas (tempo)",
+      "categoria": "misto",
+      "status": "aguardando",
+      "numeroEquipesPorChave": 0,
+      "tipo": "coletiva (2 integrantes)",
+      "createdAt": "2025-10-28T22:49:42.310Z",
+      "icone": "🔢",
+      "numeroChaves": 0,
+      "updatedAt": "2025-10-28T22:49:42.310Z",
+      "ordem": 14,
+      "nome": "Sudoku",
+      "descricao": "Disputa por menor tempo com penalidades por erros e não conclusão.",
+      "criterioDesempate": [
+        "menor somatório de tempo",
+        "regras de penalidade",
+        "sorteio"
+      ],
+      "regrasPontuacao": {
+        "materiais": [
+          "lápis/lapiseira/borracha (rasuras não permitidas na versão final)",
+          "caneta azul/preta para entrega"
+        ],
+        "desempateGeral": "usar somatórios das etapas anteriores, se necessário",
+        "etapas": [
+          {
+            "nome": "Etapa 1",
+            "subdivisoes": [
+              5,
+              5,
+              6
+            ],
+            "vagasPorSubdivisao": 2,
+            "tempoMaxMin": 10,
+            "penalidades": {
+              "ate3Erros": 15,
+              "maisDe3ErrosOuNaoConclui": 16
+            }
+          },
+          {
+            "nome": "Etapa 2",
+            "descricao": "Novo sudoku por subdivisão, mesmas regras da etapa 1"
+          },
+          {
+            "nome": "Etapa 3 (Semifinal)",
+            "descricao": "6 equipes juntas, 3 sudokus (até 15min cada); penalidades: 22min até 3 erros; 25min >3 erros/NC. 3 menores somatórios avançam"
+          },
+          {
+            "nome": "Final",
+            "descricao": "2 sudokus simultâneos; erro desclassifica; repetido até ordenar 1º, 2º, 3º"
+          }
+        ]
+      },
+      "id": "sudoku"
+    },
+    "tiro_laco_fem": {
+      "numeroChaves": 0,
+      "nome": "Tiro de Laço à Vaca-Parada",
+      "regrasPontuacao": {
+        "pontuacaoPorArmada": {
+          "1": 10,
+          "2": 9,
+          "3": 8,
+          "4": 7,
+          "5": 1
+        },
+        "distanciaM": 4.5,
+        "tempoPorArmadaSeg": 60,
+        "armadas": 5
+      },
+      "status": "aguardando",
+      "criterioDesempate": [
+        "maior soma de pontos"
+      ],
+      "categoria": "feminino",
+      "sistema": "pontuacao-acumulada",
+      "createdAt": "2025-10-28T22:49:42.166Z",
+      "recado": "Não considerem a pontuação que está aparecendo aqui embaixo (tiro de laço), para ver a pontuação correta, acesse pela página Ranking -> detalhado",
+      "recadoUpdatedAt": "2025-11-05T01:28:31.059Z",
+      "updatedAt": "2025-11-05T01:28:31.059Z",
+      "icone": "🤠",
+      "ordem": 8,
+      "descricao": "5 armadas por competidora. Distância reduzida. Mesmas regras de pontuação e execução.",
+      "id": "tiro_laco_fem",
+      "numeroEquipesPorChave": 0,
+      "tipo": "individual"
+    },
+    "tiro_laco_masc": {
+      "numeroEquipesPorChave": 0,
+      "numeroChaves": 0,
+      "updatedAt": "2025-10-28T22:49:42.151Z",
+      "createdAt": "2025-10-28T22:49:42.151Z",
+      "tipo": "individual",
+      "categoria": "masculino",
+      "sistema": "pontuacao-acumulada",
+      "ordem": 7,
+      "criterioDesempate": [
+        "maior soma de pontos"
+      ],
+      "nome": "Tiro de Laço à Vaca-Parada",
+      "descricao": "5 armadas por competidor. Regras de indumentária e procedimento. Pontuação decrescente por armada válida (1ª a 5ª).",
+      "icone": "🤠",
+      "id": "tiro_laco_masc",
+      "status": "aguardando",
+      "regrasPontuacao": {
+        "distanciaM": 7,
+        "pontuacaoPorArmada": {
+          "1": 10,
+          "2": 9,
+          "3": 8,
+          "4": 7,
+          "5": 1
+        },
+        "armadas": 5,
+        "tempoPorArmadaSeg": 60
+      }
+    },
+    "truco": {
+      "numeroEquipesPorChave": 0,
+      "createdAt": "2025-10-28T22:49:42.547Z",
+      "updatedAt": "2025-10-28T22:49:42.547Z",
+      "regrasPontuacao": {
+        "tentos": {
+          "realEnvidoRecusado": 1,
+          "faltaEnvido": "até completar 24 do adversário",
+          "realEnvidoAceito": 3,
+          "envidoAceito": 2,
+          "flor": 3,
+          "retruco": 3,
+          "trucoNaoAceito": 1,
+          "envidoNaoAceito": 1,
+          "trucoAceito": 2,
+          "valeQuatro": 4
+        },
+        "ate": 24
+      },
+      "tipo": "coletiva (dupla)",
+      "id": "truco",
+      "categoria": "misto",
+      "sistema": "eliminacao-simples (melhor-de-3)",
+      "status": "aguardando",
+      "nome": "Truco (Baralho Espanhol)",
+      "icone": "🃏",
+      "numeroChaves": 0,
+      "ordem": 16,
+      "criterioDesempate": [
+        "não se aplica (melhor de 3)"
+      ],
+      "descricao": "Baralho espanhol (40 cartas). Regras clássicas de Truco com Envido/Flor, propostas e penalidades conforme regulamento."
+    },
+    "volei_de_praia_misto": {
+      "nome": "Vôlei de Praia",
+      "numeroChaves": 5,
+      "descricao": "Set único a 21, sem descansos na troca de quadra. Duplas masculina e feminina jogam, com troca ao atingir 11 pontos.",
+      "numeroEquipesPorChave": 3,
+      "criterioDesempate": [
+        "entre duas: confronto direto",
+        "entre três ou mais: nº de vitórias, pontos average, sorteio"
+      ],
+      "regrasPontuacao": {
+        "duplas": {
+          "trocaObrigatoriaNo11": true,
+          "masculina": 1,
+          "feminina": 1
+        },
+        "woPlacar": "21x0, 1 set a 0",
+        "trocaLadoAoPonto": 11,
+        "grupos": {
+          "wo": 0,
+          "vitoria": 3,
+          "derrota": 1
+        },
+        "setUnico": 21
+      },
+      "sistema": "chaves+eliminacao",
+      "id": "volei_de_praia_misto",
+      "categoria": "misto",
+      "status": "aguardando",
+      "createdAt": "2025-10-28T22:49:42.810Z",
+      "icone": "🏖️",
+      "updatedAt": "2025-10-28T22:49:42.810Z",
+      "ordem": 23,
+      "tipo": "coletiva (duplas alternadas)"
+    },
+    "voleibol_fem": {
+      "createdAt": "2025-10-28T22:49:42.735Z",
+      "updatedAt": "2025-10-28T22:49:42.735Z",
+      "regrasPontuacao": {
+        "setFormato": "1 set a 21 (final: 2 sets a 21; tie-break a 15)",
+        "grupos": {
+          "vitoria_2x0": 3,
+          "derrota_1x2": 1,
+          "derrota_0x2": 0,
+          "vitoria_2x1": 2
+        }
+      },
+      "tipo": "coletiva",
+      "icone": "🏐",
+      "numeroEquipesPorChave": 3,
+      "categoria": "feminino",
+      "id": "voleibol_fem",
+      "ordem": 22,
+      "nome": "Voleibol",
+      "criterioDesempate": [
+        "confronto direto (entre duas)",
+        "menor média pontos disciplinares",
+        "menor nº de pontos sofridos nos sets",
+        "maior nº de pontos feitos nos sets",
+        "sorteio"
+      ],
+      "status": "aguardando",
+      "sistema": "chaves+eliminacao",
+      "descricao": "Mesmo formato do masculino.",
+      "numeroChaves": 4
+    },
+    "voleibol_masc": {
+      "categoria": "masculino",
+      "regrasPontuacao": {
+        "setFormato": "1 set a 21 (final: 2 sets a 21; tie-break a 15)",
+        "grupos": {
+          "vitoria_2x1": 2,
+          "derrota_0x2": 0,
+          "derrota_1x2": 1,
+          "vitoria_2x0": 3
+        }
+      },
+      "updatedAt": "2025-10-28T22:49:42.717Z",
+      "ordem": 21,
+      "createdAt": "2025-10-28T22:49:42.717Z",
+      "nome": "Voleibol",
+      "numeroEquipesPorChave": 3,
+      "icone": "🏐",
+      "descricao": "16 equipes em 4 chaves (ajustável).",
+      "id": "voleibol_masc",
+      "tipo": "coletiva",
+      "criterioDesempate": [
+        "confronto direto (entre duas)",
+        "menor média pontos disciplinares",
+        "menor nº de pontos sofridos nos sets",
+        "maior nº de pontos feitos nos sets",
+        "sorteio"
+      ],
+      "status": "aguardando",
+      "sistema": "chaves+eliminacao",
+      "numeroChaves": 5
+    },
+    "xadrez": {
+      "status": "aguardando",
+      "sistema": "suíço (5 rodadas)",
+      "criterioDesempate": [
+        "padrões de torneios rápidos (não especificado)"
+      ],
+      "tipo": "individual (dupla por turma)",
+      "numeroEquipesPorChave": 0,
+      "descricao": "Duplas por turma. 5 rodadas; perdedor segue no torneio (sem eliminação imediata). Conduta inadequada gera desclassificação.",
+      "regrasPontuacao": {
+        "derrota": 0,
+        "empate": 0.5,
+        "tempoMin": 10,
+        "vitoria": 1
+      },
+      "id": "xadrez",
+      "ordem": 15,
+      "categoria": "misto",
+      "icone": "♟️",
+      "numeroChaves": 0,
+      "createdAt": "2025-10-28T22:49:42.324Z",
+      "updatedAt": "2025-10-28T22:49:42.324Z",
+      "nome": "Xadrez (Rápido)"
+    }
+  },
+  "ranking": {
+    "atletismo_100m_fem": {
+      "updatedAt": "2025-11-03T22:28:01.004Z",
+      "createdAt": "2025-11-03T22:28:01.004Z",
+      "ranking": [
+        {
+          "posicao": 1,
+          "equipe": "Turma 21",
+          "equipeId": "turma_21",
+          "pontos": 160
+        },
+        {
+          "posicao": 2,
+          "equipe": "Turma TI22",
+          "equipeId": "turma_ti22",
+          "pontos": 150
+        },
+        {
+          "posicao": 3,
+          "equipe": "Turma 31",
+          "equipeId": "turma_31",
+          "pontos": 140
+        },
+        {
+          "posicao": 4,
+          "equipe": "Turma 12",
+          "equipeId": "turma_12",
+          "pontos": 130
+        },
+        {
+          "posicao": 5,
+          "equipe": "Turma TI12",
+          "equipeId": "turma_ti12",
+          "pontos": 120
+        },
+        {
+          "posicao": 6,
+          "equipe": "Turma 14",
+          "equipeId": "turma_14",
+          "pontos": 110
+        },
+        {
+          "posicao": 7,
+          "equipe": "Turma TI21",
+          "equipeId": "turma_ti21",
+          "pontos": 100
+        },
+        {
+          "posicao": 8,
+          "equipe": "Turma 32",
+          "equipeId": "turma_32",
+          "pontos": 90
+        },
+        {
+          "posicao": 9,
+          "equipe": "Turma TI11",
+          "equipeId": "turma_ti11",
+          "pontos": 80
+        },
+        {
+          "posicao": 10,
+          "equipe": "Turma 22",
+          "equipeId": "turma_22",
+          "pontos": 70
+        },
+        {
+          "posicao": 11,
+          "equipe": "Turma 23",
+          "equipeId": "turma_23",
+          "pontos": 60
+        },
+        {
+          "posicao": 12,
+          "equipe": "Turma 13",
+          "equipeId": "turma_13",
+          "pontos": 50
+        },
+        {
+          "posicao": 13,
+          "equipe": "Turma 24",
+          "equipeId": "turma_24",
+          "pontos": 40
+        },
+        {
+          "posicao": 14,
+          "equipe": "Turma 33",
+          "equipeId": "turma_33",
+          "pontos": 30
+        },
+        {
+          "posicao": 15,
+          "equipe": "Turma 34",
+          "equipeId": "turma_34",
+          "pontos": 20
+        },
+        {
+          "posicao": 16,
+          "equipe": "Turma 11",
+          "equipeId": "turma_11",
+          "pontos": 10
+        }
+      ],
+      "modalidadeId": "atletismo_100m_fem"
+    },
+    "atletismo_100m_masc": {
+      "modalidadeId": "atletismo_100m_masc",
+      "ranking": [
+        {
+          "posicao": 1,
+          "equipe": "Turma 34",
+          "equipeId": "turma_34",
+          "pontos": 160
+        },
+        {
+          "posicao": 2,
+          "equipe": "Turma 21",
+          "equipeId": "turma_21",
+          "pontos": 150
+        },
+        {
+          "posicao": 3,
+          "equipe": "Turma 22",
+          "equipeId": "turma_22",
+          "pontos": 140
+        },
+        {
+          "posicao": 4,
+          "equipe": "Turma TI22",
+          "equipeId": "turma_ti22",
+          "pontos": 130
+        },
+        {
+          "posicao": 5,
+          "equipe": "Turma TI21",
+          "equipeId": "turma_ti21",
+          "pontos": 120
+        },
+        {
+          "posicao": 6,
+          "equipe": "Turma 24",
+          "equipeId": "turma_24",
+          "pontos": 110
+        },
+        {
+          "posicao": 7,
+          "equipe": "Turma 33",
+          "equipeId": "turma_33",
+          "pontos": 100
+        },
+        {
+          "posicao": 8,
+          "equipe": "Turma 11",
+          "equipeId": "turma_11",
+          "pontos": 90
+        },
+        {
+          "posicao": 9,
+          "equipe": "Turma 23",
+          "equipeId": "turma_23",
+          "pontos": 60
+        },
+        {
+          "posicao": 10,
+          "equipe": "Turma 31",
+          "equipeId": "turma_31",
+          "pontos": 70
+        },
+        {
+          "posicao": 11,
+          "equipe": "Turma 32",
+          "equipeId": "turma_32",
+          "pontos": 100
+        },
+        {
+          "posicao": 12,
+          "equipe": "Turma TI11",
+          "equipeId": "turma_ti11",
+          "pontos": 50
+        },
+        {
+          "posicao": 13,
+          "equipe": "Turma TI12",
+          "equipeId": "turma_ti12",
+          "pontos": 40
+        },
+        {
+          "posicao": 14,
+          "equipe": "Turma 12",
+          "equipeId": "turma_12",
+          "pontos": 30
+        },
+        {
+          "posicao": 15,
+          "equipe": "Turma 14",
+          "equipeId": "turma_14",
+          "pontos": 20
+        },
+        {
+          "posicao": 16,
+          "equipe": "Turma 13",
+          "equipeId": "turma_13",
+          "pontos": 10
+        }
+      ],
+      "createdAt": "2025-11-05T23:48:05.737Z",
+      "updatedAt": "2025-11-05T23:48:05.737Z"
+    },
+    "atletismo_1500m_masc": {
+      "createdAt": "2025-11-04T23:49:48.343Z",
+      "updatedAt": "2025-11-04T23:49:48.343Z",
+      "ranking": [
+        {
+          "posicao": 1,
+          "equipe": "Turma 34",
+          "equipeId": "turma_34",
+          "pontos": 160
+        },
+        {
+          "posicao": 2,
+          "equipe": "Turma 14",
+          "equipeId": "turma_14",
+          "pontos": 150
+        },
+        {
+          "posicao": 3,
+          "equipe": "Turma 23",
+          "equipeId": "turma_23",
+          "pontos": 140
+        },
+        {
+          "posicao": 4,
+          "equipe": "Turma 31",
+          "equipeId": "turma_31",
+          "pontos": 130
+        },
+        {
+          "posicao": 5,
+          "equipe": "Turma TI22",
+          "equipeId": "turma_ti22",
+          "pontos": 120
+        },
+        {
+          "posicao": 6,
+          "equipe": "Turma 11",
+          "equipeId": "turma_11",
+          "pontos": 110
+        },
+        {
+          "posicao": 7,
+          "equipe": "Turma 32",
+          "equipeId": "turma_32",
+          "pontos": 100
+        },
+        {
+          "posicao": 8,
+          "equipe": "Turma TI12",
+          "equipeId": "turma_ti12",
+          "pontos": 90
+        },
+        {
+          "posicao": 9,
+          "equipe": "Turma 33",
+          "equipeId": "turma_33",
+          "pontos": 80
+        },
+        {
+          "posicao": 10,
+          "equipe": "Turma TI21",
+          "equipeId": "turma_ti21",
+          "pontos": 70
+        },
+        {
+          "posicao": 11,
+          "equipe": "Turma 21",
+          "equipeId": "turma_21",
+          "pontos": 60
+        },
+        {
+          "posicao": 12,
+          "equipe": "Turma 12",
+          "equipeId": "turma_12",
+          "pontos": 50
+        },
+        {
+          "posicao": 13,
+          "equipe": "Turma TI11",
+          "equipeId": "turma_ti11",
+          "pontos": 40
+        },
+        {
+          "posicao": 14,
+          "equipe": "Turma 22",
+          "equipeId": "turma_22",
+          "pontos": 30
+        },
+        {
+          "posicao": 15,
+          "equipe": "Turma 13",
+          "equipeId": "turma_13",
+          "pontos": 0
+        },
+        {
+          "posicao": 16,
+          "equipe": "Turma 24",
+          "equipeId": "turma_24",
+          "pontos": 0
+        }
+      ],
+      "modalidadeId": "atletismo_1500m_masc"
+    },
+    "atletismo_4x100_misto": {
+      "modalidadeId": "atletismo_4x100_misto",
+      "updatedAt": "2025-11-03T23:03:19.701Z",
+      "ranking": [
+        {
+          "posicao": 1,
+          "equipe": "Turma 31",
+          "equipeId": "turma_31",
+          "pontos": 160
+        },
+        {
+          "posicao": 2,
+          "equipe": "Turma 33",
+          "equipeId": "turma_33",
+          "pontos": 150
+        },
+        {
+          "posicao": 3,
+          "equipe": "Turma TI12",
+          "equipeId": "turma_ti12",
+          "pontos": 140
+        },
+        {
+          "posicao": 4,
+          "equipe": "Turma 22",
+          "equipeId": "turma_22",
+          "pontos": 130
+        },
+        {
+          "posicao": 5,
+          "equipe": "Turma 34",
+          "equipeId": "turma_34",
+          "pontos": 120
+        },
+        {
+          "posicao": 6,
+          "equipe": "Turma TI22",
+          "equipeId": "turma_ti22",
+          "pontos": 110
+        },
+        {
+          "posicao": 7,
+          "equipe": "Turma 32",
+          "equipeId": "turma_32",
+          "pontos": 100
+        },
+        {
+          "posicao": 8,
+          "equipe": "Turma 21",
+          "equipeId": "turma_21",
+          "pontos": 90
+        },
+        {
+          "posicao": 9,
+          "equipe": "Turma TI21",
+          "equipeId": "turma_ti21",
+          "pontos": 80
+        },
+        {
+          "posicao": 10,
+          "equipe": "Turma 23",
+          "equipeId": "turma_23",
+          "pontos": 70
+        },
+        {
+          "posicao": 11,
+          "equipe": "Turma 14",
+          "equipeId": "turma_14",
+          "pontos": 60
+        },
+        {
+          "posicao": 12,
+          "equipe": "Turma 24",
+          "equipeId": "turma_24",
+          "pontos": 50
+        },
+        {
+          "posicao": 13,
+          "equipe": "Turma TI11",
+          "equipeId": "turma_ti11",
+          "pontos": 40
+        },
+        {
+          "posicao": 14,
+          "equipe": "Turma 12",
+          "equipeId": "turma_12",
+          "pontos": 30
+        },
+        {
+          "posicao": 15,
+          "equipe": "Turma 11",
+          "equipeId": "turma_11",
+          "pontos": 20
+        },
+        {
+          "posicao": 16,
+          "equipe": "Turma 13",
+          "equipeId": "turma_13",
+          "pontos": 10
+        }
+      ],
+      "createdAt": "2025-11-03T23:03:19.701Z"
+    },
+    "atletismo_800m_fem": {
+      "createdAt": "2025-11-04T23:37:09.146Z",
+      "ranking": [
+        {
+          "posicao": 1,
+          "equipe": "Turma TI12",
+          "equipeId": "turma_ti12",
+          "pontos": 160
+        },
+        {
+          "posicao": 2,
+          "equipe": "Turma 31",
+          "equipeId": "turma_31",
+          "pontos": 150
+        },
+        {
+          "posicao": 3,
+          "equipe": "Turma TI22",
+          "equipeId": "turma_ti22",
+          "pontos": 140
+        },
+        {
+          "posicao": 4,
+          "equipe": "Turma 22",
+          "equipeId": "turma_22",
+          "pontos": 130
+        },
+        {
+          "posicao": 5,
+          "equipe": "Turma 24",
+          "equipeId": "turma_24",
+          "pontos": 120
+        },
+        {
+          "posicao": 6,
+          "equipe": "Turma 23",
+          "equipeId": "turma_23",
+          "pontos": 110
+        },
+        {
+          "posicao": 7,
+          "equipe": "Turma TI21",
+          "equipeId": "turma_ti21",
+          "pontos": 100
+        },
+        {
+          "posicao": 8,
+          "equipe": "Turma 32",
+          "equipeId": "turma_32",
+          "pontos": 90
+        },
+        {
+          "posicao": 9,
+          "equipe": "Turma 14",
+          "equipeId": "turma_14",
+          "pontos": 80
+        },
+        {
+          "posicao": 10,
+          "equipe": "Turma 21",
+          "equipeId": "turma_21",
+          "pontos": 70
+        },
+        {
+          "posicao": 11,
+          "equipe": "Turma 11",
+          "equipeId": "turma_11",
+          "pontos": 60
+        },
+        {
+          "posicao": 12,
+          "equipe": "Turma 34",
+          "equipeId": "turma_34",
+          "pontos": 50
+        },
+        {
+          "posicao": 13,
+          "equipe": "Turma 33",
+          "equipeId": "turma_33",
+          "pontos": 40
+        },
+        {
+          "posicao": 14,
+          "equipe": "Turma TI11",
+          "equipeId": "turma_ti11",
+          "pontos": 30
+        },
+        {
+          "posicao": 15,
+          "equipe": "Turma 13",
+          "equipeId": "turma_13",
+          "pontos": 20
+        },
+        {
+          "posicao": 16,
+          "equipe": "Turma 12",
+          "equipeId": "turma_12",
+          "pontos": 10
+        }
+      ],
+      "updatedAt": "2025-11-04T23:37:09.146Z",
+      "modalidadeId": "atletismo_800m_fem"
+    },
+    "atletismo_800m_masc": {
+      "createdAt": "2025-11-04T23:46:50.228Z",
+      "modalidadeId": "atletismo_800m_masc",
+      "updatedAt": "2025-11-04T23:46:50.228Z",
+      "ranking": [
+        {
+          "posicao": 1,
+          "equipe": "Turma 34",
+          "equipeId": "turma_34",
+          "pontos": 160
+        },
+        {
+          "posicao": 2,
+          "equipe": "Turma 23",
+          "equipeId": "turma_23",
+          "pontos": 150
+        },
+        {
+          "posicao": 3,
+          "equipe": "Turma 31",
+          "equipeId": "turma_31",
+          "pontos": 140
+        },
+        {
+          "posicao": 4,
+          "equipe": "Turma TI11",
+          "equipeId": "turma_ti11",
+          "pontos": 130
+        },
+        {
+          "posicao": 5,
+          "equipe": "Turma 33",
+          "equipeId": "turma_33",
+          "pontos": 120
+        },
+        {
+          "posicao": 6,
+          "equipe": "Turma 14",
+          "equipeId": "turma_14",
+          "pontos": 110
+        },
+        {
+          "posicao": 7,
+          "equipe": "Turma 21",
+          "equipeId": "turma_21",
+          "pontos": 100
+        },
+        {
+          "posicao": 8,
+          "equipe": "Turma 24",
+          "equipeId": "turma_24",
+          "pontos": 90
+        },
+        {
+          "posicao": 9,
+          "equipe": "Turma 11",
+          "equipeId": "turma_11",
+          "pontos": 80
+        },
+        {
+          "posicao": 10,
+          "equipe": "Turma 12",
+          "equipeId": "turma_12",
+          "pontos": 70
+        },
+        {
+          "posicao": 11,
+          "equipe": "Turma TI12",
+          "equipeId": "turma_ti12",
+          "pontos": 60
+        },
+        {
+          "posicao": 12,
+          "equipe": "Turma TI22",
+          "equipeId": "turma_ti22",
+          "pontos": 50
+        },
+        {
+          "posicao": 13,
+          "equipe": "Turma 32",
+          "equipeId": "turma_32",
+          "pontos": 40
+        },
+        {
+          "posicao": 14,
+          "equipe": "Turma 22",
+          "equipeId": "turma_22",
+          "pontos": 30
+        },
+        {
+          "posicao": 15,
+          "equipe": "Turma TI21",
+          "equipeId": "turma_ti21",
+          "pontos": 20
+        },
+        {
+          "posicao": 16,
+          "equipe": "Turma 13",
+          "equipeId": "turma_13",
+          "pontos": 10
+        }
+      ]
+    },
+    "basquetebol_fem": {
+      "createdAt": "2025-11-05T23:57:51.999Z",
+      "updatedAt": "2025-11-05T23:57:51.999Z",
+      "ranking": [
+        {
+          "posicao": 1,
+          "equipe": "Turma 31",
+          "equipeId": "turma_31",
+          "pontos": 160
+        },
+        {
+          "posicao": 2,
+          "equipe": "Turma 22",
+          "equipeId": "turma_22",
+          "pontos": 150
+        },
+        {
+          "posicao": 3,
+          "equipe": "Turma 21",
+          "equipeId": "turma_21",
+          "pontos": 140
+        },
+        {
+          "posicao": 4,
+          "equipe": "Turma 32/33",
+          "equipeId": "turma_3233",
+          "pontos": 0
+        },
+        {
+          "posicao": 5,
+          "equipe": "Turma TI21",
+          "equipeId": "turma_ti21",
+          "pontos": 120
+        },
+        {
+          "posicao": 6,
+          "equipe": "Turma 12/14",
+          "equipeId": "turma_1214",
+          "pontos": 0
+        },
+        {
+          "posicao": 7,
+          "equipe": "Turma TI11/12",
+          "equipeId": "turma_ti1112",
+          "pontos": 0
+        },
+        {
+          "posicao": 8,
+          "equipe": "Turma TI22",
+          "equipeId": "turma_ti22",
+          "pontos": 90
+        },
+        {
+          "posicao": 9,
+          "equipe": "Turma 34",
+          "equipeId": "turma_34",
+          "pontos": 80
+        },
+        {
+          "posicao": 10,
+          "equipe": "Turma 23/24",
+          "equipeId": "turma_2324",
+          "pontos": 0
+        },
+        {
+          "posicao": 11,
+          "equipe": "Turma 11",
+          "equipeId": "turma_11",
+          "pontos": 60
+        },
+        {
+          "posicao": 12,
+          "equipe": "Turma 13",
+          "equipeId": "turma_13",
+          "pontos": 50
+        },
+        {
+          "posicao": 13,
+          "equipe": "Turma 23",
+          "equipeId": "turma_23",
+          "pontos": 70
+        },
+        {
+          "posicao": 14,
+          "equipe": "Turma 32",
+          "equipeId": "turma_32",
+          "pontos": 130
+        },
+        {
+          "posicao": 15,
+          "equipe": "Turma 12",
+          "equipeId": "turma_12",
+          "pontos": 130
+        },
+        {
+          "posicao": 16,
+          "equipe": "Turma 24",
+          "equipeId": "turma_24",
+          "pontos": 70
+        },
+        {
+          "posicao": 17,
+          "equipe": "Turma TI12",
+          "equipeId": "turma_ti12",
+          "pontos": 100
+        },
+        {
+          "posicao": 18,
+          "equipe": "Turma 33",
+          "equipeId": "turma_33",
+          "pontos": 130
+        },
+        {
+          "posicao": 19,
+          "equipe": "Turma 14",
+          "equipeId": "turma_14",
+          "pontos": 110
+        },
+        {
+          "posicao": 20,
+          "equipe": "Turma TI11",
+          "equipeId": "turma_ti11",
+          "pontos": 100
+        }
+      ],
+      "modalidadeId": "basquetebol_fem"
+    },
+    "basquetebol_masc": {
+      "modalidadeId": "basquetebol_masc",
+      "updatedAt": "2025-11-05T23:59:03.018Z",
+      "createdAt": "2025-11-05T23:59:03.018Z",
+      "ranking": [
+        {
+          "posicao": 1,
+          "equipe": "Turma 31",
+          "equipeId": "turma_31",
+          "pontos": 160
+        },
+        {
+          "posicao": 2,
+          "equipe": "Turma TI22",
+          "equipeId": "turma_ti22",
+          "pontos": 150
+        },
+        {
+          "posicao": 3,
+          "equipe": "Turma 23",
+          "equipeId": "turma_23",
+          "pontos": 140
+        },
+        {
+          "posicao": 4,
+          "equipe": "Turma 12/13",
+          "equipeId": "turma_1213",
+          "pontos": 0
+        },
+        {
+          "posicao": 5,
+          "equipe": "Turma 22",
+          "equipeId": "turma_22",
+          "pontos": 120
+        },
+        {
+          "posicao": 6,
+          "equipe": "Turma 21",
+          "equipeId": "turma_21",
+          "pontos": 110
+        },
+        {
+          "posicao": 7,
+          "equipe": "Turma 24",
+          "equipeId": "turma_24",
+          "pontos": 100
+        },
+        {
+          "posicao": 8,
+          "equipe": "Turma 33",
+          "equipeId": "turma_33",
+          "pontos": 90
+        },
+        {
+          "posicao": 9,
+          "equipe": "Turma 14",
+          "equipeId": "turma_14",
+          "pontos": 80
+        },
+        {
+          "posicao": 10,
+          "equipe": "Turma TI12",
+          "equipeId": "turma_ti12",
+          "pontos": 70
+        },
+        {
+          "posicao": 11,
+          "equipe": "Turma TI21",
+          "equipeId": "turma_ti21",
+          "pontos": 60
+        },
+        {
+          "posicao": 12,
+          "equipe": "Turma 32",
+          "equipeId": "turma_32",
+          "pontos": 50
+        },
+        {
+          "posicao": 13,
+          "equipe": "Turma 34",
+          "equipeId": "turma_34",
+          "pontos": 40
+        },
+        {
+          "posicao": 14,
+          "equipe": "Turma TI11",
+          "equipeId": "turma_ti11",
+          "pontos": 30
+        },
+        {
+          "posicao": 15,
+          "equipe": "Turma 11",
+          "equipeId": "turma_11",
+          "pontos": 20
+        },
+        {
+          "posicao": 16,
+          "equipe": "Turma 12",
+          "equipeId": "turma_12",
+          "pontos": 100
+        },
+        {
+          "posicao": 17,
+          "equipe": "Turma 13",
+          "equipeId": "turma_13",
+          "pontos": 130
+        }
+      ]
+    },
+    "bisca": {
+      "ranking": [
+        {
+          "posicao": 1,
+          "equipe": "Turma 24",
+          "equipeId": "turma_24",
+          "pontos": 160
+        },
+        {
+          "posicao": 2,
+          "equipe": "Turma 34",
+          "equipeId": "turma_34",
+          "pontos": 150
+        },
+        {
+          "posicao": 3,
+          "equipe": "Turma 21",
+          "equipeId": "turma_21",
+          "pontos": 140
+        },
+        {
+          "posicao": 4,
+          "equipe": "Turma 11",
+          "equipeId": "turma_11",
+          "pontos": 130
+        },
+        {
+          "posicao": 5,
+          "equipe": "Turma 22",
+          "equipeId": "turma_22",
+          "pontos": 120
+        },
+        {
+          "posicao": 6,
+          "equipe": "Turma 13",
+          "equipeId": "turma_13",
+          "pontos": 110
+        },
+        {
+          "posicao": 7,
+          "equipe": "Turma 31",
+          "equipeId": "turma_31",
+          "pontos": 100
+        },
+        {
+          "posicao": 8,
+          "equipe": "Turma TI21",
+          "equipeId": "turma_ti21",
+          "pontos": 90
+        },
+        {
+          "posicao": 9,
+          "equipe": "Turma TI12",
+          "equipeId": "turma_ti12",
+          "pontos": 80
+        },
+        {
+          "posicao": 10,
+          "equipe": "Turma 33",
+          "equipeId": "turma_33",
+          "pontos": 70
+        },
+        {
+          "posicao": 11,
+          "equipe": "Turma 32",
+          "equipeId": "turma_32",
+          "pontos": 60
+        },
+        {
+          "posicao": 12,
+          "equipe": "Turma 23",
+          "equipeId": "turma_23",
+          "pontos": 50
+        },
+        {
+          "posicao": 13,
+          "equipe": "Turma TI22",
+          "equipeId": "turma_ti22",
+          "pontos": 40
+        },
+        {
+          "posicao": 14,
+          "equipe": "Turma 14",
+          "equipeId": "turma_14",
+          "pontos": 30
+        },
+        {
+          "posicao": 15,
+          "equipe": "Turma 12",
+          "equipeId": "turma_12",
+          "pontos": 20
+        },
+        {
+          "posicao": 16,
+          "equipe": "Turma TI11",
+          "equipeId": "turma_ti11",
+          "pontos": 10
+        }
+      ],
+      "updatedAt": "2025-11-05T16:26:03.177Z",
+      "createdAt": "2025-11-05T16:26:03.177Z",
+      "modalidadeId": "bisca"
+    },
+    "bocha_campeira": {
+      "updatedAt": "2025-11-07T14:41:19.779Z",
+      "ranking": [
+        {
+          "posicao": 1,
+          "equipe": "Turma 23",
+          "equipeId": "turma_23",
+          "pontos": 160
+        },
+        {
+          "posicao": 2,
+          "equipe": "Turma TI11",
+          "equipeId": "turma_ti11",
+          "pontos": 150
+        },
+        {
+          "posicao": 3,
+          "equipe": "Turma 32",
+          "equipeId": "turma_32",
+          "pontos": 130
+        },
+        {
+          "posicao": 4,
+          "equipe": "Turma 22",
+          "equipeId": "turma_22",
+          "pontos": 140
+        },
+        {
+          "posicao": 5,
+          "equipe": "Turma 31",
+          "equipeId": "turma_31",
+          "pontos": 90
+        },
+        {
+          "posicao": 6,
+          "equipe": "Turma 24",
+          "equipeId": "turma_24",
+          "pontos": 110
+        },
+        {
+          "posicao": 7,
+          "equipe": "Turma TI21",
+          "equipeId": "turma_ti21",
+          "pontos": 100
+        },
+        {
+          "posicao": 8,
+          "equipe": "Turma 33",
+          "equipeId": "turma_33",
+          "pontos": 120
+        },
+        {
+          "posicao": 9,
+          "equipe": "Turma 14",
+          "equipeId": "turma_14",
+          "pontos": 80
+        },
+        {
+          "posicao": 10,
+          "equipe": "Turma 34",
+          "equipeId": "turma_34",
+          "pontos": 70
+        },
+        {
+          "posicao": 11,
+          "equipe": "Turma TI22",
+          "equipeId": "turma_ti22",
+          "pontos": 50
+        },
+        {
+          "posicao": 12,
+          "equipe": "Turma TI12",
+          "equipeId": "turma_ti12",
+          "pontos": 30
+        },
+        {
+          "posicao": 13,
+          "equipe": "Turma 12",
+          "equipeId": "turma_12",
+          "pontos": 40
+        },
+        {
+          "posicao": 14,
+          "equipe": "Turma 21",
+          "equipeId": "turma_21",
+          "pontos": 40
+        },
+        {
+          "posicao": 15,
+          "equipe": "Turma 13",
+          "equipeId": "turma_13",
+          "pontos": 20
+        },
+        {
+          "posicao": 16,
+          "equipe": "Turma 11",
+          "equipeId": "turma_11",
+          "pontos": 0
+        }
+      ],
+      "createdAt": "2025-11-07T14:41:19.779Z",
+      "modalidadeId": "bocha_campeira"
+    },
+    "cabo_de_guerra": {
+      "updatedAt": "2025-11-07T12:58:21.029Z",
+      "createdAt": "2025-11-07T12:58:21.029Z",
+      "modalidadeId": "cabo_de_guerra",
+      "ranking": [
+        {
+          "posicao": 1,
+          "equipe": "Turma 32",
+          "equipeId": "turma_32",
+          "pontos": 160
+        },
+        {
+          "posicao": 2,
+          "equipe": "Turma 21",
+          "equipeId": "turma_21",
+          "pontos": 150
+        },
+        {
+          "posicao": 3,
+          "equipe": "Turma 23",
+          "equipeId": "turma_23",
+          "pontos": 140
+        },
+        {
+          "posicao": 4,
+          "equipe": "Turma 33",
+          "equipeId": "turma_33",
+          "pontos": 130
+        },
+        {
+          "posicao": 5,
+          "equipe": "Turma 34",
+          "equipeId": "turma_34",
+          "pontos": 120
+        },
+        {
+          "posicao": 6,
+          "equipe": "Turma 24",
+          "equipeId": "turma_24",
+          "pontos": 110
+        },
+        {
+          "posicao": 7,
+          "equipe": "Turma TI22",
+          "equipeId": "turma_ti22",
+          "pontos": 100
+        },
+        {
+          "posicao": 8,
+          "equipe": "Turma 22",
+          "equipeId": "turma_22",
+          "pontos": 90
+        },
+        {
+          "posicao": 9,
+          "equipe": "Turma 14",
+          "equipeId": "turma_14",
+          "pontos": 80
+        },
+        {
+          "posicao": 10,
+          "equipe": "Turma 12",
+          "equipeId": "turma_12",
+          "pontos": 70
+        },
+        {
+          "posicao": 11,
+          "equipe": "Turma 31",
+          "equipeId": "turma_31",
+          "pontos": 60
+        },
+        {
+          "posicao": 12,
+          "equipe": "Turma TI21",
+          "equipeId": "turma_ti21",
+          "pontos": 50
+        },
+        {
+          "posicao": 13,
+          "equipe": "Turma 11",
+          "equipeId": "turma_11",
+          "pontos": 40
+        },
+        {
+          "posicao": 14,
+          "equipe": "Turma 13",
+          "equipeId": "turma_13",
+          "pontos": 30
+        },
+        {
+          "posicao": 15,
+          "equipe": "Turma TI12",
+          "equipeId": "turma_ti12",
+          "pontos": 20
+        },
+        {
+          "posicao": 16,
+          "equipe": "Turma TI11",
+          "equipeId": "turma_ti11",
+          "pontos": 10
+        }
+      ]
+    },
+    "cs_go": {
+      "ranking": [
+        {
+          "posicao": 1,
+          "equipe": "Turma TI12",
+          "equipeId": "turma_ti12",
+          "pontos": 160
+        },
+        {
+          "posicao": 2,
+          "equipe": "Turma TI22",
+          "equipeId": "turma_ti22",
+          "pontos": 150
+        },
+        {
+          "posicao": 3,
+          "equipe": "Turma 11",
+          "equipeId": "turma_11",
+          "pontos": 140
+        },
+        {
+          "posicao": 4,
+          "equipe": "Turma 21",
+          "equipeId": "turma_21",
+          "pontos": 130
+        },
+        {
+          "posicao": 5,
+          "equipe": "Turma 34",
+          "equipeId": "turma_34",
+          "pontos": 120
+        },
+        {
+          "posicao": 6,
+          "equipe": "Turma 31",
+          "equipeId": "turma_31",
+          "pontos": 110
+        },
+        {
+          "posicao": 7,
+          "equipe": "Turma 14",
+          "equipeId": "turma_14",
+          "pontos": 100
+        },
+        {
+          "posicao": 8,
+          "equipe": "Turma 24",
+          "equipeId": "turma_24",
+          "pontos": 90
+        },
+        {
+          "posicao": 9,
+          "equipe": "Turma 23",
+          "equipeId": "turma_23",
+          "pontos": 80
+        },
+        {
+          "posicao": 10,
+          "equipe": "Turma 12",
+          "equipeId": "turma_12",
+          "pontos": 70
+        },
+        {
+          "posicao": 11,
+          "equipe": "Turma TI11",
+          "equipeId": "turma_ti11",
+          "pontos": 60
+        },
+        {
+          "posicao": 12,
+          "equipe": "Turma 13",
+          "equipeId": "turma_13",
+          "pontos": 50
+        },
+        {
+          "posicao": 13,
+          "equipe": "Turma 32",
+          "equipeId": "turma_32",
+          "pontos": 40
+        },
+        {
+          "posicao": 14,
+          "equipe": "Turma 33",
+          "equipeId": "turma_33",
+          "pontos": 30
+        },
+        {
+          "posicao": 15,
+          "equipe": "Turma 22",
+          "equipeId": "turma_22",
+          "pontos": 20
+        },
+        {
+          "posicao": 16,
+          "equipe": "Turma TI21",
+          "equipeId": "turma_ti21",
+          "pontos": 0
+        }
+      ],
+      "createdAt": "2025-11-07T12:16:19.018Z",
+      "updatedAt": "2025-11-07T12:16:19.018Z",
+      "modalidadeId": "cs_go"
+    },
+    "culinaria": {
+      "modalidadeId": "culinaria",
+      "updatedAt": "2025-11-06T17:08:34.620Z",
+      "createdAt": "2025-11-06T17:08:34.620Z",
+      "ranking": [
+        {
+          "posicao": 1,
+          "equipe": "Turma 34",
+          "equipeId": "turma_34",
+          "pontos": 160
+        },
+        {
+          "posicao": 2,
+          "equipe": "Turma 32",
+          "equipeId": "turma_32",
+          "pontos": 150
+        },
+        {
+          "posicao": 3,
+          "equipe": "Turma 21",
+          "equipeId": "turma_21",
+          "pontos": 140
+        },
+        {
+          "posicao": 4,
+          "equipe": "Turma 22",
+          "equipeId": "turma_22",
+          "pontos": 130
+        },
+        {
+          "posicao": 5,
+          "equipe": "Turma 13",
+          "equipeId": "turma_13",
+          "pontos": 120
+        },
+        {
+          "posicao": 6,
+          "equipe": "Turma 23",
+          "equipeId": "turma_23",
+          "pontos": 110
+        },
+        {
+          "posicao": 7,
+          "equipe": "Turma 11",
+          "equipeId": "turma_11",
+          "pontos": 100
+        },
+        {
+          "posicao": 8,
+          "equipe": "Turma TI22",
+          "equipeId": "turma_ti22",
+          "pontos": 100
+        },
+        {
+          "posicao": 9,
+          "equipe": "Turma 31",
+          "equipeId": "turma_31",
+          "pontos": 80
+        },
+        {
+          "posicao": 10,
+          "equipe": "Turma 14",
+          "equipeId": "turma_14",
+          "pontos": 70
+        },
+        {
+          "posicao": 11,
+          "equipe": "Turma 33",
+          "equipeId": "turma_33",
+          "pontos": 60
+        },
+        {
+          "posicao": 12,
+          "equipe": "Turma TI11",
+          "equipeId": "turma_ti11",
+          "pontos": 50
+        },
+        {
+          "posicao": 13,
+          "equipe": "Turma 12",
+          "equipeId": "turma_12",
+          "pontos": 40
+        },
+        {
+          "posicao": 14,
+          "equipe": "Turma TI12",
+          "equipeId": "turma_ti12",
+          "pontos": 30
+        },
+        {
+          "posicao": 15,
+          "equipe": "Turma TI21",
+          "equipeId": "turma_ti21",
+          "pontos": 20
+        },
+        {
+          "posicao": 16,
+          "equipe": "Turma 24",
+          "equipeId": "turma_24",
+          "pontos": 0
+        }
+      ]
+    },
+    "dardo_fem": {
+      "ranking": [
+        {
+          "posicao": 1,
+          "equipe": "Turma 32",
+          "equipeId": "turma_32",
+          "pontos": 160
+        },
+        {
+          "posicao": 2,
+          "equipe": "Turma 31",
+          "equipeId": "turma_31",
+          "pontos": 150
+        },
+        {
+          "posicao": 3,
+          "equipe": "Turma TI22",
+          "equipeId": "turma_ti22",
+          "pontos": 140
+        },
+        {
+          "posicao": 4,
+          "equipe": "Turma TI12",
+          "equipeId": "turma_ti12",
+          "pontos": 130
+        },
+        {
+          "posicao": 5,
+          "equipe": "Turma 21",
+          "equipeId": "turma_21",
+          "pontos": 120
+        },
+        {
+          "posicao": 6,
+          "equipe": "Turma 23",
+          "equipeId": "turma_23",
+          "pontos": 110
+        },
+        {
+          "posicao": 7,
+          "equipe": "Turma 34",
+          "equipeId": "turma_34",
+          "pontos": 100
+        },
+        {
+          "posicao": 8,
+          "equipe": "Turma 14",
+          "equipeId": "turma_14",
+          "pontos": 90
+        },
+        {
+          "posicao": 9,
+          "equipe": "Turma 11",
+          "equipeId": "turma_11",
+          "pontos": 80
+        },
+        {
+          "posicao": 10,
+          "equipe": "Turma TI21",
+          "equipeId": "turma_ti21",
+          "pontos": 70
+        },
+        {
+          "posicao": 11,
+          "equipe": "Turma 13",
+          "equipeId": "turma_13",
+          "pontos": 60
+        },
+        {
+          "posicao": 12,
+          "equipe": "Turma 33",
+          "equipeId": "turma_33",
+          "pontos": 50
+        },
+        {
+          "posicao": 13,
+          "equipe": "Turma TI11",
+          "equipeId": "turma_ti11",
+          "pontos": 40
+        },
+        {
+          "posicao": 14,
+          "equipe": "Turma 24",
+          "equipeId": "turma_24",
+          "pontos": 10
+        },
+        {
+          "posicao": 15,
+          "equipe": "Turma 22",
+          "equipeId": "turma_22",
+          "pontos": 10
+        },
+        {
+          "posicao": 16,
+          "equipe": "Turma 12",
+          "equipeId": "turma_12",
+          "pontos": 0
+        }
+      ],
+      "updatedAt": "2025-11-04T00:57:48.198Z",
+      "createdAt": "2025-11-04T00:57:48.198Z",
+      "modalidadeId": "dardo_fem"
+    },
+    "dardo_masc": {
+      "createdAt": "2025-11-04T01:05:48.757Z",
+      "updatedAt": "2025-11-04T01:05:48.757Z",
+      "modalidadeId": "dardo_masc",
+      "ranking": [
+        {
+          "posicao": 1,
+          "equipe": "Turma 31",
+          "equipeId": "turma_31",
+          "pontos": 160
+        },
+        {
+          "posicao": 2,
+          "equipe": "Turma TI21",
+          "equipeId": "turma_ti21",
+          "pontos": 150
+        },
+        {
+          "posicao": 3,
+          "equipe": "Turma TI22",
+          "equipeId": "turma_ti22",
+          "pontos": 140
+        },
+        {
+          "posicao": 4,
+          "equipe": "Turma 32",
+          "equipeId": "turma_32",
+          "pontos": 130
+        },
+        {
+          "posicao": 5,
+          "equipe": "Turma 33",
+          "equipeId": "turma_33",
+          "pontos": 120
+        },
+        {
+          "posicao": 6,
+          "equipe": "Turma 11",
+          "equipeId": "turma_11",
+          "pontos": 110
+        },
+        {
+          "posicao": 7,
+          "equipe": "Turma TI12",
+          "equipeId": "turma_ti12",
+          "pontos": 100
+        },
+        {
+          "posicao": 8,
+          "equipe": "Turma 24",
+          "equipeId": "turma_24",
+          "pontos": 90
+        },
+        {
+          "posicao": 9,
+          "equipe": "Turma 22",
+          "equipeId": "turma_22",
+          "pontos": 80
+        },
+        {
+          "posicao": 10,
+          "equipe": "Turma 21",
+          "equipeId": "turma_21",
+          "pontos": 70
+        },
+        {
+          "posicao": 11,
+          "equipe": "Turma 23",
+          "equipeId": "turma_23",
+          "pontos": 10
+        },
+        {
+          "posicao": 12,
+          "equipe": "Turma 14",
+          "equipeId": "turma_14",
+          "pontos": 10
+        },
+        {
+          "posicao": 13,
+          "equipe": "Turma 13",
+          "equipeId": "turma_13",
+          "pontos": 10
+        },
+        {
+          "posicao": 14,
+          "equipe": "Turma 12",
+          "equipeId": "turma_12",
+          "pontos": 10
+        },
+        {
+          "posicao": 15,
+          "equipe": "Turma TI11",
+          "equipeId": "turma_ti11",
+          "pontos": 10
+        },
+        {
+          "posicao": 16,
+          "equipe": "Turma 34",
+          "equipeId": "turma_34",
+          "pontos": 10
+        }
+      ]
+    },
+    "disciplina_organizacao": {
+      "ranking": [
+        {
+          "posicao": 1,
+          "equipe": "Turma TI21",
+          "equipeId": "turma_ti21",
+          "pontos": 160
+        },
+        {
+          "posicao": 2,
+          "equipe": "Turma TI11",
+          "equipeId": "turma_ti11",
+          "pontos": 160
+        },
+        {
+          "posicao": 3,
+          "equipe": "Turma TI12",
+          "equipeId": "turma_ti12",
+          "pontos": 160
+        },
+        {
+          "posicao": 4,
+          "equipe": "Turma TI22",
+          "equipeId": "turma_ti22",
+          "pontos": 450
+        },
+        {
+          "posicao": 5,
+          "equipe": "Turma 13",
+          "equipeId": "turma_13",
+          "pontos": 130
+        },
+        {
+          "posicao": 6,
+          "equipe": "Turma 34",
+          "equipeId": "turma_34",
+          "pontos": 110
+        },
+        {
+          "posicao": 7,
+          "equipe": "Turma 33",
+          "equipeId": "turma_33",
+          "pontos": 100
+        },
+        {
+          "posicao": 8,
+          "equipe": "Turma 32",
+          "equipeId": "turma_32",
+          "pontos": 90
+        },
+        {
+          "posicao": 9,
+          "equipe": "Turma 31",
+          "equipeId": "turma_31",
+          "pontos": 210
+        },
+        {
+          "posicao": 10,
+          "equipe": "Turma 11",
+          "equipeId": "turma_11",
+          "pontos": 70
+        },
+        {
+          "posicao": 11,
+          "equipe": "Turma 14",
+          "equipeId": "turma_14",
+          "pontos": 60
+        },
+        {
+          "posicao": 12,
+          "equipe": "Turma 12",
+          "equipeId": "turma_12",
+          "pontos": 50
+        },
+        {
+          "posicao": 13,
+          "equipe": "Turma 21",
+          "equipeId": "turma_21",
+          "pontos": 320
+        },
+        {
+          "posicao": 14,
+          "equipe": "Turma 22",
+          "equipeId": "turma_22",
+          "pontos": 50
+        },
+        {
+          "posicao": 15,
+          "equipe": "Turma 24",
+          "equipeId": "turma_24",
+          "pontos": 20
+        },
+        {
+          "posicao": 16,
+          "equipe": "Turma 23",
+          "equipeId": "turma_23",
+          "pontos": 10
+        }
+      ],
+      "createdAt": "2025-11-07T14:56:18.019Z",
+      "modalidadeId": "disciplina_organizacao",
+      "updatedAt": "2025-11-07T14:56:18.019Z"
+    },
+    "fifa": {
+      "modalidadeId": "fifa",
+      "ranking": [
+        {
+          "posicao": 1,
+          "equipe": "Turma TI12",
+          "equipeId": "turma_ti12",
+          "pontos": 160
+        },
+        {
+          "posicao": 2,
+          "equipe": "Turma 11",
+          "equipeId": "turma_11",
+          "pontos": 150
+        },
+        {
+          "posicao": 3,
+          "equipe": "Turma 21",
+          "equipeId": "turma_21",
+          "pontos": 140
+        },
+        {
+          "posicao": 4,
+          "equipe": "Turma 32",
+          "equipeId": "turma_32",
+          "pontos": 130
+        },
+        {
+          "posicao": 5,
+          "equipe": "Turma TI22",
+          "equipeId": "turma_ti22",
+          "pontos": 120
+        },
+        {
+          "posicao": 6,
+          "equipe": "Turma 33",
+          "equipeId": "turma_33",
+          "pontos": 110
+        },
+        {
+          "posicao": 7,
+          "equipe": "Turma 22",
+          "equipeId": "turma_22",
+          "pontos": 100
+        },
+        {
+          "posicao": 8,
+          "equipe": "Turma 24",
+          "equipeId": "turma_24",
+          "pontos": 90
+        },
+        {
+          "posicao": 9,
+          "equipe": "Turma 23",
+          "equipeId": "turma_23",
+          "pontos": 80
+        },
+        {
+          "posicao": 10,
+          "equipe": "Turma 14",
+          "equipeId": "turma_14",
+          "pontos": 70
+        },
+        {
+          "posicao": 11,
+          "equipe": "Turma 34",
+          "equipeId": "turma_34",
+          "pontos": 60
+        },
+        {
+          "posicao": 12,
+          "equipe": "Turma 13",
+          "equipeId": "turma_13",
+          "pontos": 50
+        },
+        {
+          "posicao": 13,
+          "equipe": "Turma TI11",
+          "equipeId": "turma_ti11",
+          "pontos": 40
+        },
+        {
+          "posicao": 14,
+          "equipe": "Turma TI21",
+          "equipeId": "turma_ti21",
+          "pontos": 30
+        },
+        {
+          "posicao": 15,
+          "equipe": "Turma 12",
+          "equipeId": "turma_12",
+          "pontos": 20
+        },
+        {
+          "posicao": 16,
+          "equipe": "Turma 31",
+          "equipeId": "turma_31",
+          "pontos": 10
+        }
+      ],
+      "createdAt": "2025-11-06T23:37:57.343Z",
+      "updatedAt": "2025-11-06T23:37:57.343Z"
+    },
+    "futsal_fem": {
+      "modalidadeId": "futsal_fem",
+      "createdAt": "2025-11-05T23:58:03.013Z",
+      "ranking": [
+        {
+          "posicao": 1,
+          "equipe": "Turma 22",
+          "equipeId": "turma_22",
+          "pontos": 160
+        },
+        {
+          "posicao": 2,
+          "equipe": "Turma 23/24",
+          "equipeId": "turma_2324",
+          "pontos": 0
+        },
+        {
+          "posicao": 3,
+          "equipe": "Turma 34",
+          "equipeId": "turma_34",
+          "pontos": 140
+        },
+        {
+          "posicao": 4,
+          "equipe": "Turma 21",
+          "equipeId": "turma_21",
+          "pontos": 130
+        },
+        {
+          "posicao": 5,
+          "equipe": "Turma TI22",
+          "equipeId": "turma_ti22",
+          "pontos": 120
+        },
+        {
+          "posicao": 6,
+          "equipe": "Turma 32/33",
+          "equipeId": "turma_3233",
+          "pontos": 0
+        },
+        {
+          "posicao": 7,
+          "equipe": "Turma 31",
+          "equipeId": "turma_31",
+          "pontos": 100
+        },
+        {
+          "posicao": 8,
+          "equipe": "Turma 12/14",
+          "equipeId": "turma_1214",
+          "pontos": 0
+        },
+        {
+          "posicao": 9,
+          "equipe": "Turma 13",
+          "equipeId": "turma_13",
+          "pontos": 80
+        },
+        {
+          "posicao": 10,
+          "equipe": "Turma 11",
+          "equipeId": "turma_11",
+          "pontos": 70
+        },
+        {
+          "posicao": 11,
+          "equipe": "Turma TI21",
+          "equipeId": "turma_ti21",
+          "pontos": 60
+        },
+        {
+          "posicao": 12,
+          "equipe": "Turma TI11/12",
+          "equipeId": "turma_ti1112",
+          "pontos": 0
+        },
+        {
+          "posicao": 13,
+          "equipe": "Turma 23",
+          "equipeId": "turma_23",
+          "pontos": 150
+        },
+        {
+          "posicao": 14,
+          "equipe": "Turma 32",
+          "equipeId": "turma_32",
+          "pontos": 110
+        },
+        {
+          "posicao": 15,
+          "equipe": "Turma 24",
+          "equipeId": "turma_24",
+          "pontos": 150
+        },
+        {
+          "posicao": 16,
+          "equipe": "Turma TI12",
+          "equipeId": "turma_ti12",
+          "pontos": 50
+        },
+        {
+          "posicao": 17,
+          "equipe": "Turma 33",
+          "equipeId": "turma_33",
+          "pontos": 110
+        },
+        {
+          "posicao": 18,
+          "equipe": "Turma 14",
+          "equipeId": "turma_14",
+          "pontos": 90
+        },
+        {
+          "posicao": 19,
+          "equipe": "Turma 12",
+          "equipeId": "turma_12",
+          "pontos": 80
+        },
+        {
+          "posicao": 20,
+          "equipe": "Turma TI11",
+          "equipeId": "turma_ti11",
+          "pontos": 20
+        }
+      ],
+      "updatedAt": "2025-11-05T23:58:03.013Z"
+    },
+    "futsal_masc": {
+      "createdAt": "2025-11-05T23:59:09.781Z",
+      "modalidadeId": "futsal_masc",
+      "updatedAt": "2025-11-05T23:59:09.781Z",
+      "ranking": [
+        {
+          "posicao": 1,
+          "equipe": "Turma 23",
+          "equipeId": "turma_23",
+          "pontos": 160
+        },
+        {
+          "posicao": 2,
+          "equipe": "Turma 11",
+          "equipeId": "turma_11",
+          "pontos": 150
+        },
+        {
+          "posicao": 3,
+          "equipe": "Turma 33",
+          "equipeId": "turma_33",
+          "pontos": 140
+        },
+        {
+          "posicao": 4,
+          "equipe": "Turma 24",
+          "equipeId": "turma_24",
+          "pontos": 130
+        },
+        {
+          "posicao": 5,
+          "equipe": "Turma TI22",
+          "equipeId": "turma_ti22",
+          "pontos": 120
+        },
+        {
+          "posicao": 6,
+          "equipe": "Turma 31",
+          "equipeId": "turma_31",
+          "pontos": 110
+        },
+        {
+          "posicao": 7,
+          "equipe": "Turma 14",
+          "equipeId": "turma_14",
+          "pontos": 100
+        },
+        {
+          "posicao": 8,
+          "equipe": "Turma 34",
+          "equipeId": "turma_34",
+          "pontos": 90
+        },
+        {
+          "posicao": 9,
+          "equipe": "Turma 12/13",
+          "equipeId": "turma_1213",
+          "pontos": 0
+        },
+        {
+          "posicao": 10,
+          "equipe": "Turma 32",
+          "equipeId": "turma_32",
+          "pontos": 70
+        },
+        {
+          "posicao": 11,
+          "equipe": "Turma 22",
+          "equipeId": "turma_22",
+          "pontos": 60
+        },
+        {
+          "posicao": 12,
+          "equipe": "Turma TI21",
+          "equipeId": "turma_ti21",
+          "pontos": 50
+        },
+        {
+          "posicao": 13,
+          "equipe": "Turma 21",
+          "equipeId": "turma_21",
+          "pontos": 40
+        },
+        {
+          "posicao": 14,
+          "equipe": "Turma TI12",
+          "equipeId": "turma_ti12",
+          "pontos": 30
+        },
+        {
+          "posicao": 15,
+          "equipe": "Turma TI11",
+          "equipeId": "turma_ti11",
+          "pontos": 50
+        },
+        {
+          "posicao": 16,
+          "equipe": "Turma 12",
+          "equipeId": "turma_12",
+          "pontos": 90
+        },
+        {
+          "posicao": 17,
+          "equipe": "Turma 13",
+          "equipeId": "turma_13",
+          "pontos": 80
+        }
+      ]
+    },
+    "geral": {
+      "tipo": "geral",
+      "updatedAt": "2025-10-28T22:49:45.129Z",
+      "createdAt": "2025-10-28T22:49:45.129Z",
+      "classificacao": [],
+      "calculadoEm": "2025-10-28T22:49:44.344Z",
+      "totalTurmas": 16,
+      "ultimaAtualizacao": "2025-10-28T22:49:44.344Z"
+    },
+    "gincana_recreativa": {
+      "modalidadeId": "gincana_recreativa",
+      "createdAt": "2025-11-05T18:43:11.362Z",
+      "updatedAt": "2025-11-05T18:43:11.362Z",
+      "ranking": [
+        {
+          "posicao": 1,
+          "equipe": "Turma TI21",
+          "equipeId": "turma_ti21",
+          "pontos": 160
+        },
+        {
+          "posicao": 2,
+          "equipe": "Turma 21",
+          "equipeId": "turma_21",
+          "pontos": 150
+        },
+        {
+          "posicao": 3,
+          "equipe": "Turma 34",
+          "equipeId": "turma_34",
+          "pontos": 140
+        },
+        {
+          "posicao": 4,
+          "equipe": "Turma 22",
+          "equipeId": "turma_22",
+          "pontos": 130
+        },
+        {
+          "posicao": 5,
+          "equipe": "Turma 32",
+          "equipeId": "turma_32",
+          "pontos": 120
+        },
+        {
+          "posicao": 6,
+          "equipe": "Turma 31",
+          "equipeId": "turma_31",
+          "pontos": 110
+        },
+        {
+          "posicao": 7,
+          "equipe": "Turma 23",
+          "equipeId": "turma_23",
+          "pontos": 100
+        },
+        {
+          "posicao": 8,
+          "equipe": "Turma 33",
+          "equipeId": "turma_33",
+          "pontos": 90
+        },
+        {
+          "posicao": 9,
+          "equipe": "Turma 24",
+          "equipeId": "turma_24",
+          "pontos": 80
+        },
+        {
+          "posicao": 10,
+          "equipe": "Turma 14",
+          "equipeId": "turma_14",
+          "pontos": 70
+        },
+        {
+          "posicao": 11,
+          "equipe": "Turma 11",
+          "equipeId": "turma_11",
+          "pontos": 60
+        },
+        {
+          "posicao": 12,
+          "equipe": "Turma 12",
+          "equipeId": "turma_12",
+          "pontos": 50
+        },
+        {
+          "posicao": 13,
+          "equipe": "Turma 13",
+          "equipeId": "turma_13",
+          "pontos": 40
+        },
+        {
+          "posicao": 14,
+          "equipe": "Turma TI22",
+          "equipeId": "turma_ti22",
+          "pontos": 30
+        },
+        {
+          "posicao": 15,
+          "equipe": "Turma TI11",
+          "equipeId": "turma_ti11",
+          "pontos": 20
+        },
+        {
+          "posicao": 16,
+          "equipe": "Turma TI12",
+          "equipeId": "turma_ti12",
+          "pontos": 10
+        }
+      ]
+    },
+    "gincana_tecnico_cultural": {
+      "modalidadeId": "gincana_tecnico_cultural",
+      "updatedAt": "2025-11-07T14:43:01.985Z",
+      "ranking": [
+        {
+          "posicao": 1,
+          "equipe": "Turma 24",
+          "equipeId": "turma_24",
+          "pontos": 160
+        },
+        {
+          "posicao": 2,
+          "equipe": "Turma TI22",
+          "equipeId": "turma_ti22",
+          "pontos": 150
+        },
+        {
+          "posicao": 3,
+          "equipe": "Turma TI21",
+          "equipeId": "turma_ti21",
+          "pontos": 140
+        },
+        {
+          "posicao": 4,
+          "equipe": "Turma 23",
+          "equipeId": "turma_23",
+          "pontos": 130
+        },
+        {
+          "posicao": 5,
+          "equipe": "Turma TI12",
+          "equipeId": "turma_ti12",
+          "pontos": 120
+        },
+        {
+          "posicao": 6,
+          "equipe": "Turma 21",
+          "equipeId": "turma_21",
+          "pontos": 110
+        },
+        {
+          "posicao": 7,
+          "equipe": "Turma 34",
+          "equipeId": "turma_34",
+          "pontos": 100
+        },
+        {
+          "posicao": 8,
+          "equipe": "Turma 31",
+          "equipeId": "turma_31",
+          "pontos": 90
+        },
+        {
+          "posicao": 9,
+          "equipe": "Turma 14",
+          "equipeId": "turma_14",
+          "pontos": 80
+        },
+        {
+          "posicao": 10,
+          "equipe": "Turma TI11",
+          "equipeId": "turma_ti11",
+          "pontos": 70
+        },
+        {
+          "posicao": 11,
+          "equipe": "Turma 22",
+          "equipeId": "turma_22",
+          "pontos": 60
+        },
+        {
+          "posicao": 12,
+          "equipe": "Turma 32",
+          "equipeId": "turma_32",
+          "pontos": 50
+        },
+        {
+          "posicao": 13,
+          "equipe": "Turma 13",
+          "equipeId": "turma_13",
+          "pontos": 0
+        },
+        {
+          "posicao": 14,
+          "equipe": "Turma 33",
+          "equipeId": "turma_33",
+          "pontos": 30
+        },
+        {
+          "posicao": 15,
+          "equipe": "Turma 11",
+          "equipeId": "turma_11",
+          "pontos": 20
+        },
+        {
+          "posicao": 16,
+          "equipe": "Turma 12",
+          "equipeId": "turma_12",
+          "pontos": 0
+        }
+      ],
+      "createdAt": "2025-11-07T14:43:01.985Z"
+    },
+    "handebol_fem": {
+      "createdAt": "2025-11-06T17:08:49.376Z",
+      "updatedAt": "2025-11-06T17:08:49.376Z",
+      "ranking": [
+        {
+          "posicao": 1,
+          "equipe": "Turma 22",
+          "equipeId": "turma_22",
+          "pontos": 160
+        },
+        {
+          "posicao": 2,
+          "equipe": "Turma 31",
+          "equipeId": "turma_31",
+          "pontos": 150
+        },
+        {
+          "posicao": 3,
+          "equipe": "Turma 34",
+          "equipeId": "turma_34",
+          "pontos": 140
+        },
+        {
+          "posicao": 4,
+          "equipe": "Turma 12",
+          "equipeId": "turma_12",
+          "pontos": 130
+        },
+        {
+          "posicao": 5,
+          "equipe": "Turma 14",
+          "equipeId": "turma_14",
+          "pontos": 130
+        },
+        {
+          "posicao": 6,
+          "equipe": "Turma 13",
+          "equipeId": "turma_13",
+          "pontos": 120
+        },
+        {
+          "posicao": 7,
+          "equipe": "Turma 21",
+          "equipeId": "turma_21",
+          "pontos": 110
+        },
+        {
+          "posicao": 8,
+          "equipe": "Turma 23",
+          "equipeId": "turma_23",
+          "pontos": 100
+        },
+        {
+          "posicao": 9,
+          "equipe": "Turma 24",
+          "equipeId": "turma_24",
+          "pontos": 100
+        },
+        {
+          "posicao": 10,
+          "equipe": "Turma 32",
+          "equipeId": "turma_32",
+          "pontos": 90
+        },
+        {
+          "posicao": 11,
+          "equipe": "Turma 33",
+          "equipeId": "turma_33",
+          "pontos": 90
+        },
+        {
+          "posicao": 12,
+          "equipe": "Turma TI21",
+          "equipeId": "turma_ti21",
+          "pontos": 80
+        },
+        {
+          "posicao": 13,
+          "equipe": "Turma TI11",
+          "equipeId": "turma_ti11",
+          "pontos": 70
+        },
+        {
+          "posicao": 14,
+          "equipe": "Turma TI12",
+          "equipeId": "turma_ti12",
+          "pontos": 70
+        },
+        {
+          "posicao": 15,
+          "equipe": "Turma 11",
+          "equipeId": "turma_11",
+          "pontos": 60
+        },
+        {
+          "posicao": 16,
+          "equipe": "Turma TI22",
+          "equipeId": "turma_ti22",
+          "pontos": 50
+        }
+      ],
+      "modalidadeId": "handebol_fem"
+    },
+    "handebol_masc": {
+      "ranking": [
+        {
+          "posicao": 1,
+          "equipe": "Turma 24",
+          "equipeId": "turma_24",
+          "pontos": 160
+        },
+        {
+          "posicao": 2,
+          "equipe": "Turma TI22",
+          "equipeId": "turma_ti22",
+          "pontos": 150
+        },
+        {
+          "posicao": 3,
+          "equipe": "Turma 23",
+          "equipeId": "turma_23",
+          "pontos": 140
+        },
+        {
+          "posicao": 4,
+          "equipe": "Turma 34",
+          "equipeId": "turma_34",
+          "pontos": 130
+        },
+        {
+          "posicao": 5,
+          "equipe": "Turma 31",
+          "equipeId": "turma_31",
+          "pontos": 120
+        },
+        {
+          "posicao": 6,
+          "equipe": "Turma 21",
+          "equipeId": "turma_21",
+          "pontos": 110
+        },
+        {
+          "posicao": 7,
+          "equipe": "Turma 32",
+          "equipeId": "turma_32",
+          "pontos": 100
+        },
+        {
+          "posicao": 8,
+          "equipe": "Turma TI21",
+          "equipeId": "turma_ti21",
+          "pontos": 90
+        },
+        {
+          "posicao": 9,
+          "equipe": "Turma TI12",
+          "equipeId": "turma_ti12",
+          "pontos": 80
+        },
+        {
+          "posicao": 10,
+          "equipe": "Turma 14",
+          "equipeId": "turma_14",
+          "pontos": 70
+        },
+        {
+          "posicao": 11,
+          "equipe": "Turma TI11",
+          "equipeId": "turma_ti11",
+          "pontos": 60
+        },
+        {
+          "posicao": 12,
+          "equipe": "Turma 11",
+          "equipeId": "turma_11",
+          "pontos": 50
+        },
+        {
+          "posicao": 13,
+          "equipe": "Turma 12",
+          "equipeId": "turma_12",
+          "pontos": 40
+        },
+        {
+          "posicao": 14,
+          "equipe": "Turma 13",
+          "equipeId": "turma_13",
+          "pontos": 40
+        },
+        {
+          "posicao": 15,
+          "equipe": "Turma 33",
+          "equipeId": "turma_33",
+          "pontos": 30
+        },
+        {
+          "posicao": 16,
+          "equipe": "Turma 22",
+          "equipeId": "turma_22",
+          "pontos": 20
+        }
+      ],
+      "createdAt": "2025-11-06T17:13:13.612Z",
+      "modalidadeId": "handebol_masc",
+      "updatedAt": "2025-11-06T17:13:13.612Z"
+    },
+    "inscricao_kit": {
+      "ranking": [
+        {
+          "posicao": 1,
+          "equipe": "Turma 11",
+          "equipeId": "turma_11",
+          "pontos": 160
+        },
+        {
+          "posicao": 2,
+          "equipe": "Turma 12",
+          "equipeId": "turma_12",
+          "pontos": 160
+        },
+        {
+          "posicao": 3,
+          "equipe": "Turma 13",
+          "equipeId": "turma_13",
+          "pontos": 160
+        },
+        {
+          "posicao": 4,
+          "equipe": "Turma 14",
+          "equipeId": "turma_14",
+          "pontos": 160
+        },
+        {
+          "posicao": 5,
+          "equipe": "Turma 21",
+          "equipeId": "turma_21",
+          "pontos": 160
+        },
+        {
+          "posicao": 6,
+          "equipe": "Turma 22",
+          "equipeId": "turma_22",
+          "pontos": 160
+        },
+        {
+          "posicao": 7,
+          "equipe": "Turma 23",
+          "equipeId": "turma_23",
+          "pontos": 160
+        },
+        {
+          "posicao": 8,
+          "equipe": "Turma 24",
+          "equipeId": "turma_24",
+          "pontos": 160
+        },
+        {
+          "posicao": 9,
+          "equipe": "Turma 31",
+          "equipeId": "turma_31",
+          "pontos": 160
+        },
+        {
+          "posicao": 10,
+          "equipe": "Turma 32",
+          "equipeId": "turma_32",
+          "pontos": 160
+        },
+        {
+          "posicao": 11,
+          "equipe": "Turma 33",
+          "equipeId": "turma_33",
+          "pontos": 160
+        },
+        {
+          "posicao": 12,
+          "equipe": "Turma 34",
+          "equipeId": "turma_34",
+          "pontos": 160
+        },
+        {
+          "posicao": 13,
+          "equipe": "Turma TI11",
+          "equipeId": "turma_ti11",
+          "pontos": 160
+        },
+        {
+          "posicao": 14,
+          "equipe": "Turma TI12",
+          "equipeId": "turma_ti12",
+          "pontos": 160
+        },
+        {
+          "posicao": 15,
+          "equipe": "Turma TI21",
+          "equipeId": "turma_ti21",
+          "pontos": 160
+        },
+        {
+          "posicao": 16,
+          "equipe": "Turma TI22",
+          "equipeId": "turma_ti22",
+          "pontos": 160
+        }
+      ],
+      "createdAt": "2025-11-02T13:43:46.784Z",
+      "modalidadeId": "inscricao_kit",
+      "updatedAt": "2025-11-02T13:43:46.784Z"
+    },
+    "mortal_kombat": {
+      "createdAt": "2025-11-05T16:39:59.476Z",
+      "updatedAt": "2025-11-05T16:39:59.476Z",
+      "modalidadeId": "mortal_kombat",
+      "ranking": [
+        {
+          "posicao": 1,
+          "equipe": "Turma TI22",
+          "equipeId": "turma_ti22",
+          "pontos": 160
+        },
+        {
+          "posicao": 2,
+          "equipe": "Turma 31",
+          "equipeId": "turma_31",
+          "pontos": 150
+        },
+        {
+          "posicao": 3,
+          "equipe": "Turma 22",
+          "equipeId": "turma_22",
+          "pontos": 140
+        },
+        {
+          "posicao": 4,
+          "equipe": "Turma 11",
+          "equipeId": "turma_11",
+          "pontos": 130
+        },
+        {
+          "posicao": 5,
+          "equipe": "Turma TI12",
+          "equipeId": "turma_ti12",
+          "pontos": 120
+        },
+        {
+          "posicao": 6,
+          "equipe": "Turma 32",
+          "equipeId": "turma_32",
+          "pontos": 110
+        },
+        {
+          "posicao": 7,
+          "equipe": "Turma TI21",
+          "equipeId": "turma_ti21",
+          "pontos": 100
+        },
+        {
+          "posicao": 8,
+          "equipe": "Turma 14",
+          "equipeId": "turma_14",
+          "pontos": 90
+        },
+        {
+          "posicao": 9,
+          "equipe": "Turma TI11",
+          "equipeId": "turma_ti11",
+          "pontos": 80
+        },
+        {
+          "posicao": 10,
+          "equipe": "Turma 34",
+          "equipeId": "turma_34",
+          "pontos": 70
+        },
+        {
+          "posicao": 11,
+          "equipe": "Turma 23",
+          "equipeId": "turma_23",
+          "pontos": 60
+        },
+        {
+          "posicao": 12,
+          "equipe": "Turma 21",
+          "equipeId": "turma_21",
+          "pontos": 50
+        },
+        {
+          "posicao": 13,
+          "equipe": "Turma 33",
+          "equipeId": "turma_33",
+          "pontos": 40
+        },
+        {
+          "posicao": 14,
+          "equipe": "Turma 12",
+          "equipeId": "turma_12",
+          "pontos": 30
+        },
+        {
+          "posicao": 15,
+          "equipe": "Turma 13",
+          "equipeId": "turma_13",
+          "pontos": 0
+        },
+        {
+          "posicao": 16,
+          "equipe": "Turma 24",
+          "equipeId": "turma_24",
+          "pontos": 0
+        }
+      ]
+    },
+    "presencas": {
+      "updatedAt": "2025-11-07T14:23:34.097Z",
+      "modalidadeId": "presencas",
+      "createdAt": "2025-11-07T14:23:34.097Z",
+      "ranking": [
+        {
+          "posicao": 1,
+          "equipe": "Turma 31",
+          "equipeId": "turma_31",
+          "pontos": 320
+        },
+        {
+          "posicao": 2,
+          "equipe": "Turma 21",
+          "equipeId": "turma_21",
+          "pontos": 300
+        },
+        {
+          "posicao": 3,
+          "equipe": "Turma 32",
+          "equipeId": "turma_32",
+          "pontos": 280
+        },
+        {
+          "posicao": 4,
+          "equipe": "Turma 23",
+          "equipeId": "turma_23",
+          "pontos": 260
+        },
+        {
+          "posicao": 5,
+          "equipe": "Turma TI12",
+          "equipeId": "turma_ti12",
+          "pontos": 240
+        },
+        {
+          "posicao": 6,
+          "equipe": "Turma TI22",
+          "equipeId": "turma_ti22",
+          "pontos": 220
+        },
+        {
+          "posicao": 7,
+          "equipe": "Turma 24",
+          "equipeId": "turma_24",
+          "pontos": 200
+        },
+        {
+          "posicao": 8,
+          "equipe": "Turma 22",
+          "equipeId": "turma_22",
+          "pontos": 180
+        },
+        {
+          "posicao": 9,
+          "equipe": "Turma 14",
+          "equipeId": "turma_14",
+          "pontos": 160
+        },
+        {
+          "posicao": 10,
+          "equipe": "Turma 12",
+          "equipeId": "turma_12",
+          "pontos": 140
+        },
+        {
+          "posicao": 11,
+          "equipe": "Turma 13",
+          "equipeId": "turma_13",
+          "pontos": 120
+        },
+        {
+          "posicao": 12,
+          "equipe": "Turma TI21",
+          "equipeId": "turma_ti21",
+          "pontos": 120
+        },
+        {
+          "posicao": 13,
+          "equipe": "Turma 33",
+          "equipeId": "turma_33",
+          "pontos": 80
+        },
+        {
+          "posicao": 14,
+          "equipe": "Turma 34",
+          "equipeId": "turma_34",
+          "pontos": 60
+        },
+        {
+          "posicao": 15,
+          "equipe": "Turma 11",
+          "equipeId": "turma_11",
+          "pontos": 40
+        },
+        {
+          "posicao": 16,
+          "equipe": "Turma TI11",
+          "equipeId": "turma_ti11",
+          "pontos": 20
+        }
+      ]
+    },
+    "salto_distancia_fem": {
+      "ranking": [
+        {
+          "posicao": 1,
+          "equipe": "Turma 14",
+          "equipeId": "turma_14",
+          "pontos": 160
+        },
+        {
+          "posicao": 2,
+          "equipe": "Turma TI22",
+          "equipeId": "turma_ti22",
+          "pontos": 150
+        },
+        {
+          "posicao": 3,
+          "equipe": "Turma 31",
+          "equipeId": "turma_31",
+          "pontos": 140
+        },
+        {
+          "posicao": 4,
+          "equipe": "Turma 24",
+          "equipeId": "turma_24",
+          "pontos": 130
+        },
+        {
+          "posicao": 5,
+          "equipe": "Turma TI11",
+          "equipeId": "turma_ti11",
+          "pontos": 120
+        },
+        {
+          "posicao": 6,
+          "equipe": "Turma 34",
+          "equipeId": "turma_34",
+          "pontos": 110
+        },
+        {
+          "posicao": 7,
+          "equipe": "Turma 21",
+          "equipeId": "turma_21",
+          "pontos": 100
+        },
+        {
+          "posicao": 8,
+          "equipe": "Turma TI21",
+          "equipeId": "turma_ti21",
+          "pontos": 90
+        },
+        {
+          "posicao": 9,
+          "equipe": "Turma 23",
+          "equipeId": "turma_23",
+          "pontos": 80
+        },
+        {
+          "posicao": 10,
+          "equipe": "Turma 32",
+          "equipeId": "turma_32",
+          "pontos": 70
+        },
+        {
+          "posicao": 11,
+          "equipe": "Turma 11",
+          "equipeId": "turma_11",
+          "pontos": 60
+        },
+        {
+          "posicao": 12,
+          "equipe": "Turma TI12",
+          "equipeId": "turma_ti12",
+          "pontos": 50
+        },
+        {
+          "posicao": 13,
+          "equipe": "Turma 22",
+          "equipeId": "turma_22",
+          "pontos": 40
+        },
+        {
+          "posicao": 14,
+          "equipe": "Turma 13",
+          "equipeId": "turma_13",
+          "pontos": 30
+        },
+        {
+          "posicao": 15,
+          "equipe": "Turma 33",
+          "equipeId": "turma_33",
+          "pontos": 20
+        },
+        {
+          "posicao": 16,
+          "equipe": "Turma 12",
+          "equipeId": "turma_12",
+          "pontos": 10
+        }
+      ],
+      "modalidadeId": "salto_distancia_fem",
+      "updatedAt": "2025-11-03T23:25:12.529Z",
+      "createdAt": "2025-11-03T23:25:12.529Z"
+    },
+    "salto_distancia_masc": {
+      "modalidadeId": "salto_distancia_masc",
+      "createdAt": "2025-11-04T00:40:16.066Z",
+      "ranking": [
+        {
+          "posicao": 1,
+          "equipe": "Turma 31",
+          "equipeId": "turma_31",
+          "pontos": 160
+        },
+        {
+          "posicao": 2,
+          "equipe": "Turma 32",
+          "equipeId": "turma_32",
+          "pontos": 150
+        },
+        {
+          "posicao": 3,
+          "equipe": "Turma 23",
+          "equipeId": "turma_23",
+          "pontos": 140
+        },
+        {
+          "posicao": 4,
+          "equipe": "Turma 21",
+          "equipeId": "turma_21",
+          "pontos": 130
+        },
+        {
+          "posicao": 5,
+          "equipe": "Turma 24",
+          "equipeId": "turma_24",
+          "pontos": 120
+        },
+        {
+          "posicao": 6,
+          "equipe": "Turma TI12",
+          "equipeId": "turma_ti12",
+          "pontos": 110
+        },
+        {
+          "posicao": 7,
+          "equipe": "Turma TI22",
+          "equipeId": "turma_ti22",
+          "pontos": 100
+        },
+        {
+          "posicao": 8,
+          "equipe": "Turma 33",
+          "equipeId": "turma_33",
+          "pontos": 90
+        },
+        {
+          "posicao": 9,
+          "equipe": "Turma 14",
+          "equipeId": "turma_14",
+          "pontos": 80
+        },
+        {
+          "posicao": 10,
+          "equipe": "Turma 34",
+          "equipeId": "turma_34",
+          "pontos": 70
+        },
+        {
+          "posicao": 11,
+          "equipe": "Turma TI11",
+          "equipeId": "turma_ti11",
+          "pontos": 60
+        },
+        {
+          "posicao": 12,
+          "equipe": "Turma TI21",
+          "equipeId": "turma_ti21",
+          "pontos": 50
+        },
+        {
+          "posicao": 13,
+          "equipe": "Turma 22",
+          "equipeId": "turma_22",
+          "pontos": 40
+        },
+        {
+          "posicao": 14,
+          "equipe": "Turma 12",
+          "equipeId": "turma_12",
+          "pontos": 30
+        },
+        {
+          "posicao": 15,
+          "equipe": "Turma 13",
+          "equipeId": "turma_13",
+          "pontos": 20
+        },
+        {
+          "posicao": 16,
+          "equipe": "Turma 11",
+          "equipeId": "turma_11",
+          "pontos": 10
+        }
+      ],
+      "updatedAt": "2025-11-04T00:40:16.066Z"
+    },
+    "show_de_talentos": {
+      "ranking": [
+        {
+          "posicao": 1,
+          "equipe": "Turma TI21",
+          "equipeId": "turma_ti21",
+          "pontos": 160
+        },
+        {
+          "posicao": 2,
+          "equipe": "Turma 34",
+          "equipeId": "turma_34",
+          "pontos": 150
+        },
+        {
+          "posicao": 3,
+          "equipe": "Turma 32",
+          "equipeId": "turma_32",
+          "pontos": 140
+        },
+        {
+          "posicao": 4,
+          "equipe": "Turma 21",
+          "equipeId": "turma_21",
+          "pontos": 130
+        },
+        {
+          "posicao": 5,
+          "equipe": "Turma 23",
+          "equipeId": "turma_23",
+          "pontos": 120
+        },
+        {
+          "posicao": 6,
+          "equipe": "Turma 33",
+          "equipeId": "turma_33",
+          "pontos": 110
+        },
+        {
+          "posicao": 7,
+          "equipe": "Turma 31",
+          "equipeId": "turma_31",
+          "pontos": 100
+        },
+        {
+          "posicao": 8,
+          "equipe": "Turma 22",
+          "equipeId": "turma_22",
+          "pontos": 90
+        },
+        {
+          "posicao": 9,
+          "equipe": "Turma TI22",
+          "equipeId": "turma_ti22",
+          "pontos": 80
+        },
+        {
+          "posicao": 10,
+          "equipe": "Turma 12",
+          "equipeId": "turma_12",
+          "pontos": 70
+        },
+        {
+          "posicao": 11,
+          "equipe": "Turma 11",
+          "equipeId": "turma_11",
+          "pontos": 60
+        },
+        {
+          "posicao": 12,
+          "equipe": "Turma 14",
+          "equipeId": "turma_14",
+          "pontos": 50
+        },
+        {
+          "posicao": 13,
+          "equipe": "Turma TI12",
+          "equipeId": "turma_ti12",
+          "pontos": 40
+        },
+        {
+          "posicao": 14,
+          "equipe": "Turma TI11",
+          "equipeId": "turma_ti11",
+          "pontos": 30
+        },
+        {
+          "posicao": 15,
+          "equipe": "Turma 24",
+          "equipeId": "turma_24",
+          "pontos": 20
+        },
+        {
+          "posicao": 16,
+          "equipe": "Turma 13",
+          "equipeId": "turma_13",
+          "pontos": 0
+        }
+      ],
+      "updatedAt": "2025-11-05T16:18:33.456Z",
+      "modalidadeId": "show_de_talentos",
+      "createdAt": "2025-11-05T16:18:33.456Z"
+    },
+    "soletrando": {
+      "modalidadeId": "soletrando",
+      "ranking": [
+        {
+          "posicao": 1,
+          "equipe": "Turma 21",
+          "equipeId": "turma_21",
+          "pontos": 160
+        },
+        {
+          "posicao": 2,
+          "equipe": "Turma 22",
+          "equipeId": "turma_22",
+          "pontos": 150
+        },
+        {
+          "posicao": 3,
+          "equipe": "Turma 31",
+          "equipeId": "turma_31",
+          "pontos": 140
+        },
+        {
+          "posicao": 4,
+          "equipe": "Turma 32",
+          "equipeId": "turma_32",
+          "pontos": 130
+        },
+        {
+          "posicao": 5,
+          "equipe": "Turma 11",
+          "equipeId": "turma_11",
+          "pontos": 120
+        },
+        {
+          "posicao": 6,
+          "equipe": "Turma TI11",
+          "equipeId": "turma_ti11",
+          "pontos": 110
+        },
+        {
+          "posicao": 7,
+          "equipe": "Turma TI12",
+          "equipeId": "turma_ti12",
+          "pontos": 110
+        },
+        {
+          "posicao": 8,
+          "equipe": "Turma TI22",
+          "equipeId": "turma_ti22",
+          "pontos": 110
+        },
+        {
+          "posicao": 9,
+          "equipe": "Turma 12",
+          "equipeId": "turma_12",
+          "pontos": 110
+        },
+        {
+          "posicao": 10,
+          "equipe": "Turma 23",
+          "equipeId": "turma_23",
+          "pontos": 110
+        },
+        {
+          "posicao": 11,
+          "equipe": "Turma 24",
+          "equipeId": "turma_24",
+          "pontos": 110
+        },
+        {
+          "posicao": 12,
+          "equipe": "Turma 33",
+          "equipeId": "turma_33",
+          "pontos": 110
+        },
+        {
+          "posicao": 13,
+          "equipe": "Turma TI21",
+          "equipeId": "turma_ti21",
+          "pontos": 40
+        },
+        {
+          "posicao": 14,
+          "equipe": "Turma 34",
+          "equipeId": "turma_34",
+          "pontos": 40
+        },
+        {
+          "posicao": 15,
+          "equipe": "Turma 14",
+          "equipeId": "turma_14",
+          "pontos": 20
+        },
+        {
+          "posicao": 16,
+          "equipe": "Turma 13",
+          "equipeId": "turma_13",
+          "pontos": 0
+        }
+      ],
+      "updatedAt": "2025-11-05T16:47:48.533Z",
+      "createdAt": "2025-11-05T16:47:48.533Z"
+    },
+    "sudoku": {
+      "ranking": [
+        {
+          "posicao": 1,
+          "equipe": "Turma 31",
+          "equipeId": "turma_31",
+          "pontos": 160
+        },
+        {
+          "posicao": 2,
+          "equipe": "Turma TI11",
+          "equipeId": "turma_ti11",
+          "pontos": 150
+        },
+        {
+          "posicao": 3,
+          "equipe": "Turma TI21",
+          "equipeId": "turma_ti21",
+          "pontos": 140
+        },
+        {
+          "posicao": 4,
+          "equipe": "Turma 23",
+          "equipeId": "turma_23",
+          "pontos": 130
+        },
+        {
+          "posicao": 5,
+          "equipe": "Turma 34",
+          "equipeId": "turma_34",
+          "pontos": 120
+        },
+        {
+          "posicao": 6,
+          "equipe": "Turma TI12",
+          "equipeId": "turma_ti12",
+          "pontos": 110
+        },
+        {
+          "posicao": 7,
+          "equipe": "Turma TI22",
+          "equipeId": "turma_ti22",
+          "pontos": 100
+        },
+        {
+          "posicao": 8,
+          "equipe": "Turma 33",
+          "equipeId": "turma_33",
+          "pontos": 90
+        },
+        {
+          "posicao": 9,
+          "equipe": "Turma 22",
+          "equipeId": "turma_22",
+          "pontos": 80
+        },
+        {
+          "posicao": 10,
+          "equipe": "Turma 13",
+          "equipeId": "turma_13",
+          "pontos": 80
+        },
+        {
+          "posicao": 11,
+          "equipe": "Turma 11",
+          "equipeId": "turma_11",
+          "pontos": 80
+        },
+        {
+          "posicao": 12,
+          "equipe": "Turma 32",
+          "equipeId": "turma_32",
+          "pontos": 80
+        },
+        {
+          "posicao": 13,
+          "equipe": "Turma 14",
+          "equipeId": "turma_14",
+          "pontos": 80
+        },
+        {
+          "posicao": 14,
+          "equipe": "Turma 21",
+          "equipeId": "turma_21",
+          "pontos": 80
+        },
+        {
+          "posicao": 15,
+          "equipe": "Turma 24",
+          "equipeId": "turma_24",
+          "pontos": 80
+        },
+        {
+          "posicao": 16,
+          "equipe": "Turma 12",
+          "equipeId": "turma_12",
+          "pontos": 80
+        }
+      ],
+      "createdAt": "2025-11-06T23:28:47.643Z",
+      "updatedAt": "2025-11-06T23:28:47.643Z",
+      "modalidadeId": "sudoku"
+    },
+    "tiro_laco_fem": {
+      "modalidadeId": "tiro_laco_fem",
+      "updatedAt": "2025-11-05T16:59:57.319Z",
+      "createdAt": "2025-11-05T16:59:57.319Z",
+      "ranking": [
+        {
+          "posicao": 1,
+          "equipe": "Turma 31",
+          "equipeId": "turma_31",
+          "pontos": 160
+        },
+        {
+          "posicao": 2,
+          "equipe": "Turma 23",
+          "equipeId": "turma_23",
+          "pontos": 150
+        },
+        {
+          "posicao": 3,
+          "equipe": "Turma 13",
+          "equipeId": "turma_13",
+          "pontos": 140
+        },
+        {
+          "posicao": 4,
+          "equipe": "Turma 22",
+          "equipeId": "turma_22",
+          "pontos": 130
+        },
+        {
+          "posicao": 5,
+          "equipe": "Turma 11",
+          "equipeId": "turma_11",
+          "pontos": 10
+        },
+        {
+          "posicao": 6,
+          "equipe": "Turma 12",
+          "equipeId": "turma_12",
+          "pontos": 0
+        },
+        {
+          "posicao": 7,
+          "equipe": "Turma 14",
+          "equipeId": "turma_14",
+          "pontos": 10
+        },
+        {
+          "posicao": 8,
+          "equipe": "Turma 21",
+          "equipeId": "turma_21",
+          "pontos": 10
+        },
+        {
+          "posicao": 9,
+          "equipe": "Turma 24",
+          "equipeId": "turma_24",
+          "pontos": 10
+        },
+        {
+          "posicao": 10,
+          "equipe": "Turma 32",
+          "equipeId": "turma_32",
+          "pontos": 10
+        },
+        {
+          "posicao": 11,
+          "equipe": "Turma 33",
+          "equipeId": "turma_33",
+          "pontos": 10
+        },
+        {
+          "posicao": 12,
+          "equipe": "Turma 34",
+          "equipeId": "turma_34",
+          "pontos": 10
+        },
+        {
+          "posicao": 13,
+          "equipe": "Turma TI11",
+          "equipeId": "turma_ti11",
+          "pontos": 10
+        },
+        {
+          "posicao": 14,
+          "equipe": "Turma TI12",
+          "equipeId": "turma_ti12",
+          "pontos": 0
+        },
+        {
+          "posicao": 15,
+          "equipe": "Turma TI21",
+          "equipeId": "turma_ti21",
+          "pontos": 10
+        },
+        {
+          "posicao": 16,
+          "equipe": "Turma TI22",
+          "equipeId": "turma_ti22",
+          "pontos": 10
+        }
+      ]
+    },
+    "tiro_laco_masc": {
+      "updatedAt": "2025-11-05T23:37:48.019Z",
+      "modalidadeId": "tiro_laco_masc",
+      "createdAt": "2025-11-05T23:37:48.019Z",
+      "ranking": [
+        {
+          "posicao": 1,
+          "equipe": "Turma 31",
+          "equipeId": "turma_31",
+          "pontos": 160
+        },
+        {
+          "posicao": 2,
+          "equipe": "Turma 21",
+          "equipeId": "turma_21",
+          "pontos": 150
+        },
+        {
+          "posicao": 3,
+          "equipe": "Turma 24",
+          "equipeId": "turma_24",
+          "pontos": 140
+        },
+        {
+          "posicao": 4,
+          "equipe": "Turma 12",
+          "equipeId": "turma_12",
+          "pontos": 120
+        },
+        {
+          "posicao": 5,
+          "equipe": "Turma 32",
+          "equipeId": "turma_32",
+          "pontos": 130
+        },
+        {
+          "posicao": 6,
+          "equipe": "Turma 22",
+          "equipeId": "turma_22",
+          "pontos": 110
+        },
+        {
+          "posicao": 7,
+          "equipe": "Turma 14",
+          "equipeId": "turma_14",
+          "pontos": 10
+        },
+        {
+          "posicao": 8,
+          "equipe": "Turma TI22",
+          "equipeId": "turma_ti22",
+          "pontos": 10
+        },
+        {
+          "posicao": 9,
+          "equipe": "Turma 13",
+          "equipeId": "turma_13",
+          "pontos": 10
+        },
+        {
+          "posicao": 10,
+          "equipe": "Turma 34",
+          "equipeId": "turma_34",
+          "pontos": 10
+        },
+        {
+          "posicao": 11,
+          "equipe": "Turma 23",
+          "equipeId": "turma_23",
+          "pontos": 10
+        },
+        {
+          "posicao": 12,
+          "equipe": "Turma 33",
+          "equipeId": "turma_33",
+          "pontos": 10
+        },
+        {
+          "posicao": 13,
+          "equipe": "Turma TI21",
+          "equipeId": "turma_ti21",
+          "pontos": 10
+        },
+        {
+          "posicao": 14,
+          "equipe": "Turma TI12",
+          "equipeId": "turma_ti12",
+          "pontos": 0
+        },
+        {
+          "posicao": 15,
+          "equipe": "Turma 11",
+          "equipeId": "turma_11",
+          "pontos": 0
+        },
+        {
+          "posicao": 16,
+          "equipe": "Turma TI11",
+          "equipeId": "turma_ti11",
+          "pontos": 0
+        }
+      ]
+    },
+    "truco": {
+      "ranking": [
+        {
+          "posicao": 1,
+          "equipe": "Turma 22",
+          "equipeId": "turma_22",
+          "pontos": 160
+        },
+        {
+          "posicao": 2,
+          "equipe": "Turma 34",
+          "equipeId": "turma_34",
+          "pontos": 150
+        },
+        {
+          "posicao": 3,
+          "equipe": "Turma 31",
+          "equipeId": "turma_31",
+          "pontos": 140
+        },
+        {
+          "posicao": 4,
+          "equipe": "Turma 14",
+          "equipeId": "turma_14",
+          "pontos": 130
+        },
+        {
+          "posicao": 5,
+          "equipe": "Turma TI21",
+          "equipeId": "turma_ti21",
+          "pontos": 120
+        },
+        {
+          "posicao": 6,
+          "equipe": "Turma 24",
+          "equipeId": "turma_24",
+          "pontos": 110
+        },
+        {
+          "posicao": 7,
+          "equipe": "Turma 21",
+          "equipeId": "turma_21",
+          "pontos": 100
+        },
+        {
+          "posicao": 8,
+          "equipe": "Turma 13",
+          "equipeId": "turma_13",
+          "pontos": 90
+        },
+        {
+          "posicao": 9,
+          "equipe": "Turma 32",
+          "equipeId": "turma_32",
+          "pontos": 80
+        },
+        {
+          "posicao": 10,
+          "equipe": "Turma 33",
+          "equipeId": "turma_33",
+          "pontos": 70
+        },
+        {
+          "posicao": 11,
+          "equipe": "Turma TI22",
+          "equipeId": "turma_ti22",
+          "pontos": 60
+        },
+        {
+          "posicao": 12,
+          "equipe": "Turma TI11",
+          "equipeId": "turma_ti11",
+          "pontos": 50
+        },
+        {
+          "posicao": 13,
+          "equipe": "Turma TI12",
+          "equipeId": "turma_ti12",
+          "pontos": 40
+        },
+        {
+          "posicao": 14,
+          "equipe": "Turma 23",
+          "equipeId": "turma_23",
+          "pontos": 30
+        },
+        {
+          "posicao": 15,
+          "equipe": "Turma 12",
+          "equipeId": "turma_12",
+          "pontos": 20
+        },
+        {
+          "posicao": 16,
+          "equipe": "Turma 11",
+          "equipeId": "turma_11",
+          "pontos": 10
+        }
+      ],
+      "modalidadeId": "truco",
+      "createdAt": "2025-11-06T17:17:22.827Z",
+      "updatedAt": "2025-11-06T17:17:22.827Z"
+    },
+    "volei_de_praia_misto": {
+      "modalidadeId": "volei_de_praia_misto",
+      "ranking": [
+        {
+          "posicao": 1,
+          "equipe": "Turma 22",
+          "equipeId": "turma_22",
+          "pontos": 160
+        },
+        {
+          "posicao": 2,
+          "equipe": "Turma 31",
+          "equipeId": "turma_31",
+          "pontos": 150
+        },
+        {
+          "posicao": 3,
+          "equipe": "Turma 11",
+          "equipeId": "turma_11",
+          "pontos": 140
+        },
+        {
+          "posicao": 4,
+          "equipe": "Turma TI22",
+          "equipeId": "turma_ti22",
+          "pontos": 130
+        },
+        {
+          "posicao": 5,
+          "equipe": "Turma 32",
+          "equipeId": "turma_32",
+          "pontos": 120
+        },
+        {
+          "posicao": 6,
+          "equipe": "Turma 24",
+          "equipeId": "turma_24",
+          "pontos": 110
+        },
+        {
+          "posicao": 7,
+          "equipe": "Turma 21",
+          "equipeId": "turma_21",
+          "pontos": 100
+        },
+        {
+          "posicao": 8,
+          "equipe": "Turma 23",
+          "equipeId": "turma_23",
+          "pontos": 90
+        },
+        {
+          "posicao": 9,
+          "equipe": "Turma 14",
+          "equipeId": "turma_14",
+          "pontos": 80
+        },
+        {
+          "posicao": 10,
+          "equipe": "Turma 13",
+          "equipeId": "turma_13",
+          "pontos": 70
+        },
+        {
+          "posicao": 11,
+          "equipe": "Turma 33",
+          "equipeId": "turma_33",
+          "pontos": 60
+        },
+        {
+          "posicao": 12,
+          "equipe": "Turma TI12",
+          "equipeId": "turma_ti12",
+          "pontos": 50
+        },
+        {
+          "posicao": 13,
+          "equipe": "Turma 34",
+          "equipeId": "turma_34",
+          "pontos": 40
+        },
+        {
+          "posicao": 14,
+          "equipe": "Turma 12",
+          "equipeId": "turma_12",
+          "pontos": 30
+        },
+        {
+          "posicao": 15,
+          "equipe": "Turma TI21",
+          "equipeId": "turma_ti21",
+          "pontos": 20
+        },
+        {
+          "posicao": 16,
+          "equipe": "Turma TI11",
+          "equipeId": "turma_ti11",
+          "pontos": 10
+        }
+      ],
+      "updatedAt": "2025-11-05T18:14:44.096Z",
+      "createdAt": "2025-11-05T18:14:44.096Z"
+    },
+    "voleibol_fem": {
+      "updatedAt": "2025-11-06T23:25:59.979Z",
+      "createdAt": "2025-11-06T23:25:59.979Z",
+      "modalidadeId": "voleibol_fem",
+      "ranking": [
+        {
+          "posicao": 1,
+          "equipe": "Turma 22",
+          "equipeId": "turma_22",
+          "pontos": 160
+        },
+        {
+          "posicao": 2,
+          "equipe": "Turma 21",
+          "equipeId": "turma_21",
+          "pontos": 150
+        },
+        {
+          "posicao": 3,
+          "equipe": "Turma TI22",
+          "equipeId": "turma_ti22",
+          "pontos": 140
+        },
+        {
+          "posicao": 4,
+          "equipe": "Turma TI11",
+          "equipeId": "turma_ti11",
+          "pontos": 130
+        },
+        {
+          "posicao": 5,
+          "equipe": "Turma TI12",
+          "equipeId": "turma_ti12",
+          "pontos": 130
+        },
+        {
+          "posicao": 6,
+          "equipe": "Turma TI21",
+          "equipeId": "turma_ti21",
+          "pontos": 120
+        },
+        {
+          "posicao": 7,
+          "equipe": "Turma 32",
+          "equipeId": "turma_32",
+          "pontos": 110
+        },
+        {
+          "posicao": 8,
+          "equipe": "Turma 33",
+          "equipeId": "turma_33",
+          "pontos": 110
+        },
+        {
+          "posicao": 9,
+          "equipe": "Turma 14",
+          "equipeId": "turma_14",
+          "pontos": 100
+        },
+        {
+          "posicao": 10,
+          "equipe": "Turma 12",
+          "equipeId": "turma_12",
+          "pontos": 100
+        },
+        {
+          "posicao": 11,
+          "equipe": "Turma 23",
+          "equipeId": "turma_23",
+          "pontos": 90
+        },
+        {
+          "posicao": 12,
+          "equipe": "Turma 24",
+          "equipeId": "turma_24",
+          "pontos": 90
+        },
+        {
+          "posicao": 13,
+          "equipe": "Turma 13",
+          "equipeId": "turma_13",
+          "pontos": 80
+        },
+        {
+          "posicao": 14,
+          "equipe": "Turma 31",
+          "equipeId": "turma_31",
+          "pontos": 70
+        },
+        {
+          "posicao": 15,
+          "equipe": "Turma 11",
+          "equipeId": "turma_11",
+          "pontos": 60
+        },
+        {
+          "posicao": 16,
+          "equipe": "Turma 34",
+          "equipeId": "turma_34",
+          "pontos": 50
+        }
+      ]
+    },
+    "voleibol_masc": {
+      "ranking": [
+        {
+          "posicao": 1,
+          "equipe": "Turma 31",
+          "equipeId": "turma_31",
+          "pontos": 160
+        },
+        {
+          "posicao": 2,
+          "equipe": "Turma 23",
+          "equipeId": "turma_23",
+          "pontos": 150
+        },
+        {
+          "posicao": 3,
+          "equipe": "Turma 21",
+          "equipeId": "turma_21",
+          "pontos": 140
+        },
+        {
+          "posicao": 4,
+          "equipe": "Turma 22",
+          "equipeId": "turma_22",
+          "pontos": 130
+        },
+        {
+          "posicao": 5,
+          "equipe": "Turma TI22",
+          "equipeId": "turma_ti22",
+          "pontos": 120
+        },
+        {
+          "posicao": 6,
+          "equipe": "Turma 14",
+          "equipeId": "turma_14",
+          "pontos": 110
+        },
+        {
+          "posicao": 7,
+          "equipe": "Turma 34",
+          "equipeId": "turma_34",
+          "pontos": 100
+        },
+        {
+          "posicao": 8,
+          "equipe": "Turma 32",
+          "equipeId": "turma_32",
+          "pontos": 90
+        },
+        {
+          "posicao": 9,
+          "equipe": "Turma TI11",
+          "equipeId": "turma_ti11",
+          "pontos": 80
+        },
+        {
+          "posicao": 10,
+          "equipe": "Turma 11",
+          "equipeId": "turma_11",
+          "pontos": 70
+        },
+        {
+          "posicao": 11,
+          "equipe": "Turma 33",
+          "equipeId": "turma_33",
+          "pontos": 60
+        },
+        {
+          "posicao": 12,
+          "equipe": "Turma 24",
+          "equipeId": "turma_24",
+          "pontos": 50
+        },
+        {
+          "posicao": 13,
+          "equipe": "Turma TI12",
+          "equipeId": "turma_ti12",
+          "pontos": 40
+        },
+        {
+          "posicao": 14,
+          "equipe": "Turma 12",
+          "equipeId": "turma_12",
+          "pontos": 30
+        },
+        {
+          "posicao": 15,
+          "equipe": "Turma 13",
+          "equipeId": "turma_13",
+          "pontos": 30
+        },
+        {
+          "posicao": 16,
+          "equipe": "Turma TI21",
+          "equipeId": "turma_ti21",
+          "pontos": 20
+        }
+      ],
+      "modalidadeId": "voleibol_masc",
+      "updatedAt": "2025-11-06T23:19:45.309Z",
+      "createdAt": "2025-11-06T23:19:45.309Z"
+    },
+    "xadrez": {
+      "modalidadeId": "xadrez",
+      "createdAt": "2025-11-04T15:59:08.427Z",
+      "ranking": [
+        {
+          "posicao": 1,
+          "equipe": "Turma 31",
+          "equipeId": "turma_31",
+          "pontos": 160
+        },
+        {
+          "posicao": 2,
+          "equipe": "Turma 23",
+          "equipeId": "turma_23",
+          "pontos": 150
+        },
+        {
+          "posicao": 3,
+          "equipe": "Turma TI12",
+          "equipeId": "turma_ti12",
+          "pontos": 140
+        },
+        {
+          "posicao": 4,
+          "equipe": "Turma TI22",
+          "equipeId": "turma_ti22",
+          "pontos": 130
+        },
+        {
+          "posicao": 5,
+          "equipe": "Turma 12",
+          "equipeId": "turma_12",
+          "pontos": 120
+        },
+        {
+          "posicao": 6,
+          "equipe": "Turma 22",
+          "equipeId": "turma_22",
+          "pontos": 110
+        },
+        {
+          "posicao": 7,
+          "equipe": "Turma TI11",
+          "equipeId": "turma_ti11",
+          "pontos": 100
+        },
+        {
+          "posicao": 8,
+          "equipe": "Turma 32",
+          "equipeId": "turma_32",
+          "pontos": 90
+        },
+        {
+          "posicao": 9,
+          "equipe": "Turma 34",
+          "equipeId": "turma_34",
+          "pontos": 80
+        },
+        {
+          "posicao": 10,
+          "equipe": "Turma 21",
+          "equipeId": "turma_21",
+          "pontos": 70
+        },
+        {
+          "posicao": 11,
+          "equipe": "Turma TI21",
+          "equipeId": "turma_ti21",
+          "pontos": 60
+        },
+        {
+          "posicao": 12,
+          "equipe": "Turma 13",
+          "equipeId": "turma_13",
+          "pontos": 50
+        },
+        {
+          "posicao": 13,
+          "equipe": "Turma 24",
+          "equipeId": "turma_24",
+          "pontos": 40
+        },
+        {
+          "posicao": 14,
+          "equipe": "Turma 11",
+          "equipeId": "turma_11",
+          "pontos": 30
+        },
+        {
+          "posicao": 15,
+          "equipe": "Turma 14",
+          "equipeId": "turma_14",
+          "pontos": 20
+        },
+        {
+          "posicao": 16,
+          "equipe": "Turma 33",
+          "equipeId": "turma_33",
+          "pontos": 10
+        }
+      ],
+      "updatedAt": "2025-11-04T15:59:08.427Z"
+    }
+  },
+  "configuracoes": {
+    "equipes_competindo": {
+      "equipasSimples": [
+        {
+          "id": "turma_11",
+          "nome": "Turma 11",
+          "numero": 11,
+          "serie": "1º Ano",
+          "cor": "#ff6b6b",
+          "distribuicaoPontos": [
+            {
+              "turmaId": "turma_11",
+              "percentual": 1
+            }
+          ]
+        },
+        {
+          "id": "turma_12",
+          "nome": "Turma 12",
+          "numero": 12,
+          "serie": "1º Ano",
+          "cor": "#4ecdc4",
+          "distribuicaoPontos": [
+            {
+              "turmaId": "turma_12",
+              "percentual": 1
+            }
+          ]
+        },
+        {
+          "id": "turma_13",
+          "nome": "Turma 13",
+          "numero": 13,
+          "serie": "1º Ano",
+          "cor": "#45b7d1",
+          "distribuicaoPontos": [
+            {
+              "turmaId": "turma_13",
+              "percentual": 1
+            }
+          ]
+        },
+        {
+          "id": "turma_14",
+          "nome": "Turma 14",
+          "numero": 14,
+          "serie": "1º Ano",
+          "cor": "#45b7d1",
+          "distribuicaoPontos": [
+            {
+              "turmaId": "turma_14",
+              "percentual": 1
+            }
+          ]
+        },
+        {
+          "id": "turma_21",
+          "nome": "Turma 21",
+          "numero": 21,
+          "serie": "2º Ano",
+          "cor": "#f9ca24",
+          "distribuicaoPontos": [
+            {
+              "turmaId": "turma_21",
+              "percentual": 1
+            }
+          ]
+        },
+        {
+          "id": "turma_22",
+          "nome": "Turma 22",
+          "numero": 22,
+          "serie": "2º Ano",
+          "cor": "#f0932b",
+          "distribuicaoPontos": [
+            {
+              "turmaId": "turma_22",
+              "percentual": 1
+            }
+          ]
+        },
+        {
+          "id": "turma_23",
+          "nome": "Turma 23",
+          "numero": 23,
+          "serie": "2º Ano",
+          "cor": "#eb4d4b",
+          "distribuicaoPontos": [
+            {
+              "turmaId": "turma_23",
+              "percentual": 1
+            }
+          ]
+        },
+        {
+          "id": "turma_24",
+          "nome": "Turma 24",
+          "numero": 24,
+          "serie": "2º Ano",
+          "cor": "#e74c3c",
+          "distribuicaoPontos": [
+            {
+              "turmaId": "turma_24",
+              "percentual": 1
+            }
+          ]
+        },
+        {
+          "id": "turma_31",
+          "nome": "Turma 31",
+          "numero": 31,
+          "serie": "3º Ano",
+          "cor": "#6c5ce7",
+          "distribuicaoPontos": [
+            {
+              "turmaId": "turma_31",
+              "percentual": 1
+            }
+          ]
+        },
+        {
+          "id": "turma_32",
+          "nome": "Turma 32",
+          "numero": 32,
+          "serie": "3º Ano",
+          "cor": "#a29bfe",
+          "distribuicaoPontos": [
+            {
+              "turmaId": "turma_32",
+              "percentual": 1
+            }
+          ]
+        },
+        {
+          "id": "turma_33",
+          "nome": "Turma 33",
+          "numero": 33,
+          "serie": "3º Ano",
+          "cor": "#fd79a8",
+          "distribuicaoPontos": [
+            {
+              "turmaId": "turma_33",
+              "percentual": 1
+            }
+          ]
+        },
+        {
+          "id": "turma_34",
+          "nome": "Turma 34",
+          "numero": 34,
+          "serie": "3º Ano",
+          "cor": "#e84393",
+          "distribuicaoPontos": [
+            {
+              "turmaId": "turma_34",
+              "percentual": 1
+            }
+          ]
+        },
+        {
+          "id": "turma_ti11",
+          "nome": "Turma TI11",
+          "numero": 1011,
+          "serie": "TI - 1º Ano",
+          "cor": "#00b894",
+          "distribuicaoPontos": [
+            {
+              "turmaId": "turma_ti11",
+              "percentual": 1
+            }
+          ]
+        },
+        {
+          "id": "turma_ti12",
+          "nome": "Turma TI12",
+          "numero": 1012,
+          "serie": "TI - 1º Ano",
+          "cor": "#00cec9",
+          "distribuicaoPontos": [
+            {
+              "turmaId": "turma_ti12",
+              "percentual": 1
+            }
+          ]
+        },
+        {
+          "id": "turma_ti21",
+          "nome": "Turma TI21",
+          "numero": 1021,
+          "serie": "TI - 2º Ano",
+          "cor": "#0984e3",
+          "distribuicaoPontos": [
+            {
+              "turmaId": "turma_ti21",
+              "percentual": 1
+            }
+          ]
+        },
+        {
+          "id": "turma_ti22",
+          "nome": "Turma TI22",
+          "numero": 1022,
+          "serie": "TI - 2º Ano",
+          "cor": "#74b9ff",
+          "distribuicaoPontos": [
+            {
+              "turmaId": "turma_ti22",
+              "percentual": 1
+            }
+          ]
+        }
+      ],
+      "totalEquipes": 21,
+      "equipasCombinadas": [
+        {
+          "id": "turma_1213",
+          "nome": "Turma 12/13",
+          "numero": 1213,
+          "serie": "1º Ano",
+          "cor": "#4ecdc4",
+          "distribuicaoPontos": [
+            {
+              "turmaId": "turma_12",
+              "percentual": 1
+            },
+            {
+              "turmaId": "turma_13",
+              "percentual": 1
+            }
+          ]
+        },
+        {
+          "id": "turma_1214",
+          "nome": "Turma 12/14",
+          "numero": 1214,
+          "serie": "1º Ano",
+          "cor": "#4ecdc4",
+          "distribuicaoPontos": [
+            {
+              "turmaId": "turma_12",
+              "percentual": 1
+            },
+            {
+              "turmaId": "turma_14",
+              "percentual": 1
+            }
+          ]
+        },
+        {
+          "id": "turma_2324",
+          "nome": "Turma 23/24",
+          "numero": 2324,
+          "serie": "2º Ano",
+          "cor": "#eb4d4b",
+          "distribuicaoPontos": [
+            {
+              "turmaId": "turma_23",
+              "percentual": 1
+            },
+            {
+              "turmaId": "turma_24",
+              "percentual": 1
+            }
+          ]
+        },
+        {
+          "id": "turma_3233",
+          "nome": "Turma 32/33",
+          "numero": 3233,
+          "serie": "3º Ano",
+          "cor": "#a29bfe",
+          "distribuicaoPontos": [
+            {
+              "turmaId": "turma_32",
+              "percentual": 1
+            },
+            {
+              "turmaId": "turma_33",
+              "percentual": 1
+            }
+          ]
+        },
+        {
+          "id": "turma_ti1112",
+          "nome": "Turma TI11/12",
+          "numero": 101112,
+          "serie": "TI - 1º Ano",
+          "cor": "#00b894",
+          "distribuicaoPontos": [
+            {
+              "turmaId": "turma_ti11",
+              "percentual": 1
+            },
+            {
+              "turmaId": "turma_ti12",
+              "percentual": 1
+            }
+          ]
+        }
+      ],
+      "createdAt": "2025-10-28T22:49:44.771Z",
+      "updatedAt": "2025-10-28T22:49:44.771Z",
+      "equipes": [
+        {
+          "id": "turma_11",
+          "nome": "Turma 11",
+          "numero": 11,
+          "serie": "1º Ano",
+          "cor": "#ff6b6b",
+          "distribuicaoPontos": [
+            {
+              "turmaId": "turma_11",
+              "percentual": 1
+            }
+          ]
+        },
+        {
+          "id": "turma_12",
+          "nome": "Turma 12",
+          "numero": 12,
+          "serie": "1º Ano",
+          "cor": "#4ecdc4",
+          "distribuicaoPontos": [
+            {
+              "turmaId": "turma_12",
+              "percentual": 1
+            }
+          ]
+        },
+        {
+          "id": "turma_1213",
+          "nome": "Turma 12/13",
+          "numero": 1213,
+          "serie": "1º Ano",
+          "cor": "#4ecdc4",
+          "distribuicaoPontos": [
+            {
+              "turmaId": "turma_12",
+              "percentual": 1
+            },
+            {
+              "turmaId": "turma_13",
+              "percentual": 1
+            }
+          ]
+        },
+        {
+          "id": "turma_1214",
+          "nome": "Turma 12/14",
+          "numero": 1214,
+          "serie": "1º Ano",
+          "cor": "#4ecdc4",
+          "distribuicaoPontos": [
+            {
+              "turmaId": "turma_12",
+              "percentual": 1
+            },
+            {
+              "turmaId": "turma_14",
+              "percentual": 1
+            }
+          ]
+        },
+        {
+          "id": "turma_13",
+          "nome": "Turma 13",
+          "numero": 13,
+          "serie": "1º Ano",
+          "cor": "#45b7d1",
+          "distribuicaoPontos": [
+            {
+              "turmaId": "turma_13",
+              "percentual": 1
+            }
+          ]
+        },
+        {
+          "id": "turma_14",
+          "nome": "Turma 14",
+          "numero": 14,
+          "serie": "1º Ano",
+          "cor": "#45b7d1",
+          "distribuicaoPontos": [
+            {
+              "turmaId": "turma_14",
+              "percentual": 1
+            }
+          ]
+        },
+        {
+          "id": "turma_21",
+          "nome": "Turma 21",
+          "numero": 21,
+          "serie": "2º Ano",
+          "cor": "#f9ca24",
+          "distribuicaoPontos": [
+            {
+              "turmaId": "turma_21",
+              "percentual": 1
+            }
+          ]
+        },
+        {
+          "id": "turma_22",
+          "nome": "Turma 22",
+          "numero": 22,
+          "serie": "2º Ano",
+          "cor": "#f0932b",
+          "distribuicaoPontos": [
+            {
+              "turmaId": "turma_22",
+              "percentual": 1
+            }
+          ]
+        },
+        {
+          "id": "turma_23",
+          "nome": "Turma 23",
+          "numero": 23,
+          "serie": "2º Ano",
+          "cor": "#eb4d4b",
+          "distribuicaoPontos": [
+            {
+              "turmaId": "turma_23",
+              "percentual": 1
+            }
+          ]
+        },
+        {
+          "id": "turma_2324",
+          "nome": "Turma 23/24",
+          "numero": 2324,
+          "serie": "2º Ano",
+          "cor": "#eb4d4b",
+          "distribuicaoPontos": [
+            {
+              "turmaId": "turma_23",
+              "percentual": 1
+            },
+            {
+              "turmaId": "turma_24",
+              "percentual": 1
+            }
+          ]
+        },
+        {
+          "id": "turma_24",
+          "nome": "Turma 24",
+          "numero": 24,
+          "serie": "2º Ano",
+          "cor": "#e74c3c",
+          "distribuicaoPontos": [
+            {
+              "turmaId": "turma_24",
+              "percentual": 1
+            }
+          ]
+        },
+        {
+          "id": "turma_31",
+          "nome": "Turma 31",
+          "numero": 31,
+          "serie": "3º Ano",
+          "cor": "#6c5ce7",
+          "distribuicaoPontos": [
+            {
+              "turmaId": "turma_31",
+              "percentual": 1
+            }
+          ]
+        },
+        {
+          "id": "turma_32",
+          "nome": "Turma 32",
+          "numero": 32,
+          "serie": "3º Ano",
+          "cor": "#a29bfe",
+          "distribuicaoPontos": [
+            {
+              "turmaId": "turma_32",
+              "percentual": 1
+            }
+          ]
+        },
+        {
+          "id": "turma_3233",
+          "nome": "Turma 32/33",
+          "numero": 3233,
+          "serie": "3º Ano",
+          "cor": "#a29bfe",
+          "distribuicaoPontos": [
+            {
+              "turmaId": "turma_32",
+              "percentual": 1
+            },
+            {
+              "turmaId": "turma_33",
+              "percentual": 1
+            }
+          ]
+        },
+        {
+          "id": "turma_33",
+          "nome": "Turma 33",
+          "numero": 33,
+          "serie": "3º Ano",
+          "cor": "#fd79a8",
+          "distribuicaoPontos": [
+            {
+              "turmaId": "turma_33",
+              "percentual": 1
+            }
+          ]
+        },
+        {
+          "id": "turma_34",
+          "nome": "Turma 34",
+          "numero": 34,
+          "serie": "3º Ano",
+          "cor": "#e84393",
+          "distribuicaoPontos": [
+            {
+              "turmaId": "turma_34",
+              "percentual": 1
+            }
+          ]
+        },
+        {
+          "id": "turma_ti11",
+          "nome": "Turma TI11",
+          "numero": 1011,
+          "serie": "TI - 1º Ano",
+          "cor": "#00b894",
+          "distribuicaoPontos": [
+            {
+              "turmaId": "turma_ti11",
+              "percentual": 1
+            }
+          ]
+        },
+        {
+          "id": "turma_ti1112",
+          "nome": "Turma TI11/12",
+          "numero": 101112,
+          "serie": "TI - 1º Ano",
+          "cor": "#00b894",
+          "distribuicaoPontos": [
+            {
+              "turmaId": "turma_ti11",
+              "percentual": 1
+            },
+            {
+              "turmaId": "turma_ti12",
+              "percentual": 1
+            }
+          ]
+        },
+        {
+          "id": "turma_ti12",
+          "nome": "Turma TI12",
+          "numero": 1012,
+          "serie": "TI - 1º Ano",
+          "cor": "#00cec9",
+          "distribuicaoPontos": [
+            {
+              "turmaId": "turma_ti12",
+              "percentual": 1
+            }
+          ]
+        },
+        {
+          "id": "turma_ti21",
+          "nome": "Turma TI21",
+          "numero": 1021,
+          "serie": "TI - 2º Ano",
+          "cor": "#0984e3",
+          "distribuicaoPontos": [
+            {
+              "turmaId": "turma_ti21",
+              "percentual": 1
+            }
+          ]
+        },
+        {
+          "id": "turma_ti22",
+          "nome": "Turma TI22",
+          "numero": 1022,
+          "serie": "TI - 2º Ano",
+          "cor": "#74b9ff",
+          "distribuicaoPontos": [
+            {
+              "turmaId": "turma_ti22",
+              "percentual": 1
+            }
+          ]
+        }
+      ]
+    },
+    "geral": {
+      "totalTurmasRanking": 16,
+      "createdAt": "2025-10-28T22:49:44.456Z",
+      "tema": {
+        "corSecundaria": "#0891b2",
+        "corPrimaria": "#2dd4bf",
+        "corDestaque": "#ffd700"
+      },
+      "updatedAt": "2025-10-28T22:49:44.456Z",
+      "equipasCombinadas": [
+        {
+          "id": "turma_1213",
+          "turmas": [
+            "turma_12",
+            "turma_13"
+          ]
+        },
+        {
+          "id": "turma_1214",
+          "turmas": [
+            "turma_12",
+            "turma_14"
+          ]
+        },
+        {
+          "id": "turma_2324",
+          "turmas": [
+            "turma_23",
+            "turma_24"
+          ]
+        },
+        {
+          "id": "turma_3233",
+          "turmas": [
+            "turma_32",
+            "turma_33"
+          ]
+        },
+        {
+          "id": "turma_ti1112",
+          "turmas": [
+            "turma_ti11",
+            "turma_ti12"
+          ]
+        }
+      ],
+      "nomeEvento": "XXIX Semana da Juventude",
+      "instituicao": "IFRS - Campus Erechim",
+      "eventoAtivo": true,
+      "inscricoesAbertas": true,
+      "contatos": {
+        "site": "https://ifrs.edu.br/erechim",
+        "telefone": "(54) 3321-8100",
+        "email": "semanadajuventude@erechim.ifrs.edu.br"
+      },
+      "dataFim": "2025-10-31T00:00:00Z",
+      "totalEquipesCompetindo": 21,
+      "tabelaPontuacao": [
+        160,
+        150,
+        140,
+        130,
+        120,
+        110,
+        100,
+        90,
+        80,
+        70,
+        60,
+        50,
+        40,
+        30,
+        20,
+        10
+      ],
+      "dataInicio": "2025-10-27T00:00:00Z",
+      "anoEvento": 2025
+    },
+    "turmas_ranking": {
+      "createdAt": "2025-10-28T22:49:44.894Z",
+      "totalTurmas": 16,
+      "turmas": [
+        {
+          "id": "turma_11",
+          "nome": "Turma 11",
+          "numero": 11,
+          "serie": "1º Ano",
+          "cor": "#ff6b6b"
+        },
+        {
+          "id": "turma_12",
+          "nome": "Turma 12",
+          "numero": 12,
+          "serie": "1º Ano",
+          "cor": "#4ecdc4"
+        },
+        {
+          "id": "turma_13",
+          "nome": "Turma 13",
+          "numero": 13,
+          "serie": "1º Ano",
+          "cor": "#45b7d1"
+        },
+        {
+          "id": "turma_14",
+          "nome": "Turma 14",
+          "numero": 14,
+          "serie": "1º Ano",
+          "cor": "#45b7d1"
+        },
+        {
+          "id": "turma_21",
+          "nome": "Turma 21",
+          "numero": 21,
+          "serie": "2º Ano",
+          "cor": "#f9ca24"
+        },
+        {
+          "id": "turma_22",
+          "nome": "Turma 22",
+          "numero": 22,
+          "serie": "2º Ano",
+          "cor": "#f0932b"
+        },
+        {
+          "id": "turma_23",
+          "nome": "Turma 23",
+          "numero": 23,
+          "serie": "2º Ano",
+          "cor": "#eb4d4b"
+        },
+        {
+          "id": "turma_24",
+          "nome": "Turma 24",
+          "numero": 24,
+          "serie": "2º Ano",
+          "cor": "#e74c3c"
+        },
+        {
+          "id": "turma_31",
+          "nome": "Turma 31",
+          "numero": 31,
+          "serie": "3º Ano",
+          "cor": "#6c5ce7"
+        },
+        {
+          "id": "turma_32",
+          "nome": "Turma 32",
+          "numero": 32,
+          "serie": "3º Ano",
+          "cor": "#a29bfe"
+        },
+        {
+          "id": "turma_33",
+          "nome": "Turma 33",
+          "numero": 33,
+          "serie": "3º Ano",
+          "cor": "#fd79a8"
+        },
+        {
+          "id": "turma_34",
+          "nome": "Turma 34",
+          "numero": 34,
+          "serie": "3º Ano",
+          "cor": "#e84393"
+        },
+        {
+          "id": "turma_ti11",
+          "nome": "Turma TI11",
+          "numero": 1011,
+          "serie": "TI - 1º Ano",
+          "cor": "#00b894"
+        },
+        {
+          "id": "turma_ti12",
+          "nome": "Turma TI12",
+          "numero": 1012,
+          "serie": "TI - 1º Ano",
+          "cor": "#00cec9"
+        },
+        {
+          "id": "turma_ti21",
+          "nome": "Turma TI21",
+          "numero": 1021,
+          "serie": "TI - 2º Ano",
+          "cor": "#0984e3"
+        },
+        {
+          "id": "turma_ti22",
+          "nome": "Turma TI22",
+          "numero": 1022,
+          "serie": "TI - 2º Ano",
+          "cor": "#74b9ff"
+        }
+      ],
+      "updatedAt": "2025-10-28T22:49:44.894Z"
+    }
+  },
+  "chaves": {
+    "basquetebol_fem": {
+      "createdAt": "2025-11-04T23:34:03.754Z",
+      "updatedAt": "2025-11-04T23:34:03.754Z",
+      "modalidadeId": "basquetebol_fem",
+      "chaves": [
+        {
+          "nome": "Chave A",
+          "equipes": [
+            "Turma 22",
+            "Turma 34",
+            "Turma 31"
+          ],
+          "equipesIds": [
+            "turma_22",
+            "turma_34",
+            "turma_31"
+          ]
+        },
+        {
+          "nome": "Chave B",
+          "equipes": [
+            "Turma 23/24",
+            "Turma 21",
+            "Turma TI22"
+          ],
+          "equipesIds": [
+            "turma_2324",
+            "turma_21",
+            "turma_ti22"
+          ]
+        },
+        {
+          "nome": "Chave C",
+          "equipes": [
+            "Turma TI21",
+            "Turma 13",
+            "Turma 12/14"
+          ],
+          "equipesIds": [
+            "turma_ti21",
+            "turma_13",
+            "turma_1214"
+          ]
+        },
+        {
+          "nome": "Chave D",
+          "equipes": [
+            "Turma TI11/12",
+            "Turma 11",
+            "Turma 32/33"
+          ],
+          "equipesIds": [
+            "turma_ti1112",
+            "turma_11",
+            "turma_3233"
+          ]
+        }
+      ]
+    },
+    "futsal_fem": {
+      "resultadosJogos": [
+        {
+          "id": "chave0_jogo0",
+          "chaveIdx": 0,
+          "jogoIdx": 0,
+          "equipeA": "Turma TI11/12",
+          "equipeB": "Turma 31",
+          "scoreA": 0,
+          "scoreB": 3,
+          "meta": {},
+          "updatedAt": "2025-11-05T17:09:55.149Z"
+        },
+        {
+          "id": "chave0_jogo1",
+          "chaveIdx": 0,
+          "jogoIdx": 1,
+          "equipeA": "Turma 31",
+          "equipeB": "Turma 21",
+          "scoreA": 3,
+          "scoreB": 0,
+          "meta": {},
+          "updatedAt": "2025-11-05T17:10:37.419Z"
+        },
+        {
+          "id": "chave0_jogo2",
+          "chaveIdx": 0,
+          "jogoIdx": 2,
+          "equipeA": "Turma 21",
+          "equipeB": "Turma TI11/12",
+          "scoreA": 4,
+          "scoreB": 0,
+          "meta": {},
+          "updatedAt": "2025-11-05T17:10:59.184Z"
+        },
+        {
+          "id": "chave1_jogo0",
+          "chaveIdx": 1,
+          "jogoIdx": 0,
+          "equipeA": "Turma 13",
+          "equipeB": "Turma 32/33",
+          "scoreA": 0,
+          "scoreB": 4,
+          "meta": {},
+          "updatedAt": "2025-11-05T17:11:16.381Z"
+        },
+        {
+          "id": "chave1_jogo1",
+          "chaveIdx": 1,
+          "jogoIdx": 1,
+          "equipeA": "Turma 32/33",
+          "equipeB": "Turma 22",
+          "scoreA": 0,
+          "scoreB": 3,
+          "meta": {},
+          "updatedAt": "2025-11-05T17:11:30.545Z"
+        },
+        {
+          "id": "chave1_jogo2",
+          "chaveIdx": 1,
+          "jogoIdx": 2,
+          "equipeA": "Turma 22",
+          "equipeB": "Turma 13",
+          "scoreA": 3,
+          "scoreB": 0,
+          "meta": {},
+          "updatedAt": "2025-11-05T17:11:47.719Z"
+        },
+        {
+          "id": "chave2_jogo0",
+          "chaveIdx": 2,
+          "jogoIdx": 0,
+          "equipeA": "Turma 12/14",
+          "equipeB": "Turma TI21",
+          "scoreA": 2,
+          "scoreB": 1,
+          "meta": {},
+          "updatedAt": "2025-11-05T17:12:57.201Z"
+        },
+        {
+          "id": "chave2_jogo1",
+          "chaveIdx": 2,
+          "jogoIdx": 1,
+          "equipeA": "Turma TI21",
+          "equipeB": "Turma 34",
+          "scoreA": 0,
+          "scoreB": 0,
+          "meta": {},
+          "updatedAt": "2025-11-05T17:13:10.396Z"
+        },
+        {
+          "id": "chave2_jogo2",
+          "chaveIdx": 2,
+          "jogoIdx": 2,
+          "equipeA": "Turma 34",
+          "equipeB": "Turma 12/14",
+          "scoreA": 1,
+          "scoreB": 1,
+          "meta": {},
+          "updatedAt": "2025-11-05T17:13:22.971Z"
+        },
+        {
+          "id": "chave3_jogo0",
+          "chaveIdx": 3,
+          "jogoIdx": 0,
+          "equipeA": "Turma 11",
+          "equipeB": "Turma 23/24",
+          "scoreA": 0,
+          "scoreB": 2,
+          "meta": {},
+          "updatedAt": "2025-11-05T17:13:42.059Z"
+        },
+        {
+          "id": "chave3_jogo1",
+          "chaveIdx": 3,
+          "jogoIdx": 1,
+          "equipeA": "Turma 23/24",
+          "equipeB": "Turma TI22",
+          "scoreA": 1,
+          "scoreB": 0,
+          "meta": {},
+          "updatedAt": "2025-11-05T17:13:55.559Z"
+        }
+      ],
+      "confrontosSemis": [],
+      "confrontosQuartas": [
+        {
+          "id": "quarta-1",
+          "equipeA": {
+            "nome": "Turma 22",
+            "pontos": 6,
+            "jogos": 2,
+            "vitorias": 2,
+            "empates": 0,
+            "derrotas": 0,
+            "golsPro": 6,
+            "golsContra": 0,
+            "saldoGols": 6,
+            "disciplinaTotal": 0,
+            "disciplinaMedia": 0,
+            "setsPontosFeitos": 0,
+            "setsPontosSofridos": 0,
+            "setsAverage": 0,
+            "mediaGolsFeitos": 3,
+            "mediaGolsSofridos": 0,
+            "desclassificada": false,
+            "chave": "Chave B",
+            "chaveIdx": 1,
+            "posicao": 1
+          },
+          "equipeB": {
+            "nome": "Turma 34",
+            "pontos": 2,
+            "jogos": 2,
+            "vitorias": 0,
+            "empates": 2,
+            "derrotas": 0,
+            "golsPro": 1,
+            "golsContra": 1,
+            "saldoGols": 0,
+            "disciplinaTotal": 0,
+            "disciplinaMedia": 0,
+            "setsPontosFeitos": 0,
+            "setsPontosSofridos": 0,
+            "setsAverage": 0,
+            "mediaGolsFeitos": 0.5,
+            "mediaGolsSofridos": 0.5,
+            "desclassificada": false,
+            "chave": "Chave C",
+            "chaveIdx": 2,
+            "posicao": 2
+          },
+          "fase": "Quartas de Final",
+          "jogo": 1
+        },
+        {
+          "id": "quarta-2",
+          "equipeA": {
+            "nome": "Turma 12/14",
+            "pontos": 4,
+            "jogos": 2,
+            "vitorias": 1,
+            "empates": 1,
+            "derrotas": 0,
+            "golsPro": 3,
+            "golsContra": 2,
+            "saldoGols": 1,
+            "disciplinaTotal": 0,
+            "disciplinaMedia": 0,
+            "setsPontosFeitos": 0,
+            "setsPontosSofridos": 0,
+            "setsAverage": 0,
+            "mediaGolsFeitos": 1.5,
+            "mediaGolsSofridos": 1,
+            "desclassificada": false,
+            "chave": "Chave C",
+            "chaveIdx": 2,
+            "posicao": 1
+          },
+          "equipeB": {
+            "nome": "Turma 21",
+            "pontos": 3,
+            "jogos": 2,
+            "vitorias": 1,
+            "empates": 0,
+            "derrotas": 1,
+            "golsPro": 4,
+            "golsContra": 3,
+            "saldoGols": 1,
+            "disciplinaTotal": 0,
+            "disciplinaMedia": 0,
+            "setsPontosFeitos": 0,
+            "setsPontosSofridos": 0,
+            "setsAverage": 0,
+            "mediaGolsFeitos": 2,
+            "mediaGolsSofridos": 1.5,
+            "desclassificada": false,
+            "chave": "Chave A",
+            "chaveIdx": 0,
+            "posicao": 2
+          },
+          "fase": "Quartas de Final",
+          "jogo": 2
+        },
+        {
+          "id": "quarta-3",
+          "equipeA": {
+            "nome": "Turma TI22",
+            "pontos": 3,
+            "jogos": 2,
+            "vitorias": 1,
+            "empates": 0,
+            "derrotas": 1,
+            "golsPro": 1,
+            "golsContra": 1,
+            "saldoGols": 0,
+            "disciplinaTotal": 0,
+            "disciplinaMedia": 0,
+            "setsPontosFeitos": 0,
+            "setsPontosSofridos": 0,
+            "setsAverage": 0,
+            "mediaGolsFeitos": 0.5,
+            "mediaGolsSofridos": 0.5,
+            "desclassificada": false,
+            "chave": "Chave D",
+            "chaveIdx": 3,
+            "posicao": 2
+          },
+          "equipeB": {
+            "nome": "Turma 23/24",
+            "pontos": 6,
+            "jogos": 2,
+            "vitorias": 2,
+            "empates": 0,
+            "derrotas": 0,
+            "golsPro": 3,
+            "golsContra": 0,
+            "saldoGols": 3,
+            "disciplinaTotal": 0,
+            "disciplinaMedia": 0,
+            "setsPontosFeitos": 0,
+            "setsPontosSofridos": 0,
+            "setsAverage": 0,
+            "mediaGolsFeitos": 1.5,
+            "mediaGolsSofridos": 0,
+            "desclassificada": false,
+            "chave": "Chave D",
+            "chaveIdx": 3,
+            "posicao": 1
+          },
+          "fase": "Quartas de Final",
+          "jogo": 3
+        },
+        {
+          "id": "quarta-4",
+          "equipeA": {
+            "nome": "Turma 32/33",
+            "pontos": 3,
+            "jogos": 2,
+            "vitorias": 1,
+            "empates": 0,
+            "derrotas": 1,
+            "golsPro": 4,
+            "golsContra": 3,
+            "saldoGols": 1,
+            "disciplinaTotal": 0,
+            "disciplinaMedia": 0,
+            "setsPontosFeitos": 0,
+            "setsPontosSofridos": 0,
+            "setsAverage": 0,
+            "mediaGolsFeitos": 2,
+            "mediaGolsSofridos": 1.5,
+            "desclassificada": false,
+            "chave": "Chave B",
+            "chaveIdx": 1,
+            "posicao": 2
+          },
+          "equipeB": {
+            "nome": "Turma 31",
+            "pontos": 6,
+            "jogos": 2,
+            "vitorias": 2,
+            "empates": 0,
+            "derrotas": 0,
+            "golsPro": 6,
+            "golsContra": 0,
+            "saldoGols": 6,
+            "disciplinaTotal": 0,
+            "disciplinaMedia": 0,
+            "setsPontosFeitos": 0,
+            "setsPontosSofridos": 0,
+            "setsAverage": 0,
+            "mediaGolsFeitos": 3,
+            "mediaGolsSofridos": 0,
+            "desclassificada": false,
+            "chave": "Chave A",
+            "chaveIdx": 0,
+            "posicao": 1
+          },
+          "fase": "Quartas de Final",
+          "jogo": 4
+        }
+      ],
+      "confrontosFinal": null,
+      "updatedAt": "2025-11-05T17:14:07.242Z",
+      "modalidadeId": "futsal_fem",
+      "id": "futsal_fem",
+      "createdAt": "2025-11-02T13:56:40.279Z",
+      "chaves": [
+        {
+          "nome": "Chave A",
+          "equipes": [
+            "Turma TI11/12",
+            "Turma 31",
+            "Turma 21"
+          ],
+          "equipesIds": [
+            "turma_ti1112",
+            "turma_31",
+            "turma_21"
+          ]
+        },
+        {
+          "nome": "Chave B",
+          "equipes": [
+            "Turma 13",
+            "Turma 32/33",
+            "Turma 22"
+          ],
+          "equipesIds": [
+            "turma_13",
+            "turma_3233",
+            "turma_22"
+          ]
+        },
+        {
+          "nome": "Chave C",
+          "equipes": [
+            "Turma 12/14",
+            "Turma TI21",
+            "Turma 34"
+          ],
+          "equipesIds": [
+            "turma_1214",
+            "turma_ti21",
+            "turma_34"
+          ]
+        },
+        {
+          "nome": "Chave D",
+          "equipes": [
+            "Turma 11",
+            "Turma 23/24",
+            "Turma TI22"
+          ],
+          "equipesIds": [
+            "turma_11",
+            "turma_2324",
+            "turma_ti22"
+          ]
+        }
+      ]
+    },
+    "futsal_masc": {
+      "createdAt": "2025-11-02T13:51:45.533Z",
+      "updatedAt": "2025-11-02T13:51:45.533Z",
+      "chaves": [
+        {
+          "nome": "Chave A",
+          "equipes": [
+            "Turma TI11",
+            "Turma TI22",
+            "Turma 24"
+          ],
+          "equipesIds": [
+            "turma_ti11",
+            "turma_ti22",
+            "turma_24"
+          ]
+        },
+        {
+          "nome": "Chave B",
+          "equipes": [
+            "Turma 31",
+            "Turma TI21",
+            "Turma 14"
+          ],
+          "equipesIds": [
+            "turma_31",
+            "turma_ti21",
+            "turma_14"
+          ]
+        },
+        {
+          "nome": "Chave C",
+          "equipes": [
+            "Turma 12/13",
+            "Turma 23",
+            "Turma 21"
+          ],
+          "equipesIds": [
+            "turma_1213",
+            "turma_23",
+            "turma_21"
+          ]
+        },
+        {
+          "nome": "Chave D",
+          "equipes": [
+            "Turma 11",
+            "Turma 33",
+            "Turma TI12"
+          ],
+          "equipesIds": [
+            "turma_11",
+            "turma_33",
+            "turma_ti12"
+          ]
+        },
+        {
+          "nome": "Chave E",
+          "equipes": [
+            "Turma 32",
+            "Turma 22",
+            "Turma 34"
+          ],
+          "equipesIds": [
+            "turma_32",
+            "turma_22",
+            "turma_34"
+          ]
+        }
+      ],
+      "modalidadeId": "futsal_masc"
+    }
+  }
+}

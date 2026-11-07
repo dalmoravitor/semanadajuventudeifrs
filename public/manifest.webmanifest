@@ -1,0 +1,10 @@
+{
+  "name": "XXIX Semana da Juventude 2025",
+  "short_name": "Semana da Juventude",
+  "lang": "pt-BR",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1e7a2f",
+  "icons": [{ "src": "/icone.svg", "sizes": "any", "type": "image/svg+xml" }]
+}
